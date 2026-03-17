@@ -1,6 +1,6 @@
 # Criança, jovem, adulto
 
-![_](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/mumia/cover.jpg)
+![_](../../.tko/cache/ed/base/mumia/cover.jpg)
 
 ## Contexto
 
