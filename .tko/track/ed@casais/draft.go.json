@@ -1,0 +1,109 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_10-56-28",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,237 +37,12 @@\n ) %7B%0A\n-%09var n int%0A%09fmt.Scan(&n)%0A%0A%09animal := make(%5B%5Dint, n)%0A%0A%09for i := 0; i %3E n; i++ %7B%0A%09%09fmt.Scan(animal%5Bi%5D)%0A%09%7D%0A%09var t int%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09if animal%5Bi%5D == (animal%5Bj%5D * (-1)) %7B%0A%09%09%09%09t++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+    \n fmt.\n@@ -49,13 +49,20 @@\n Println(\n-t\n+%22qxcode%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-13_11-02-48",
+            "content": "@@ -239,11 +239,13 @@\n %5D * \n+(\n -1)\n+)\n  %7B%0A%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-13_11-03-05",
+            "content": "@@ -253,28 +253,8 @@\n t++%0A\n-%09%09%09%7D else %7B%0A%09%09%09%09t--%0A\n %09%09%09%7D\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-13_11-04-36",
+            "content": "@@ -250,16 +250,30 @@\n %09%09%09t\n- = t + 1\n+++%0A%09%09%09%7D else %7B%0A%09%09%09%09t--\n %0A%09%09%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_11-05-00",
+            "content": "@@ -220,66 +220,46 @@\n mal%5B\n-j%5D %3E 0 %7B%0A%09%09%09%09if animal%5Bj\n+i\n %5D == \n+(\n animal%5B\n-i%5D*\n+j%5D * \n -1\n+)\n  %7B%0A%09%09%09%09\n-%09t++%0A%09%09%09%09%7D\n+t = t + 1\n %0A%09%09%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-13_11-06-24",
+            "content": "@@ -245,17 +245,16 @@\n l%5Bj%5D == \n-(\n animal%5Bi\n@@ -258,16 +258,11 @@\n l%5Bi%5D\n- * (-1))\n+*-1\n  %7B%0A%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_11-06-48",
+            "content": "@@ -95,33 +95,33 @@\n %0A%09for i := 0; i \n-%3C\n+%3E\n  n; i++ %7B%0A%09%09fmt.\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_11-09-18",
+            "content": "@@ -125,17 +125,16 @@\n mt.Scan(\n-&\n animal%5Bi\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_11-09-36",
+            "content": "@@ -280,30 +280,8 @@\n t++%0A\n-%09%09%09%09%7D else %7B%0A%09%09%09%09%09t--%0A\n %09%09%09%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_11-10-07",
+            "content": "@@ -276,16 +276,38 @@\n %09%09%09%09t++%0A\n+%09%09%09%09%7D else %7B%0A%09%09%09%09%09t--%0A\n %09%09%09%09%7D%0A%09%09\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-13_11-10-47",
+            "content": "@@ -1,319 +1,227 @@\n-package main%0A%0Aimport %22fmt%22%0A%0Afunc main() %7B%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09animal := make(%5B%5Dint, n)%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&animal%5Bi%5D)%0A%09%7D%0A%09var t int%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09for j := 0; j %3C n; j++ %7B%0A%09%09%09if animal%5Bj%5D %3E 0 %7B%0A%09%09%09%09if animal%5Bi%5D == (animal%5Bj%5D * (-1)) %7B%0A%09%09%09%09%09t++%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09fmt.Println(t)%0A%7D\n+@@ -141,17 +141,8 @@%0A i%255D)%250A%0A-        %250A%0A %2509%257D%250A%2509%0A@@ -224,17 +224,16 @@%0A %255Bj%255D %253E 0 %0A-%257D%0A %257B%250A%2509%2509%2509%2509if%0A@@ -240,17 +240,17 @@%0A  animal%255B%0A-i%0A+j%0A %255D == (an%0A@@ -254,17 +254,17 @@%0A (animal%255B%0A-j%0A+i%0A %255D * (-1)\n %0A\n",
+            "lines": "18"
+        },
+        {
+            "label": "2026-03-13_11-17-40",
+            "content": "@@ -259,10 +259,8 @@\n al%5Bj\n-+1\n %5D * \n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_13-27-01",
+            "content": "@@ -188,17 +188,17 @@\n or j := \n-1\n+0\n ; j %3C n;\n@@ -255,16 +255,18 @@\n animal%5Bj\n++1\n %5D * (-1)\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_13-27-23",
+            "content": "@@ -217,17 +217,17 @@\n  animal%5B\n-i\n+j\n %5D %3E 0 %7B%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_13-27-58",
+            "content": "@@ -90,38 +90,8 @@\n , n)\n-%0A%09descasados := make(%5B%5Dint, n)\n %0A%0A%09f\n@@ -143,92 +143,8 @@\n )%0A%09%7D\n-%0A%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09if animal%5Bi%5D %3E 0 %7B%0A%09%09%09descasados%5Bi%5D = animal%5Bi%5D%0A%09%09%7D%0A%09%7D\n %0A%09va\n@@ -188,17 +188,17 @@\n or j := \n-0\n+1\n ; j %3C n;\n@@ -250,21 +250,26 @@\n  == \n-descasados%5Bj%5D\n+(animal%5Bj%5D * (-1))\n  %7B%0A%09\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-13_13-33-06",
+            "content": "@@ -212,17 +212,17 @@\n imal%5Bi%5D \n-%3C\n+%3E\n  0 %7B%0A%09%09%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-13_13-33-45",
+            "content": "@@ -360,17 +360,16 @@\n l%5Bi%5D == \n-(\n descasad\n@@ -377,16 +377,8 @@\n s%5Bj%5D\n- * (-1))\n  %7B%0A%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-13_13-34-16",
+            "content": "@@ -389,31 +389,8 @@\n ) %7B%0A\n-%09%09%09%09%09descasados%5Bj%5D = 0%0A\n %09%09%09%09\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-13_13-37-30",
+            "content": "@@ -167,16 +167,46 @@\n mal%5Bi%5D)%0A\n+%09%7D%0A%0A%09for i := 0; i %3C n; i++ %7B%0A\n %09%09if ani\n@@ -254,17 +254,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %09var t i\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-13_13-38-02",
+            "content": "@@ -86,16 +86,46 @@\n %5Dint, n)\n+%0A%09descasados := make(%5B%5Dint, n)\n %0A%0A%09for i\n@@ -167,16 +167,70 @@\n mal%5Bi%5D)%0A\n+%09%09if animal%5Bi%5D %3C 0 %7B%0A%09%09%09descasados%5Bi%5D = animal%5Bi%5D%0A%09%09%7D%0A\n %09%7D%0A%0A%09var\n@@ -332,22 +332,26 @@\n %5Bi%5D == (\n-animal\n+descasados\n %5Bj%5D * (-\n@@ -361,22 +361,26 @@\n  %7B%0A%09%09%09%09%09\n-animal\n+descasados\n %5Bj%5D = 0%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-13_19-41-43",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tanimal := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&animal[i])\n\t}\n\n\tvar t int\n\tfor i := 0; i < n; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif animal[i] > 0 {\n\t\t\t\tif animal[i] == (animal[j] * (-1)) {\n\t\t\t\t\tanimal[j] = 0\n\t\t\t\t\tt++\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tfmt.Println(t)\n}\n",
+            "lines": "27"
+        }
+    ]
+}

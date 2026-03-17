@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_11-20-53",
+            "content": "@@ -142,10 +142,8 @@\n (%22%25f\n-%5Cn\n %22, f\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-03-15_11-21-02",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var celsius float64\n    fmt.Scan(&celsius)\n\n    fahrenheit := 1.8 * celsius + 32\n\n    fmt.Printf(\"%f\\n\", fahrenheit)\n}\n",
+            "lines": "11"
+        }
+    ]
+}

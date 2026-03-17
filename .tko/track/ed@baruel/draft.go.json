@@ -1,0 +1,254 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_14-12-43",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -41,16 +41,20 @@\n oSlices(\n+var \n n %5B%5Dint)\n@@ -58,15 +58,14 @@\n nt) \n-int %7B%0A%09\n+%7B%0A    \n tama\n@@ -77,15 +77,18 @@\n = le\n-n\n+t\n (n)%0A%0A\n-%09\n+    \n soma\n@@ -93,17 +93,20 @@\n ma := 0%0A\n-%09\n+    \n for i :=\n@@ -132,21 +132,33 @@\n + %7B%0A\n-%09%09soma++%0A%09%7D%0A%09\n+        soma++%0A    %7D%0A    \n retu\n@@ -181,17 +181,20 @@\n ain() %7B%0A\n-%09\n+    \n var q, n\n@@ -198,17 +198,20 @@\n , n int%0A\n-%09\n+    \n fmt.Scan\n@@ -220,17 +220,20 @@\n q, &n)%0A%0A\n-%09\n+    \n v := mak\n@@ -245,17 +245,20 @@\n nt, n)%0A%0A\n-%09\n+    \n for i :=\n@@ -274,18 +274,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Scan\n@@ -302,13 +302,19 @@\n i%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n for \n@@ -338,16 +338,21 @@\n + %7B%0A\n-%09%09\n+        \n for j\n- \n := 0\n@@ -370,77 +370,147 @@\n + %7B%0A\n-%09%09%09if j %3E 0 %7B%0A%09%09%09%09if v%5Bi%5D == v%5Bj%5D %7B%0A%09%09%09%09%09v%5Bj%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09\n+            if j %3E 0 %7B%0A                if v%5Bi%5D == v%5Bj%5D %7B%0A                    v%5Bj%5D = 0;%0A                %7D%0A            %7D%0A        %7D%0A    %7D%0A    \n fmt.\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-13_14-14-26",
+            "content": "@@ -327,14 +327,13 @@\n %09if \n-i != j\n+j %3E 0\n  %7B%0A%09\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_14-15-00",
+            "content": "@@ -390,68 +390,8 @@\n %0A%09%7D%0A\n-%09if tamanhoDoSlices(v) == q %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09\n %09fmt\n@@ -419,13 +419,10 @@\n ces(v))%0A\n-%09%7D%0A\n %7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_14-17-13",
+            "content": "@@ -21,16 +21,142 @@\n  %22fmt%22%0A%0A\n+func tamanhoDoSlices(n %5B%5Dint) int %7B%0A%09tamanho := len(n)%0A%0A%09soma := 0%0A%09for i := 0; i %3C tamanho; i++ %7B%0A%09%09soma++%0A%09%7D%0A%09return soma%0A%7D%0A\n func mai\n@@ -218,29 +218,8 @@\n , n)\n-%0A%09r := make(%5B%5Dint, n)\n %0A%0A%09f\n@@ -363,19 +363,16 @@\n %09%09%09%09\n-r%5Bi%5D = \n v%5Bj%5D\n+ = 0\n %0A%09%09%09\n@@ -390,92 +390,40 @@\n %0A%09%7D%0A\n-%0A%09quantidade := len(r)%0A%0A%09if quantidade %3E 0 %7B%0A%09%09for i := 0; i %3C quantidade; i++\n+%09if tamanhoDoSlices(v) == q\n  %7B%0A%09%09\n-%09\n fmt.\n@@ -431,26 +431,15 @@\n rint\n-f(%22%25d %22, r%5Bi%5D)%0A%09%09%7D\n+ln(%22N%22)\n %0A%09%7D \n@@ -460,113 +460,32 @@\n rint\n-f(%22N%22)%0A%09%7D%0A%0A%09fmt.Println()%0A%0A%09if quantidade %3E 0 %7B%0A%09%09fmt.Println(quantidade)%0A%09%7D else %7B%0A%09%09fmt.Println(%22N%22\n+ln(tamanhoDoSlices(v)\n )%0A%09%7D%0A\n-%0A\n %7D%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-13_23-35-53",
+            "content": "@@ -410,32 +410,8 @@\n e %7B%0A\n-%09%09if quantidade == q %7B%0A%09\n %09%09fm\n@@ -424,20 +424,16 @@\n tf(%22N%22)%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09fmt\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-13_23-43-48",
+            "content": "@@ -94,19 +94,27 @@\n n)%0A%09\n-var r \n+r := make(\n %5B%5Dint\n+, n)\n %0A%0A%09f\n@@ -259,26 +259,18 @@\n %09%09%09r\n- = append(r, v%5Bi%5D)\n+%5Bi%5D = v%5Bj%5D\n %0A%09%09%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-13_23-53-41",
+            "content": "@@ -398,32 +398,56 @@\n )%0A%09%09%7D%0A%09%7D else %7B%0A\n+%09%09if quantidade == q %7B%0A%09\n %09%09fmt.Printf(%22N%22\n@@ -444,24 +444,28 @@\n Printf(%22N%22)%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09fmt.Pri\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-13_23-56-59",
+            "content": "@@ -154,15 +154,8 @@\n %0A%09%7D%0A\n-%09j := 0\n %0A%09fo\n@@ -177,16 +177,44 @@\n ; i++ %7B%0A\n+%09%09for j := 0; j %3C n; j++ %7B%0A%09\n %09%09if i !\n@@ -219,16 +219,17 @@\n  != j %7B%0A\n+%09\n %09%09%09if v%5B\n@@ -241,16 +241,17 @@\n  v%5Bj%5D %7B%0A\n+%09\n %09%09%09%09r = \n@@ -273,19 +273,19 @@\n %0A%09%09%09\n+%09\n %7D%0A\n+%09\n %09%09%7D%0A%09%09\n-j++\n+%7D\n %0A%09%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-14_00-10-03",
+            "content": "@@ -154,65 +154,44 @@\n %0A%09%7D%0A\n-%0A%09for i := 0; i %3C 1; i++ %7B%0A%09\n+%09j := 0%0A\n %09for \n-j\n+i\n  := 0; \n-j\n+i\n  %3C n; \n-j\n+i\n ++ %7B%0A%09%09\n-%09\n if i\n@@ -198,17 +198,16 @@\n  != j %7B%0A\n-%09\n %09%09%09if v%5B\n@@ -219,17 +219,16 @@\n  v%5Bj%5D %7B%0A\n-%09\n %09%09%09%09r = \n@@ -250,19 +250,19 @@\n %0A%09%09%09\n-%09\n %7D%0A\n-%09\n %09%09%7D%0A%09%09\n-%7D\n+j++\n %0A%09%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-14_00-11-29",
+            "content": "@@ -154,112 +154,101 @@\n %0A%09%7D%0A\n-%09caderno := make(%5B%5Dint, q)%0A\n+%0A%09for i := 0; i %3C 1; i++ %7B%0A%09\n %09for \n-i\n+j\n  := 0; \n-i\n+j\n  %3C n; \n-i\n+j\n ++ %7B%0A%09%09\n-figurinha := v%5Bi%5D%0A%0A%09%09if caderno%5Bfigurinha%5D %3E 0\n+%09if i != j %7B%0A%09%09%09%09if v%5Bi%5D == v%5Bj%5D\n  %7B%0A\n+%09%09\n %09%09%09r\n@@ -264,45 +264,28 @@\n (r, \n-figurinha\n+v%5Bi%5D\n )%0A\n+%09%09\n %09%09%7D%0A%09%09\n-caderno%5Bfigurinha%5D++\n+%09%7D%0A%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-14_00-23-18",
+            "content": "@@ -179,10 +179,8 @@\n t, q\n-+1\n )%0A%09f\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-14_00-23-36",
+            "content": "@@ -150,17 +150,16 @@\n %5Bi%5D)%0A%09%7D%0A\n-%0A\n %09caderno\n@@ -430,24 +430,8 @@\n %09%09%7D%0A\n-%09%09fmt.Println()%0A\n %09%7D e\n@@ -455,17 +455,31 @@\n f(%22N\n-%5Cn\n %22)%0A%09%7D%0A%0A\n+%09fmt.Println()%0A%0A\n %09if \n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-14_00-25-59",
+            "content": "@@ -377,17 +377,16 @@\n = 0; i %3C\n-=\n  quantid\n@@ -400,33 +400,8 @@\n + %7B%0A\n-%09%09%09if i == quantidade %7B%0A%09\n %09%09%09f\n@@ -415,19 +415,24 @@\n tf(%22\n-%5Cn%22\n+%25d %22, r%5Bi%5D\n )%0A\n-%09\n %09%09%7D%0A\n-%09\n %09%09fm\n@@ -438,34 +438,20 @@\n mt.Print\n-f(%22%25d %22, r%5Bi%5D)%0A%09%09%7D\n+ln()\n %0A%09%7D else\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-14_00-26-40",
+            "content": "@@ -377,16 +377,17 @@\n = 0; i %3C\n+=\n  quantid\n@@ -401,35 +401,8 @@\n + %7B%0A\n-%09%09%09fmt.Printf(%22%25d %22, r%5Bi%5D)%0A\n %09%09%09i\n@@ -422,10 +422,8 @@\n dade\n--1\n  %7B%0A%09\n@@ -434,16 +434,17 @@\n mt.Print\n+f\n (%22%5Cn%22)%0A%09\n@@ -447,16 +447,43 @@\n %22)%0A%09%09%09%7D%0A\n+%09%09%09fmt.Printf(%22%25d %22, r%5Bi%5D)%0A\n %09%09%7D%0A%09%7D e\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-14_00-28-12",
+            "content": "@@ -431,17 +431,18 @@\n %09%09%09if i \n-%3C\n+==\n  quantid\n@@ -449,9 +449,9 @@\n ade-\n-2\n+1\n  %7B%0A%09\n@@ -466,12 +466,12 @@\n rint\n-f\n (%22\n- \n+%5Cn\n %22)%0A%09\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-14_00-29-06",
+            "content": "@@ -413,16 +413,17 @@\n intf(%22%25d\n+ \n %22, r%5Bi%5D)\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-14_00-29-19",
+            "content": "@@ -443,17 +443,17 @@\n ntidade-\n-1\n+2\n  %7B%0A%09%09%09%09f\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-14_00-29-31",
+            "content": "@@ -480,24 +480,8 @@\n %09%09%7D%0A\n-%09%09fmt.Println()%0A\n %09%7D e\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-14_00-29-59",
+            "content": "@@ -545,12 +545,11 @@\n ade \n-== q\n+%3E 0\n  %7B%0A%09\n@@ -565,11 +565,18 @@\n tln(\n-%22N%22\n+quantidade\n )%0A%09%7D\n@@ -593,30 +593,23 @@\n fmt.Println(\n-quantidade\n+%22N%22\n )%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-14_00-30-35",
+            "content": "@@ -579,161 +579,35 @@\n lse \n-if quantidade %3C q %7B%0A%09%09for i := 0; i %3C q+1; i++ %7B%0A%09%09%09if caderno%5Bi%5D == 0 %7B%0A%09%09%09%09fmt.Printf(%22%25d%22, caderno%5Bi%5D)%0A%09%09%09%7D%0A%09%09%09if i %3C q %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D\n+%7B%0A%09%09fmt.Println(quantidade)\n %0A%09%7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-14_00-35-15",
+            "content": "@@ -531,34 +531,97 @@\n %7D%0A%0A%09\n-for i := 1; i %3C quantidade\n+if quantidade == q %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else if quantidade %3C q %7B%0A%09%09for i := 0; i %3C q+1\n ; i+\n@@ -626,16 +626,17 @@\n i++ %7B%0A%09%09\n+%09\n if cader\n@@ -647,24 +647,25 @@\n %5D == 0 %7B%0A%09%09%09\n+%09\n fmt.Printf(%22\n@@ -670,14 +670,66 @@\n (%22%25d\n- \n %22, \n-i)\n+caderno%5Bi%5D)%0A%09%09%09%7D%0A%09%09%09if i %3C q %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D\n %0A%09%09%7D\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-14_00-44-49",
+            "content": "@@ -526,10 +526,100 @@\n n%22)%0A%09%7D%0A%0A\n+%09for i := 1; i %3C quantidade; i++ %7B%0A%09%09if caderno%5Bi%5D == 0 %7B%0A%09%09%09fmt.Printf(%22%25d %22, i)%0A%09%09%7D%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-14_00-47-51",
+            "content": "@@ -530,277 +530,6 @@\n %09%7D%0A%0A\n-%09var faltando %5B%5Dint%0A%0A%09for i := 1; i %3C q; i++ %7B%0A%09%09if caderno%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09qtdFaltando := len(faltando)%0A%0A%09if qtdFaltando %3E 0 %7B%0A%09%09for i := 0; i %3C qtdFaltando; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, faltando%5Bi%5D)%0A%09%09%7D%0A%09%7D else %7B%0A%09%09fmt.Printf(%22N%22)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-14_00-54-53",
+            "content": "@@ -767,76 +767,9 @@\n )%0A%09%09\n-%09if i %3C qtdFaltando-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()\n+%7D\n %0A%09%7D \n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-14_00-55-50",
+            "content": "@@ -831,14 +831,11 @@\n rint\n-f(%22%5Cn%22\n+ln(\n )%0A%09%7D\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-14_00-58-04",
+            "content": "@@ -856,23 +856,21 @@\n mt.Printf(%22N\n-%5Cn\n %22)%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-14_00-58-18",
+            "content": "@@ -563,17 +563,16 @@\n = 1; i %3C\n-=\n  q; i++ \n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-14_00-58-46",
+            "content": "@@ -45,76 +45,37 @@\n ar q\n-tdTotal, qtdPossui int%0A%09fmt.Scan(&qtdTotal, &qtdPossui)%0A%0A%09figurinhas\n+, n int%0A%09fmt.Scan(&q, &n)%0A%0A%09v\n  := \n@@ -90,18 +90,23 @@\n nt, \n-qtdPossui)\n+n)%0A%09var r %5B%5Dint\n %0A%0A%09f\n@@ -116,33 +116,25 @@\n i := 0; i %3C \n-qtdPossui\n+n\n ; i++ %7B%0A%09%09fm\n@@ -141,26 +141,17 @@\n t.Scan(&\n-figurinhas\n+v\n %5Bi%5D)%0A%09%7D%0A\n@@ -180,37 +180,11 @@\n t, q\n-tdPossui+1)%0A%09var vetor %5B%5Dint%0A\n++1)\n %0A%09fo\n@@ -201,17 +201,9 @@\n i %3C \n-qtdPossui\n+n\n ; i+\n@@ -212,15 +212,8 @@\n %7B%0A%09%09\n-aux := \n figu\n@@ -217,17 +217,21 @@\n igurinha\n-s\n+ := v\n %5Bi%5D%0A%0A%09%09i\n@@ -240,19 +240,25 @@\n caderno%5B\n-aux\n+figurinha\n %5D %3E 0 %7B%0A\n@@ -260,20 +260,16 @@\n  0 %7B%0A%09%09%09\n-veto\n r = appe\n@@ -275,18 +275,20 @@\n end(\n-vetor, aux\n+r, figurinha\n )%0A%09%09\n@@ -303,35 +303,44 @@\n rno%5B\n-aux%5D++%0A%09%7D%0A%0A%09tamanho\n+figurinha%5D++%0A%09%7D%0A%0A%09quantidade\n  := len(\n veto\n@@ -339,20 +339,16 @@\n len(\n-veto\n r)%0A%0A%09if \n tama\n@@ -347,49 +347,354 @@\n %09if \n-tamanho == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else\n+quantidade %3E 0 %7B%0A%09%09for i := 0; i %3C quantidade; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, r%5Bi%5D)%0A%09%09%09if i %3C quantidade-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D else %7B%0A%09%09fmt.Printf(%22N%5Cn%22)%0A%09%7D%0A%0A%09var faltando %5B%5Dint%0A%0A%09for i := 1; i %3C= q; i++ %7B%0A%09%09if caderno%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09qtdFaltando := len(faltando)%0A%0A%09if qtdFaltando %3E 0\n  %7B%0A%09\n@@ -710,22 +710,26 @@\n  0; i %3C \n-tamanh\n+qtdFaltand\n o; i++ %7B\n@@ -753,13 +753,16 @@\n d%22, \n-vetor\n+faltando\n %5Bi%5D)\n@@ -774,16 +774,20 @@\n f i \n-%3E tamanh\n+%3C qtdFaltand\n o-1 \n@@ -824,23 +824,56 @@\n %0A%09%09fmt.Print\n-ln(\n+f(%22%5Cn%22)%0A%09%7D else %7B%0A%09%09fmt.Printf(%22N%5Cn%22\n )%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "62"
+        },
+        {
+            "label": "2026-03-14_11-13-36",
+            "content": "@@ -271,15 +271,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  qtd\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-14-16",
+            "content": "@@ -229,21 +229,22 @@\n int, qtd\n-Total\n+Possui\n +1)%0A%09var\n@@ -271,23 +271,25 @@\n  := \n-0\n+1\n ; i %3C\n+=\n  qtd\n-Total\n+Possui\n ; i+\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-16-18",
+            "content": "@@ -268,38 +268,37 @@\n  i := 0; i %3C qtd\n-Possui\n+Total\n ; i++ %7B%0A%09%09aux :=\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-17-13",
+            "content": "@@ -536,17 +536,17 @@\n %09%09%09if i \n-%3C\n+%3E\n  tamanho\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-17-36",
+            "content": "@@ -602,234 +602,7 @@\n %0A%09%7D%0A\n-%09tamanhoCaderno := len(caderno)%0A%0A%09if tamanhoCaderno == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 1; i %3C tamanhoCaderno; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, i)%0A%09%09%09if i %3E tamanhoCaderno-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-22-09",
+            "content": "@@ -750,18 +750,9 @@\n d%22, \n-caderno%5Bi%5D\n+i\n )%0A%09%09\n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-14_11-22-36",
+            "content": "@@ -636,224 +636,24 @@\n )%0A%0A%09\n-var figurinhasRepetida %5B%5Dint%0A%0A%09for i := 1; i %3C tamanhoCaderno; i++ %7B%0A%09%09if caderno%5Bi%5D %3E 0 %7B%0A%09%09%09figurinhasRepetida = append(figurinhasRepetida, i)%0A%09%09%7D%0A%09%7D%0A%0A%09tamanhoRepetido := len(figurinhasRepetida)%0A%0A%09if tamanhoRepetid\n+if tamanhoCadern\n o ==\n@@ -689,33 +689,33 @@\n se %7B%0A%09%09for i := \n-0\n+1\n ; i %3C tamanhoRep\n@@ -711,23 +711,22 @@\n  tamanho\n-Repetid\n+Cadern\n o; i++ %7B\n@@ -750,32 +750,20 @@\n d%22, \n-figurinhasRepetida\n+caderno\n %5Bi%5D)%0A\n-%0A\n %09%09%09i\n@@ -779,15 +779,14 @@\n anho\n-Repetid\n+Cadern\n o-1 \n",
+            "lines": "53"
+        },
+        {
+            "label": "2026-03-14_11-27-38",
+            "content": "@@ -717,18 +717,17 @@\n erno%5Bi%5D \n-==\n+%3E\n  0 %7B%0A%09%09%09\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-14_11-29-11",
+            "content": "@@ -972,33 +972,33 @@\n da%5Bi%5D)%0A%0A%09%09%09if i \n-%3C\n+%3E\n  tamanhoRepetido\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-14_11-29-27",
+            "content": "@@ -203,21 +203,23 @@\n %5D)%0A%09%7D%0A%0A%09\n-album\n+caderno\n  := make\n@@ -243,35 +243,21 @@\n 1)%0A%09var \n-figurinhasRepetidas\n+vetor\n  %5B%5Dint%0A%0A\n@@ -323,47 +323,434 @@\n %09if \n-album%5Baux%5D %3E 0 %7B%0A%09%09%09figurinhasRepetidas\n+caderno%5Baux%5D %3E 0 %7B%0A%09%09%09vetor = append(vetor, aux)%0A%09%09%7D%0A%09%09caderno%5Baux%5D++%0A%09%7D%0A%0A%09tamanho := len(vetor)%0A%0A%09if tamanho == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C tamanho; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, vetor%5Bi%5D)%0A%09%09%09if i %3C tamanho-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%09tamanhoCaderno := len(caderno)%0A%0A%09var figurinhasRepetida %5B%5Dint%0A%0A%09for i := 1; i %3C tamanhoCaderno; i++ %7B%0A%09%09if caderno%5Bi%5D == 0 %7B%0A%09%09%09figurinhasRepetida\n  = a\n@@ -777,35 +777,17 @@\n tida\n-s\n , \n-aux\n+i\n )%0A%09%09%7D%0A\n-%09%09album%5Baux%5D++%0A\n %09%7D%0A%0A\n@@ -801,18 +801,17 @@\n oRepetid\n-as\n+o\n  := len(\n@@ -828,17 +828,16 @@\n Repetida\n-s\n )%0A%0A%09if t\n@@ -849,18 +849,17 @@\n oRepetid\n-as\n+o\n  == 0 %7B%0A\n@@ -919,18 +919,17 @@\n oRepetid\n-as\n+o\n ; i++ %7B%0A\n@@ -966,17 +966,16 @@\n Repetida\n-s\n %5Bi%5D)%0A%0A%09%09\n@@ -982,33 +982,29 @@\n %09if \n-figurinhasRepetidas-1 %3E i\n+i %3C tamanhoRepetido-1\n  %7B%0A%09\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-14_11-48-19",
+            "content": "@@ -626,27 +626,26 @@\n %0A%0A%09%09%09if \n-i %3C tamanho\n+figurinhas\n Repetida\n@@ -648,16 +648,20 @@\n tidas-1 \n+%3E i \n %7B%0A%09%09%09%09fm\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-49-47",
+            "content": "@@ -702,241 +702,7 @@\n )%0A%09%7D\n-%0A%0A%09var faltando int%5B%5D %0A%09tamanhoAlbum := len(album)%0A%0A%09for i := 1; i %3C= tamanhoAlbum; i++ %7B%0A%09%09if album%5Bi%5D == 0 %7B%0A%09%09%09faltando.append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09tamanhoFaltando := len(faltando)%0A%0A%09if tamanhoFaltando == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-14_11-55-07",
+            "content": "@@ -1,943 +1,68 @@\n-package main%0A%0Aimport %22fmt%22%0A%0Afunc main() %7B%0A%09var qtdTotal, qtdPossui int%0A%09fmt.Scan(&qtdTotal, &qtdPossui)%0A%0A%09figurinhas := make(%5B%5Dint, qtdPossui)%0A%0A%09for i := 0; i %3C qtdPossui; i++ %7B%0A%09%09fmt.Scan(&figurinhas%5Bi%5D)%0A%09%7D%0A%0A%09album := make(%5B%5Dint, qtdTotal+1)%0A%09var figurinhasRepetidas %5B%5Dint%0A%0A%09for i := 0; i %3C qtdPossui; i++ %7B%0A%09%09aux := figurinhas%5Bi%5D%0A%0A%09%09if album%5Baux%5D %3E 0 %7B%0A%09%09%09figurinhasRepetidas = append(figurinhasRepetidas, aux)%0A%09%09%7D%0A%09%09album%5Baux%5D++%0A%09%7D%0A%0A%09tamanhoRepetidas := len(figurinhasRepetidas)%0A%0A%09if tamanhoRepetidas == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C tamanhoRepetidas; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, figurinhasRepetidas%5Bi%5D)%0A%0A%09%09%09if i %3C tamanhoRepetidas-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%0A%09var faltando %5B%5Dint%0A%09tamanhoAlbum := len(album)%0A%0A%09for i := 1; i %3C= tamanhoAlbum; i++ %7B%0A%09%09if album%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09tamanhoFaltando := len(faltando)%0A%0A%09if tamanhoFaltando == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D%0A%7D\n+@@ -714,21 +714,22 @@%0A altando %0A-%255B%255D%0A int%0A+%255B%255D %0A %250A%2509tamanh\n %0A\n",
+            "lines": "6"
+        },
+        {
+            "label": "2026-03-14_11-55-46",
+            "content": "@@ -715,24 +715,52 @@\n ltando %5B%5Dint\n+%0A%09tamanhoAlbum := len(album)\n %0A%0A%09for i := \n@@ -767,24 +767,28 @@\n 1; i %3C= \n-qtdTotal\n+tamanhoAlbum\n ; i++ %7B%0A\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-14_11-58-03",
+            "content": "@@ -232,16 +232,18 @@\n qtdTotal\n++1\n )%0A%09var f\n@@ -723,36 +723,8 @@\n %5Dint\n-%0A%09tamanhoAlbum := len(album)\n %0A%0A%09f\n@@ -735,27 +735,24 @@\n  := \n-0\n+1\n ; i %3C\n- tamanhoAlbum\n+= qtdTotal\n ; i+\n@@ -808,18 +808,16 @@\n tando, i\n-+1\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-14_12-02-39",
+            "content": "@@ -837,16 +837,18 @@\n tando, i\n++1\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-14_12-03-14",
+            "content": "@@ -236,10 +236,8 @@\n otal\n-+1\n )%0A%09v\n@@ -761,15 +761,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  tam\n@@ -901,32 +901,32 @@\n Faltando == 0 %7B%0A\n+\n %09%09fmt.Println(%22N\n@@ -932,168 +932,8 @@\n N%22)%0A\n-%09%7D else %7B%0A%09%09for i := 0; i %3C tamanhoFaltando; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, faltando%5Bi%5D)%0A%0A%09%09%09if i %3C tamanhoFaltando-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A\n %09%7D%0A%7D\n",
+            "lines": "56"
+        },
+        {
+            "label": "2026-03-14_12-07-10",
+            "content": "@@ -1,1072 +1,84 @@\n-package main%0A%0Aimport %22fmt%22%0A%0Afunc main() %7B%0A%09var qtdTotal, qtdPossui int%0A%09fmt.Scan(&qtdTotal, &qtdPossui)%0A%0A%09figurinhas := make(%5B%5Dint, qtdPossui)%0A%0A%09for i := 0; i %3C qtdPossui; i++ %7B%0A%09%09fmt.Scan(&figurinhas%5Bi%5D)%0A%09%7D%0A%0A%09album := make(%5B%5Dint, qtdTotal+1)%0A%09var figurinhasRepetidas %5B%5Dint%0A%0A%09for i := 0; i %3C qtdPossui; i++ %7B%0A%09%09aux := figurinhas%5Bi%5D%0A%0A%09%09if album%5Baux%5D %3E 0 %7B%0A%09%09%09figurinhasRepetidas = append(figurinhasRepetidas, aux)%0A%09%09%7D%0A%09%09album%5Baux%5D++%0A%09%7D%0A%0A%09tamanhoRepetidas := len(figurinhasRepetidas)%0A%0A%09if tamanhoRepetidas == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C tamanhoRepetidas; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, figurinhasRepetidas%5Bi%5D)%0A%0A%09%09%09if i %3C tamanhoRepetidas-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%0A%09var faltando %5B%5Dint%0A%0A%09for i := 1; i %3C= qtdTotal; i++ %7B%0A%09%09if album%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09tamanhoFaltando := len(faltando)%0A%0A%09if tamanhoFaltando == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 1; i %3C= tamanhoFaltando; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, faltando%5Bi%5D)%0A%0A%09%09%09if i %3C tamanhoFaltando-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%7D\n+@@ -944,39 +944,38 @@%0A se %257B%250A%2509%2509for i := %0A-1%0A+0%0A ; i %253C%0A-=%0A  tamanhoFaltando\n %0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-14_12-09-05",
+            "content": "@@ -738,30 +738,29 @@\n  1; i %3C= qtd\n-Possui\n+Total\n ; i++ %7B%0A%09%09if\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-14_12-09-29",
+            "content": "@@ -742,21 +742,22 @@\n i %3C= qtd\n-Total\n+Possui\n ; i++ %7B%0A\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-14_12-09-48",
+            "content": "@@ -912,38 +912,39 @@\n se %7B%0A%09%09for i := \n-0\n+1\n ; i %3C\n+=\n  tamanhoFaltando\n",
+            "lines": "64"
+        },
+        {
+            "label": "2026-03-14_12-10-05",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtdTotal, qtdPossui int\n\tfmt.Scan(&qtdTotal, &qtdPossui)\n\n\tfigurinhas := make([]int, qtdPossui)\n\n\tfor i := 0; i < qtdPossui; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\n\talbum := make([]int, qtdTotal+1)\n\tvar figurinhasRepetidas []int\n\n\tfor i := 0; i < qtdPossui; i++ {\n\t\taux := figurinhas[i]\n\n\t\tif album[aux] > 0 {\n\t\t\tfigurinhasRepetidas = append(figurinhasRepetidas, aux)\n\t\t}\n\t\talbum[aux]++\n\t}\n\n\ttamanhoRepetidas := len(figurinhasRepetidas)\n\n\tif tamanhoRepetidas == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < tamanhoRepetidas; i++ {\n\t\t\tfmt.Printf(\"%d\", figurinhasRepetidas[i])\n\n\t\t\tif i < tamanhoRepetidas-1 {\n\t\t\t\tfmt.Printf(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n\n\tvar faltando []int\n\n\tfor i := 1; i <= qtdTotal; i++ {\n\t\tif album[i] == 0 {\n\t\t\tfaltando = append(faltando, i)\n\t\t}\n\t}\n\n\ttamanhoFaltando := len(faltando)\n\n\tif tamanhoFaltando == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < tamanhoFaltando; i++ {\n\t\t\tfmt.Printf(\"%d\", faltando[i])\n\n\t\t\tif i < tamanhoFaltando-1 {\n\t\t\t\tfmt.Printf(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n}\n",
+            "lines": "64"
+        }
+    ]
+}

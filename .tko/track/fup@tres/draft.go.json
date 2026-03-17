@@ -1,0 +1,44 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_11-21-10",
+            "content": "@@ -57,44 +57,8 @@\n int%0A\n-    fmt.scanf(%22%25d%25d%25d%22, &a, &b, &c)%0A\n     \n",
+            "lines": "6"
+        },
+        {
+            "label": "2026-03-11_11-23-17",
+            "content": "@@ -65,9 +65,9 @@\n fmt.\n-S\n+s\n canf\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-24-18",
+            "content": "@@ -93,27 +93,8 @@\n &c)%0A\n-    d := a + b + c%0A\n     \n@@ -105,13 +105,21 @@\n Println(\n-d\n+a + b + c\n )%0A%7D%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-25-47",
+            "content": "@@ -74,12 +74,10 @@\n (%22%25d\n- \n %25d\n- \n %25d%22,\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-11_11-28-22",
+            "content": "@@ -91,16 +91,35 @@\n &b, &c)%0A\n+    d := a + b + c%0A\n     fmt.\n@@ -126,21 +126,13 @@\n Println(\n-a + b + c\n+d\n )%0A%7D%0A\n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-11_11-29-07",
+            "content": "@@ -69,14 +69,29 @@\n Scan\n-(\n+f(%22%25d %25d %25d%22, \n &a\n+,\n  &b\n+,\n  &c)\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-29-41",
+            "content": "@@ -72,13 +72,11 @@\n n(&a\n-,\n  &b\n-,\n  &c)\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-29-59",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a, b, c int\n    fmt.Scan(&a, &b, &c)\n    fmt.Println(a + b + c)\n}\n",
+            "lines": "7"
+        }
+    ]
+}

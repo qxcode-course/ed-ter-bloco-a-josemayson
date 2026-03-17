@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-15_11-05-29",
+            "content": "@@ -145,24 +145,25 @@\n  %25 3600%0A\n+%0A\n     fmt.\n Println%0A\n@@ -158,14 +158,37 @@\n fmt.\n-P\n+p\n rint\n-ln\n+f(%22%25d %25d%22, hora, minutos)\n %0A%7D%0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2026-03-15_11-06-02",
+            "content": "@@ -164,23 +164,7 @@\n ntln\n-(hora + minutos)\n %0A%7D%0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-03-15_11-06-18",
+            "content": "@@ -171,15 +171,8 @@\n ra +\n- %22 %22 + \n  min\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-03-15_11-06-39",
+            "content": "@@ -162,26 +162,24 @@\n rint\n-f(%22%25d %25d%5Cn%22, hora,\n+ln(hora + %22 %22 + \n  min\n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-03-15_11-07-05",
+            "content": "@@ -122,92 +122,33 @@\n var \n-aux int = tempo %25 3600%0A    var minutos int = aux / 60%0A    var segundos int = aux %25 6\n+minutos int = tempo %25 360\n 0%0A  \n",
+            "lines": "11"
+        },
+        {
+            "label": "2026-03-15_11-08-19",
+            "content": "@@ -223,19 +223,16 @@\n ntf(%22%25d \n-%25d \n %25d%5Cn%22, h\n@@ -247,18 +247,8 @@\n utos\n-, segundos\n )%0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-15_11-08-35",
+            "content": "@@ -149,16 +149,20 @@\n     \n+var \n minutos \n := a\n@@ -157,17 +157,20 @@\n minutos \n-:\n+int \n = aux / \n@@ -176,16 +176,20 @@\n  60%0A    \n+var \n segundos\n@@ -189,17 +189,20 @@\n egundos \n-:\n+int \n = aux %25 \n@@ -204,17 +204,16 @@\n ux %25 60%0A\n-%0A\n     fmt.\n@@ -226,12 +226,12 @@\n (%22%25d\n-:%25d:\n+ %25d \n %25d%5Cn\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-03-15_11-09-20",
+            "content": "@@ -86,14 +86,21 @@\n     \n+var \n hora \n-:\n+int \n = te\n@@ -118,13 +118,20 @@\n     \n-aux :\n+var aux int \n = te\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-03-15_11-09-46",
+            "content": "package main\nimport \"fmt\"\n\nfunc main() {\n    var tempo int\n    fmt.Scan(&tempo)\n    \n    hora := tempo / 3600\n    aux := tempo % 3600\n    minutos := aux / 60\n    segundos := aux % 60\n\n    fmt.Printf(\"%d:%d:%d\\n\", hora, minutos, segundos)\n}\n",
+            "lines": "14"
+        }
+    ]
+}

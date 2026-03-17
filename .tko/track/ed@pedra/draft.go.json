@@ -1,0 +1,89 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-13_01-13-23",
+            "content": "@@ -51,17 +51,17 @@\n  %7B%0A%09var \n-n\n+q\n  int%0A%09fm\n@@ -72,81 +72,38 @@\n an(&\n-n)%0A%09a := make(%5B%5Dint, n)%0A%09b := make(%5B%5Dint, n)%0A%09c := make(%5B%5Dint, n)\n+q)%0A%09var a, b, c %5Bn%5Dint\n %0A%0A%09for i\n  := \n@@ -102,14 +102,16 @@\n or i\n+nt i\n  \n-:\n = 0\n- \n ; i \n@@ -168,25 +168,27 @@\n int = 0%0A\n-%0A\n %09for i\n+nt i\n  \n-:\n = 0; i %3C\n@@ -276,26 +276,29 @@\n %09%7D%0A%09%7D%0A%09for i\n+nt i\n  \n-:\n = 0; i %3C n; \n@@ -422,10 +422,13 @@\n or i\n+nt i\n  \n-:\n = 0;\n@@ -466,17 +466,16 @@\n %5D,b%5Bi%5D =\n-=\n  menor) \n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-13_01-25-24",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import (\n@@ -32,17 +32,16 @@\n math%22%0A)%0A\n-%0A\n func mai\n@@ -138,32 +138,33 @@\n  n)%0A%0A%09for i := 0\n+ \n ; i %3C n; i++ %7B%0A%09\n@@ -211,21 +211,9 @@\n t = \n-math.MaxInt32\n+0\n %0A%0A%09f\n@@ -271,49 +271,137 @@\n %0A%09%09%09\n-c%5Bi%5D = int(math.Abs(float64\n+menor = math.Abs(a%5Bi%5D, b%5Bi%5D)%0A%09%09%09break;%0A%09%09%7D%0A%09%7D%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09if a%5Bi%5D %3E 9 && b%5Bi%5D %3E 9 %7B%0A%09%09%09c%5Bi%5D = math.Abs\n (a%5Bi%5D,\n- \n b%5Bi%5D)\n-))\n %0A%09%09%09\n@@ -478,20 +478,16 @@\n + %7B%0A%09%09if\n- int\n (math.Ab\n@@ -492,29 +492,17 @@\n Abs(\n-float64(\n a%5Bi%5D,\n- \n b%5Bi%5D\n-)))\n  == \n@@ -506,16 +506,17 @@\n == menor\n+)\n  %7B%0A%09%09%09fm\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-13_01-28-08",
+            "content": "@@ -316,10 +316,9 @@\n a%5Bi%5D\n- -\n+,\n  b%5Bi\n@@ -433,9 +433,10 @@\n a%5Bi%5D\n--\n+, \n b%5Bi%5D\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_01-28-47",
+            "content": "@@ -48,17 +48,16 @@\n ain() %7B%0A\n-%0A\n %09var n i\n@@ -141,24 +141,8 @@\n n)%0A%0A\n-%09var d int = 0%0A%0A\n %09for\n@@ -370,26 +370,8 @@\n %09%09%7D%0A\n-%09%09%7D else %7B%0A%09%09%09d++%0A\n %09%09%7D%0A\n@@ -450,16 +450,16 @@\n menor %7B%0A\n+\n %09%09%09fmt.P\n@@ -472,50 +472,8 @@\n (i)%0A\n-%09%09%7D else %7B%0A%09%09%09fmt.Println(%22sem ganhador%22)%0A\n %09%09%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-13_01-32-04",
+            "content": "@@ -516,18 +516,8 @@\n lse \n-if d == n \n %7B%0A%09%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-13_01-32-25",
+            "content": "@@ -506,21 +506,22 @@\n n(i)%0A%09%09%7D\n-%0A%09%7D%0A%09\n+ else \n if d == \n@@ -524,16 +524,17 @@\n  == n %7B%0A\n+%09\n %09%09fmt.Pr\n@@ -555,13 +555,17 @@\n hador%22)%0A\n+%09%09%7D%0A\n %09%7D%0A%7D%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-13_01-33-07",
+            "content": "@@ -507,17 +507,8 @@\n (i)%0A\n-%09%09%09break%0A\n %09%09%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-13_01-33-23",
+            "content": "@@ -277,20 +277,18 @@\n f a%5Bi%5D %3E\n-= 10\n+ 9\n  && b%5Bi%5D\n@@ -293,12 +293,10 @@\n i%5D %3E\n-= 10\n+ 9\n  %7B%0A%09\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-13_01-33-59",
+            "content": "@@ -269,34 +269,36 @@\n ++ %7B%0A%09%09if a%5Bi%5D %3E\n- 9\n+= 10\n  && b%5Bi%5D %3E 9 %7B%0A%09\n@@ -287,26 +287,28 @@\n 10 && b%5Bi%5D %3E\n- 9\n+= 10\n  %7B%0A%09%09%09c%5Bi%5D =\n@@ -443,37 +443,8 @@\n + %7B%0A\n-%09%09if a%5Bi%5D %3E 9 && b%5Bi%5D %3E 9 %7B%0A%09\n %09%09if\n@@ -492,17 +492,16 @@\n or %7B%0A%09%09%09\n-%09\n fmt.Prin\n@@ -514,20 +514,14 @@\n %0A%09%09%09\n-%09\n break%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-13_01-37-31",
+            "content": "@@ -48,16 +48,17 @@\n ain() %7B%0A\n+%0A\n %09var n i\n@@ -74,17 +74,16 @@\n can(&n)%0A\n-%0A\n %09a := ma\n@@ -120,43 +120,44 @@\n  n)%0A\n-%0A%09var d, menor int = 0, math.MaxInt\n+%09c := make(%5B%5Dint, n)%0A%0A%09var d int = 0\n %0A%0A%09f\n@@ -205,16 +205,77 @@\n  &b%5Bi%5D)%0A\n+%09%7D%0A%09var menor int = math.MaxInt32%0A%0A%09for i := 0; i %3C n; i++ %7B%0A\n %09%09if a%5Bi\n@@ -301,18 +301,14 @@\n %0A%09%09%09\n-if menor %3E\n+c%5Bi%5D =\n  int\n@@ -333,66 +333,56 @@\n a%5Bi%5D\n--\n+ - \n b%5Bi%5D)))\n- %7B\n %0A%09%09%09\n-%09\n+if \n menor \n-= int(math.Abs(float64(a%5Bi%5D - b%5Bi%5D)))\n+%3E c%5Bi%5D %7B%0A%09%09%09%09menor = c%5Bi%5D\n %0A%09%09%09\n@@ -547,22 +547,25 @@\n eak%0A%09%09%09%7D\n- else \n+%0A%09%09%7D%0A%09%7D%0A%09\n if d == \n@@ -568,18 +568,16 @@\n  == n %7B%0A\n-%09%09\n %09%09fmt.Pr\n@@ -598,22 +598,13 @@\n hador%22)%0A\n-%09%09%09%7D%0A%09%09%7D%0A\n %09%7D%0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-13_01-55-38",
+            "content": "@@ -391,65 +391,8 @@\n + %7B%0A\n-%09%09if d == n %7B%0A%09%09%09fmt.Println(%22sem ganhador%22)%0A%09%09%7D else %7B%0A%09\n %09%09if\n@@ -415,17 +415,16 @@\n %5D %3E 9 %7B%0A\n-%09\n %09%09%09if in\n@@ -470,17 +470,16 @@\n r %7B%0A%09%09%09%09\n-%09\n fmt.Prin\n@@ -489,17 +489,16 @@\n (i)%0A%09%09%09%09\n-%09\n break%0A%09%09\n@@ -498,18 +498,66 @@\n reak%0A%09%09%09\n-%09\n %7D\n+ else if d == n %7B%0A%09%09%09%09fmt.Println(%22sem ganhador%22)\n %0A%09%09%09%7D%0A%09%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-13_01-59-50",
+            "content": "@@ -432,25 +432,16 @@\n hador%22)%0A\n-%09%09%09break%0A\n %09%09%7D else\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-13_02-00-07",
+            "content": "@@ -125,19 +125,21 @@\n %09var d, \n-aux\n+menor\n  int = 0\n@@ -238,19 +238,21 @@\n %7B%0A%09%09%09if \n-aux\n+menor\n  %3E int(m\n@@ -286,19 +286,21 @@\n ) %7B%0A%09%09%09%09\n-aux\n+menor\n  = int(m\n@@ -529,11 +529,13 @@\n  == \n-aux\n+menor\n  %7B%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-13_02-01-41",
+            "content": "@@ -381,17 +381,16 @@\n ; i++ %7B%0A\n-%0A\n %09%09if d =\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-13_08-33-44",
+            "content": "@@ -381,16 +381,17 @@\n ; i++ %7B%0A\n+%0A\n %09%09if d =\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-13_08-34-02",
+            "content": "@@ -355,16 +355,43 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09for i := 0; i %3C n; i++ %7B%0A%09\n %09if d ==\n@@ -395,16 +395,17 @@\n  == n %7B%0A\n+%09\n %09%09fmt.Pr\n@@ -431,41 +431,24 @@\n %22)%0A%09\n-%7D else %7B%0A%09%09for i := 0; i %3C n; i++\n+%09%09break%0A%09%09%7D else\n  %7B%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-13_10-40-36",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\ta := make([]int, n)\n\tb := make([]int, n)\n\n\tvar d, aux int = 0, math.MaxInt\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&a[i], &b[i])\n\t\tif a[i] > 9 && b[i] > 9 {\n\t\t\tif aux > int(math.Abs(float64(a[i]-b[i]))) {\n\t\t\t\taux = int(math.Abs(float64(a[i] - b[i])))\n\t\t\t}\n\t\t} else {\n\t\t\td++\n\t\t}\n\t}\n\n\tif d == n {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfor i := 0; i < n; i++ {\n\t\t\tif a[i] > 9 && b[i] > 9 {\n\t\t\t\tif int(math.Abs(float64(a[i]-b[i]))) == aux {\n\t\t\t\t\tfmt.Println(i)\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n",
+            "lines": "40"
+        }
+    ]
+}

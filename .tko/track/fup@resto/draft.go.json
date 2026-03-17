@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-11_11-34-44",
+            "content": "@@ -99,11 +99,9 @@\n %22, a\n- %25 \n+%25\n b, a\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-34-58",
+            "content": "@@ -74,22 +74,8 @@\n &b)%0A\n-    d := a %25b%0A\n     \n@@ -94,17 +94,21 @@\n %25d %25d%22, \n-d\n+a %25 b\n , a - b)\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-35-54",
+            "content": "@@ -70,16 +70,30 @@\n &a, &b)%0A\n+    d := a %25b%0A\n     fmt.\n@@ -109,18 +109,12 @@\n d %25d\n-%5Cn\n %22, \n-a %25 b\n+d\n , a \n",
+            "lines": "8"
+        },
+        {
+            "label": "2026-03-11_11-37-15",
+            "content": "@@ -109,9 +109,9 @@\n , a \n-/\n+-\n  b)%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-37-24",
+            "content": "@@ -102,16 +102,16 @@\n , a \n-/\n+%25\n  b, a \n-%25\n+/\n  b)%0A\n",
+            "lines": "7"
+        },
+        {
+            "label": "2026-03-11_11-37-40",
+            "content": "package main\nimport \"fmt\"\nfunc main() {\n    var a,b int\n    fmt.Scan(&a, &b)\n    fmt.Printf(\"%d %d\\n\", a / b, a % b)\n}\n",
+            "lines": "7"
+        }
+    ]
+}
