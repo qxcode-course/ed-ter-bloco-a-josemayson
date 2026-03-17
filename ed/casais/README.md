@@ -1,6 +1,6 @@
 # Quantos casais na arca
 
-![_](../../.tko/cache/ed/base/casais/cover.jpg)
+![_](../../.tko/cache/6421490caf670842e74ba5681e807eeaa53f9028/base/casais/cover.jpg)
 
 ## Contexto
 

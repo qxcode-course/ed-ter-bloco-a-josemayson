@@ -19,8 +19,8 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@revisão
 - ed@main-quest
+- ed@revisão
 tasks:
   fup@tres: '{self:1, rate:100, study:3, friend:nao, problem:1, code:1, debug:1, refactor:1}'
   fup@resto: '{self:1, rate:100, study:7, friend:nao, problem:1, code:1, debug:1,
@@ -59,4 +59,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@pintando
+selected: ed@gomos
