@@ -1,0 +1,5 @@
+2026-03-18 10:33:24, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-03-18 10:51:48, EXEC, v:1, k:ed@pedra, mode:FULL, rate:0, size:55
+2026-03-18 10:52:09, EXEC, v:1, k:ed@pedra, mode:FULL, rate:75, size:54
+2026-03-18 10:52:24, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100, size:54
+2026-03-18 10:54:07, EXEC, v:1, k:ed@pedra, mode:FULL, rate:100

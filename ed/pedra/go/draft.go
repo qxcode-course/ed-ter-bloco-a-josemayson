@@ -5,36 +5,50 @@ import (
 	"math"
 )
 
+type jogada struct {
+	pa, pb int
+}
+
+func abs(a int, b int) int {
+	if a-b >= 0 {
+		return a - b
+	} else {
+		return (a - b) * (-1)
+	}
+}
+
 func main() {
 	var n int
 	fmt.Scan(&n)
 
-	a := make([]int, n)
-	b := make([]int, n)
+	jogadas := make([]jogada, n)
 
-	var d, aux int = 0, math.MaxInt
+	var aux, maior int = 0, math.MaxInt
 
-	for i := 0; i < n; i++ {
-		fmt.Scan(&a[i], &b[i])
-		if a[i] > 9 && b[i] > 9 {
-			if aux > int(math.Abs(float64(a[i]-b[i]))) {
-				aux = int(math.Abs(float64(a[i] - b[i])))
+	for i := range n {
+		fmt.Scan(&jogadas[i].pa, &jogadas[i].pb)
+		if jogadas[i].pa > 9 && jogadas[i].pb > 9 {
+			diferenca := abs(jogadas[i].pa, jogadas[i].pb)
+			if maior > diferenca {
+				maior = diferenca
 			}
 		} else {
-			d++
+			aux++
 		}
 	}
 
-	if d == n {
+	if aux == n {
 		fmt.Println("sem ganhador")
 	} else {
-		for i := 0; i < n; i++ {
-			if a[i] > 9 && b[i] > 9 {
-				if int(math.Abs(float64(a[i]-b[i]))) == aux {
+		for i := range n {
+			if jogadas[i].pa > 9 && jogadas[i].pb > 9 {
+				auxiliar := abs(jogadas[i].pa, jogadas[i].pb)
+				if maior == auxiliar {
 					fmt.Println(i)
 					break
 				}
 			}
 		}
 	}
+
 }

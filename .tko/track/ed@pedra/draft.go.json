@@ -82,8 +82,23 @@
         },
         {
             "label": "2026-03-13_10-40-36",
-            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\ta := make([]int, n)\n\tb := make([]int, n)\n\n\tvar d, aux int = 0, math.MaxInt\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&a[i], &b[i])\n\t\tif a[i] > 9 && b[i] > 9 {\n\t\t\tif aux > int(math.Abs(float64(a[i]-b[i]))) {\n\t\t\t\taux = int(math.Abs(float64(a[i] - b[i])))\n\t\t\t}\n\t\t} else {\n\t\t\td++\n\t\t}\n\t}\n\n\tif d == n {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfor i := 0; i < n; i++ {\n\t\t\tif a[i] > 9 && b[i] > 9 {\n\t\t\t\tif int(math.Abs(float64(a[i]-b[i]))) == aux {\n\t\t\t\t\tfmt.Println(i)\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n}\n",
+            "content": "@@ -38,143 +38,8 @@\n %0A)%0A%0A\n-type jogada struct %7B%0A%09pa, pb int%0A%7D%0A%0Afunc abs(a int, b int) int %7B%0A%09if a-b %3E= 0 %7B%0A%09%09return a - b%0A%09%7D else %7B%0A%09%09return (a - b) * (-1)%0A%09%7D%0A%7D%0A%0A\n func\n@@ -75,23 +75,17 @@\n n(&n)%0A%0A%09\n-jogadas\n+a\n  := make\n@@ -91,17 +91,32 @@\n e(%5B%5D\n-jogada, 0\n+int, n)%0A%09b := make(%5B%5Dint\n , n)\n@@ -126,18 +126,14 @@\n var \n+d, \n aux\n-, maior\n  int\n@@ -157,31 +157,37 @@\n %0A%0A%09for i := \n-range n\n+0; i %3C n; i++\n  %7B%0A%09%09fmt.Sca\n@@ -193,78 +193,42 @@\n an(&\n-jogadas%5Bi%5D.pa, &jogadas%5Bi%5D.pb)%0A%09%09if jogadas%5Bi%5D.pa %3E 9 && jogadas%5Bi%5D.pb\n+a%5Bi%5D, &b%5Bi%5D)%0A%09%09if a%5Bi%5D %3E 9 && b%5Bi%5D\n  %3E 9\n@@ -237,102 +237,98 @@\n %0A%09%09%09\n-d\n if\n-erenca := abs(jogadas%5Bi%5D.pa, jogadas%5Bi%5D.pb)%0A%09%09%09if maior %3E diferenca %7B%0A%09%09%09%09maior = diferenca\n+ aux %3E int(math.Abs(float64(a%5Bi%5D-b%5Bi%5D))) %7B%0A%09%09%09%09aux = int(math.Abs(float64(a%5Bi%5D - b%5Bi%5D)))\n %0A%09%09%09\n@@ -343,19 +343,17 @@\n se %7B%0A%09%09%09\n-aux\n+d\n ++%0A%09%09%7D%0A%09\n@@ -359,19 +359,17 @@\n %09%7D%0A%0A%09if \n-aux\n+d\n  == n %7B%0A\n@@ -383,17 +383,17 @@\n rintln(%22\n-S\n+s\n em ganha\n@@ -423,140 +423,100 @@\n  := \n-range n %7B%0A%09%09%09if jogadas%5Bi%5D.pa %3E 9 && jogadas%5Bi%5D.pb %3E 9 %7B%0A%09%09%09%09auxiliar := abs(jogadas%5Bi%5D.pa, jogadas%5Bi%5D.pb)%0A%0A%09%09%09%09if maior\n+0; i %3C n; i++ %7B%0A%09%09%09if a%5Bi%5D %3E 9 && b%5Bi%5D %3E 9 %7B%0A%09%09%09%09if int(math.Abs(float64(a%5Bi%5D-b%5Bi%5D)))\n  == aux\n-iliar\n  %7B%0A%09\n@@ -563,11 +563,10 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %7D%0A\n",
             "lines": "40"
+        },
+        {
+            "label": "2026-03-18_10-51-48",
+            "content": "@@ -235,16 +235,19 @@\n %5Djogada,\n+ 0,\n  n)%0A%0A%09va\n@@ -694,16 +694,17 @@\n %5Bi%5D.pb)%0A\n+%0A\n %09%09%09%09if m\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-18_10-52-09",
+            "content": "@@ -548,17 +548,17 @@\n rintln(%22\n-s\n+S\n em ganha\n",
+            "lines": "54"
+        },
+        {
+            "label": "2026-03-18_10-52-24",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n\t\"math\"\n)\n\ntype jogada struct {\n\tpa, pb int\n}\n\nfunc abs(a int, b int) int {\n\tif a-b >= 0 {\n\t\treturn a - b\n\t} else {\n\t\treturn (a - b) * (-1)\n\t}\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tjogadas := make([]jogada, n)\n\n\tvar aux, maior int = 0, math.MaxInt\n\n\tfor i := range n {\n\t\tfmt.Scan(&jogadas[i].pa, &jogadas[i].pb)\n\t\tif jogadas[i].pa > 9 && jogadas[i].pb > 9 {\n\t\t\tdiferenca := abs(jogadas[i].pa, jogadas[i].pb)\n\t\t\tif maior > diferenca {\n\t\t\t\tmaior = diferenca\n\t\t\t}\n\t\t} else {\n\t\t\taux++\n\t\t}\n\t}\n\n\tif aux == n {\n\t\tfmt.Println(\"sem ganhador\")\n\t} else {\n\t\tfor i := range n {\n\t\t\tif jogadas[i].pa > 9 && jogadas[i].pb > 9 {\n\t\t\t\tauxiliar := abs(jogadas[i].pa, jogadas[i].pb)\n\t\t\t\tif maior == auxiliar {\n\t\t\t\t\tfmt.Println(i)\n\t\t\t\t\tbreak\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\n}\n",
+            "lines": "54"
         }
     ]
 }
