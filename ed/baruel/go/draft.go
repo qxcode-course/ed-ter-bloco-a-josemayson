@@ -3,62 +3,49 @@ package main
 import "fmt"
 
 func main() {
-	var qtdTotal, qtdPossui int
-	fmt.Scan(&qtdTotal, &qtdPossui)
+	var qtdtotal, qtdpossui int
+	fmt.Scan(&qtdtotal, &qtdpossui)
 
-	figurinhas := make([]int, qtdPossui)
-
-	for i := 0; i < qtdPossui; i++ {
-		fmt.Scan(&figurinhas[i])
-	}
-
-	album := make([]int, qtdTotal+1)
-	var figurinhasRepetidas []int
-
-	for i := 0; i < qtdPossui; i++ {
-		aux := figurinhas[i]
-
-		if album[aux] > 0 {
-			figurinhasRepetidas = append(figurinhasRepetidas, aux)
-		}
-		album[aux]++
-	}
-
-	tamanhoRepetidas := len(figurinhasRepetidas)
-
-	if tamanhoRepetidas == 0 {
-		fmt.Println("N")
-	} else {
-		for i := 0; i < tamanhoRepetidas; i++ {
-			fmt.Printf("%d", figurinhasRepetidas[i])
-
-			if i < tamanhoRepetidas-1 {
-				fmt.Printf(" ")
-			}
-		}
-		fmt.Println()
-	}
-
+	aux := make(map[int]bool)
+	var repetidas []int
 	var faltando []int
 
-	for i := 1; i <= qtdTotal; i++ {
-		if album[i] == 0 {
+	for i := 0; i < qtdpossui; i++ {
+		var temp int
+		fmt.Scan(&temp)
+		if aux[temp] {
+			repetidas = append(repetidas, temp)
+		}
+		aux[temp] = true
+	}
+
+	for i := 1; i <= qtdtotal; i++ {
+		if !aux[i] {
 			faltando = append(faltando, i)
 		}
 	}
 
-	tamanhoFaltando := len(faltando)
-
-	if tamanhoFaltando == 0 {
-		fmt.Println("N")
-	} else {
-		for i := 0; i < tamanhoFaltando; i++ {
-			fmt.Printf("%d", faltando[i])
-
-			if i < tamanhoFaltando-1 {
+	if len(repetidas) > 0 {
+		for i, num := range repetidas {
+			if i > 0 {
 				fmt.Printf(" ")
 			}
+			fmt.Print(num)
 		}
 		fmt.Println()
+	} else {
+		fmt.Println("N")
+	}
+
+	if len(faltando) > 0 {
+		for i, num := range faltando {
+			if i > 0 {
+				fmt.Printf(" ")
+			}
+			fmt.Print(num)
+		}
+		fmt.Println()
+	} else {
+		fmt.Println("N")
 	}
 }

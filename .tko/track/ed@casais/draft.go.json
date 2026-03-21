@@ -102,7 +102,42 @@
         },
         {
             "label": "2026-03-13_19-41-43",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tanimal := make([]int, n)\n\n\tfor i := 0; i < n; i++ {\n\t\tfmt.Scan(&animal[i])\n\t}\n\n\tvar t int\n\tfor i := 0; i < n; i++ {\n\t\tfor j := 0; j < n; j++ {\n\t\t\tif animal[i] > 0 {\n\t\t\t\tif animal[i] == (animal[j] * (-1)) {\n\t\t\t\t\tanimal[j] = 0\n\t\t\t\t\tt++\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n\tfmt.Println(t)\n}\n",
+            "content": "@@ -67,18 +67,17 @@\n %0A%0A%09anima\n-is\n+l\n  := make\n@@ -91,40 +91,72 @@\n  n)%0A\n-%09solteiros := make(map%5Bint%5D\n+%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Scan(&animal%5Bi%5D)%0A%09%7D%0A%0A%09var t \n int\n-)%0A\n %0A%09fo\n@@ -166,41 +166,156 @@\n  := \n-range n\n+0; i %3C n; i++ %7B%0A%09%09for j := 0; j %3C n; j++\n  %7B%0A%09%09\n-fmt.Scan(&animais%5Bi%5D)\n+%09if animal%5Bi%5D %3E 0 %7B%0A%09%09%09%09if animal%5Bi%5D == (animal%5Bj%5D * (-1)) %7B%0A%09%09%09%09%09animal%5Bj%5D = 0%0A%09%09%09%09%09t++%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D\n %0A%09%7D%0A\n@@ -331,15 +331,9 @@\n tln(\n-animais\n+t\n )%0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-18_11-03-05",
+            "content": "@@ -87,16 +87,48 @@\n %5Dint, n)\n+%0A%09solteiros := make(map%5Bint%5Dint)\n %0A%0A%09for i\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-18_11-03-18",
+            "content": "@@ -91,40 +91,8 @@\n , n)\n-%0A%09solteiros := make(map%5Bint%5Dint)\n %0A%0A%09f\n@@ -140,126 +140,8 @@\n %0A%09%7D%0A\n-%09nPares := 0%0A%09for ,/animal := range animais %7B%0A%09%09if solteiros%5B-animal%5D--%0A%09%09nPares++%0A%09%7D else %7B%0A%09%09solteiros%5Banimal%5D++%0A%09%7D%0A\n %09fmt\n@@ -153,13 +153,14 @@\n tln(\n-nPare\n+animai\n s)%0A%7D\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-03-18_11-13-13",
+            "content": "@@ -190,11 +190,10 @@\n for \n-_, \n+,/\n anim\n@@ -241,40 +241,11 @@\n mal%5D\n- %3E 0 %7B%0A%09%09%09solteiros%5B-animal%5D\n --%0A\n-%09\n %09%09nP\n@@ -251,17 +251,16 @@\n Pares++%0A\n-%09\n %09%7D else \n@@ -261,17 +261,16 @@\n  else %7B%0A\n-%09\n %09%09soltei\n@@ -287,12 +287,8 @@\n %5D++%0A\n-%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-18_11-16-05",
+            "content": "@@ -170,18 +170,17 @@\n %5D)%0A%09%7D%0A%09n\n-_p\n+P\n ares := \n@@ -254,24 +254,25 @@\n %09%09solteiros%5B\n+-\n animal%5D--%0A%09%09\n@@ -273,18 +273,17 @@\n %5D--%0A%09%09%09n\n-_p\n+P\n ares++%0A%09\n@@ -340,15 +340,13 @@\n ln(n\n-_p\n+P\n ares)%0A\n-%0A\n %7D%0A\n",
+            "lines": "25"
+        },
+        {
+            "label": "2026-03-20_18-16-15",
+            "content": "@@ -255,25 +255,24 @@\n %09%09solteiros%5B\n--\n animal%5D--%0A%09%09\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-20_18-16-28",
+            "content": "@@ -40,19 +40,17 @@\n  %7B%0A%09var \n-qtd\n+n\n  int%0A%09fm\n@@ -57,19 +57,17 @@\n t.Scan(&\n-qtd\n+n\n )%0A%0A%09anim\n@@ -85,19 +85,17 @@\n (%5B%5Dint, \n-qtd\n+n\n )%0A%09solte\n@@ -141,11 +141,9 @@\n nge \n-qtd\n+n\n  %7B%0A%09\n@@ -168,17 +168,16 @@\n %5Bi%5D)%0A%09%7D%0A\n-%0A\n %09n_pares\n@@ -324,17 +324,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %09fmt.Pri\n@@ -346,10 +346,11 @@\n _pares)%0A\n+%0A\n %7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-20_19-39-55",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtd int\n\tfmt.Scan(&qtd)\n\n\tanimais := make([]int, qtd)\n\tsolteiros := make(map[int]int)\n\n\tfor i := range qtd {\n\t\tfmt.Scan(&animais[i])\n\t}\n\n\tn_pares := 0\n\tfor _, animal := range animais {\n\t\tif solteiros[-animal] > 0 {\n\t\t\tsolteiros[-animal]--\n\t\t\tn_pares++\n\t\t} else {\n\t\t\tsolteiros[animal]++\n\t\t}\n\t}\n\n\tfmt.Println(n_pares)\n}\n",
             "lines": "27"
         }
     ]

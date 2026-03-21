@@ -3,25 +3,25 @@ package main
 import "fmt"
 
 func main() {
-	var n int
-	fmt.Scan(&n)
+	var qtd int
+	fmt.Scan(&qtd)
 
-	animal := make([]int, n)
+	animais := make([]int, qtd)
+	solteiros := make(map[int]int)
 
-	for i := 0; i < n; i++ {
-		fmt.Scan(&animal[i])
+	for i := range qtd {
+		fmt.Scan(&animais[i])
 	}
 
-	var t int
-	for i := 0; i < n; i++ {
-		for j := 0; j < n; j++ {
-			if animal[i] > 0 {
-				if animal[i] == (animal[j] * (-1)) {
-					animal[j] = 0
-					t++
-				}
-			}
+	n_pares := 0
+	for _, animal := range animais {
+		if solteiros[-animal] > 0 {
+			solteiros[-animal]--
+			n_pares++
+		} else {
+			solteiros[animal]++
 		}
 	}
-	fmt.Println(t)
+
+	fmt.Println(n_pares)
 }

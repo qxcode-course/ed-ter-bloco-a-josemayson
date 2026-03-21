@@ -247,8 +247,153 @@
         },
         {
             "label": "2026-03-14_12-10-05",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtdTotal, qtdPossui int\n\tfmt.Scan(&qtdTotal, &qtdPossui)\n\n\tfigurinhas := make([]int, qtdPossui)\n\n\tfor i := 0; i < qtdPossui; i++ {\n\t\tfmt.Scan(&figurinhas[i])\n\t}\n\n\talbum := make([]int, qtdTotal+1)\n\tvar figurinhasRepetidas []int\n\n\tfor i := 0; i < qtdPossui; i++ {\n\t\taux := figurinhas[i]\n\n\t\tif album[aux] > 0 {\n\t\t\tfigurinhasRepetidas = append(figurinhasRepetidas, aux)\n\t\t}\n\t\talbum[aux]++\n\t}\n\n\ttamanhoRepetidas := len(figurinhasRepetidas)\n\n\tif tamanhoRepetidas == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < tamanhoRepetidas; i++ {\n\t\t\tfmt.Printf(\"%d\", figurinhasRepetidas[i])\n\n\t\t\tif i < tamanhoRepetidas-1 {\n\t\t\t\tfmt.Printf(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n\n\tvar faltando []int\n\n\tfor i := 1; i <= qtdTotal; i++ {\n\t\tif album[i] == 0 {\n\t\t\tfaltando = append(faltando, i)\n\t\t}\n\t}\n\n\ttamanhoFaltando := len(faltando)\n\n\tif tamanhoFaltando == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\tfor i := 0; i < tamanhoFaltando; i++ {\n\t\t\tfmt.Printf(\"%d\", faltando[i])\n\n\t\t\tif i < tamanhoFaltando-1 {\n\t\t\t\tfmt.Printf(\" \")\n\t\t\t}\n\t\t}\n\t\tfmt.Println()\n\t}\n}\n",
+            "content": "@@ -140,49 +140,132 @@\n ui)%0A\n-%09repetidas := make(map%5Bint%5Dint)%0A%09var repe\n+%0A%09for i := 0; i %3C qtdPossui; i++ %7B%0A%09%09fmt.Scan(&figurinhas%5Bi%5D)%0A%09%7D%0A%0A%09album := make(%5B%5Dint, qtdTotal+1)%0A%09var figurinhasRepetidas\n  %5B%5Di\n@@ -278,21 +278,22 @@\n or i := \n-range\n+0; i %3C\n  qtdPoss\n@@ -298,202 +298,774 @@\n ssui\n- %7B%0A%09%09fmt.Scan(&figurinhas%5Bi%5D)%0A%09%7D%0A%0A%09for _, repetida := range figurinhas %7B%0A%09%09if repetidas%5Br\n+; i++ %7B%0A%09%09aux := figurinhas%5Bi%5D%0A%0A%09%09if album%5Baux%5D %3E 0 %7B%0A%09%09%09figurinhasRepetidas = append(figurinhasRepetidas, aux)%0A%09%09%7D%0A%09%09album%5Baux%5D++%0A%09%7D%0A%0A%09tamanhoRepetidas := len(figurinhasRepetidas)%0A%0A%09if tamanhoR\n epetida\n-%5D %3E\n+s ==\n  0 %7B%0A%09%09\n-%09\n-repe = append(repe, repetida)%0A%09%09%7D else %7B%0A%09%09%09repetidas%5Brepetida%5D++%0A%09%09%7D%0A%09%7D%0A%0A%09p\n+fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C tamanhoRepetidas; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, figurinhasRepetidas%5Bi%5D)%0A%0A%09%09%09if i %3C tamanhoRepetidas-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D%0A%0A%09var faltando %5B%5Dint%0A%0A%09for i := 1; i %3C= qtdTotal; i++ %7B%0A%09%09if album%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09tamanhoFaltando := len(faltando)%0A%0A%09if tamanhoFaltando == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09for i := 0; i %3C tamanhoFaltando; i++ %7B%0A%09%09%09fmt.Printf(%22%25d%22, faltando%5Bi%5D)%0A%0A%09%09%09if i %3C tamanhoFaltando-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.P\n rintln(\n-repe)\n+)%0A%09%7D\n %0A%7D%0A\n",
             "lines": "64"
+        },
+        {
+            "label": "2026-03-20_20-17-55",
+            "content": "@@ -396,13 +396,9 @@\n %7D%0A%0A%09\n-fmt.P\n+p\n rint\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-20_20-20-54",
+            "content": "@@ -395,57 +395,8 @@\n %09%7D%0A%0A\n-%09tamanho := len(repe)%0A%09for i := range tamanho %7B%0A%09\n %09fmt\n@@ -408,18 +408,12 @@\n tln(repe\n-%5Bi%5D)%0A%09%7D\n+)\n %0A%7D%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-20_20-22-07",
+            "content": "@@ -450,16 +450,18 @@\n mt.Print\n+ln\n (repe%5Bi%5D\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-20_20-22-15",
+            "content": "@@ -454,17 +454,9 @@\n rint\n-f(%22%25d %22, \n+(\n repe\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-20_20-22-36",
+            "content": "@@ -137,20 +137,25 @@\n ossui)%0A%09\n-temp\n+repetidas\n  := make\n@@ -181,33 +181,8 @@\n repe\n-tidas %5B%5Dint%0A%09var faltando\n  %5B%5Di\n@@ -280,36 +280,41 @@\n gurinhas %7B%0A%09%09if \n-temp\n+repetidas\n %5Brepetida%5D %3E 0 %7B\n@@ -321,21 +321,16 @@\n %0A%09%09%09repe\n-tidas\n  = appen\n@@ -335,21 +335,16 @@\n end(repe\n-tidas\n , repeti\n@@ -361,20 +361,25 @@\n se %7B%0A%09%09%09\n-temp\n+repetidas\n %5Brepetid\n@@ -411,21 +411,16 @@\n len(repe\n-tidas\n )%0A%09for i\n@@ -467,21 +467,16 @@\n repe\n-tidas\n %5Bi%5D)%0A%09%7D%0A\n %0A%09fo\n@@ -475,202 +475,6 @@\n %0A%09%7D%0A\n-%0A%09for _, repetida := range figurinhas %7B%0A%09%09if temp%5Brepetida%5D == 0 %7B%0A%09%09%09faltando = append(faltando, repetida)%0A%09%09%7D%0A%09%7D%0A%09tam := len(faltando)%0A%09for i := range tam %7B%0A%09%09fmt.Printf(%22%25d %22, faltando%5Bi%5D)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "29"
+        },
+        {
+            "label": "2026-03-20_20-32-23",
+            "content": "@@ -442,27 +442,8 @@\n as)%0A\n-%09if tamanho %3E 0 %7B%0A%09\n %09for\n@@ -464,17 +464,16 @@\n manho %7B%0A\n-%09\n %09%09fmt.Pr\n@@ -502,57 +502,8 @@\n i%5D)%0A\n-%09%09%7D%0A%09%09fmt.Println()%0A%09%7D else %7B%0A%09%09fmt.Println(%22N%22)%0A\n %09%7D%0A%0A\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-20_20-34-05",
+            "content": "@@ -537,14 +537,11 @@\n rint\n-f(%22%5Cn%22\n+ln(\n )%0A%09%7D\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-20_20-34-29",
+            "content": "@@ -600,20 +600,26 @@\n = range \n-temp\n+figurinhas\n  %7B%0A%09%09if \n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-20_20-34-59",
+            "content": "@@ -273,89 +273,141 @@\n for \n-i := 1; i %3C qtdTotal; i++ %7B%0A%09%09if temp%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)\n+_, repetida := range figurinhas %7B%0A%09%09if temp%5Brepetida%5D %3E 0 %7B%0A%09%09%09repetidas = append(repetidas, repetida)%0A%09%09%7D else %7B%0A%09%09%09temp%5Brepetida%5D++\n %0A%09%09%7D\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-03-20_20-38-22",
+            "content": "@@ -390,30 +390,8 @@\n as)%0A\n-%09tam := len(faltando)%0A\n %09if \n@@ -518,24 +518,154 @@\n ln(%22N%22)%0A%09%7D%0A%0A\n+%09for _, repetida := range temp %7B%0A%09%09if temp%5Brepetida%5D == 0 %7B%0A%09%09%09faltando = append(faltando, repetida)%0A%09%09%7D%0A%09%7D%0A%09tam := len(faltando)%0A\n %09for i := ra\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-20_20-39-12",
+            "content": "@@ -280,17 +280,16 @@\n = 1; i %3C\n-=\n  qtdTota\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-20_20-40-18",
+            "content": "@@ -273,24 +273,20 @@\n for \n-_, repetida\n+i := 1\n ; i %3C\n+=\n  qtd\n@@ -312,97 +312,51 @@\n emp%5B\n-repetida%5D %3E 0 %7B%0A%09%09%09repetidas = append(repetidas, repetida)%0A%09%09%7D else %7B%0A%09%09%09temp%5Brepetida%5D++\n+i%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)\n %0A%09%09%7D\n@@ -387,16 +387,38 @@\n etidas)%0A\n+%09tam := len(faltando)%0A\n %09if tama\n@@ -541,13 +541,73 @@\n ln(%22N%22)%0A\n-\n %09%7D%0A\n+%0A%09for i := range tam %7B%0A%09%09fmt.Printf(%22%25d %22, faltando%5Bi%5D)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-20_20-46-15",
+            "content": "@@ -284,28 +284,27 @@\n tida\n- := range figurinhas\n+; i %3C qtdTotal; i++\n  %7B%0A%09\n@@ -415,181 +415,45 @@\n %7D%0A%0A%09\n-for i := 1; i %3C= qtdTotal; i++ %7B%0A%09%09if temp%5Bi%5D == 0 %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09tamrepetidas := len(repetidas)%0A%09tamfaltando := len(faltando)%0A%09if tamrepetidas\n+tamanho := len(repetidas)%0A%09if tamanho\n  %3E 0\n@@ -475,25 +475,20 @@\n ange tam\n-repetidas\n+anho\n  %7B%0A%09%09%09fm\n@@ -576,147 +576,6 @@\n %0A%09%7D%0A\n-%0A%09if tamfaltando %3E 0 %7B%0A%09%09for i := range tamfaltando %7B%0A%09%09%09fmt.Printf(%22%25d %22, faltando%5Bi%5D)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D else %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D%0A%0A\n %7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-20_20-49-54",
+            "content": "@@ -666,35 +666,38 @@\n %0A%09%09%7D%0A%09%09fmt.Print\n-ln(\n+f(%22%5Cn%22\n )%0A%09%7D else %7B%0A%09%09fm\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-20_20-50-16",
+            "content": "@@ -641,16 +641,17 @@\n intf(%22%25d\n+ \n %22, repet\n@@ -663,60 +663,8 @@\n i%5D)%0A\n-%09%09%09if i %3C tamrepetidas-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "52"
+        },
+        {
+            "label": "2026-03-20_20-51-09",
+            "content": "@@ -854,59 +854,8 @@\n i%5D)%0A\n-%09%09%09if i %3C tamfaltando-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "55"
+        },
+        {
+            "label": "2026-03-20_20-51-36",
+            "content": "@@ -833,16 +833,17 @@\n intf(%22%25d\n+ \n %22, falta\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-20_20-51-46",
+            "content": "@@ -952,10 +952,11 @@\n %22N%22)%0A%09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "58"
+        },
+        {
+            "label": "2026-03-20_20-51-53",
+            "content": "@@ -162,12 +162,11 @@\n int%5D\n-bool\n+int\n )%0A%09v\n@@ -265,78 +265,153 @@\n %5D)%0A%09\n-%09if temp%5Bi%5D %7B%0A%09%09%09repetidas = append(repetidas, i)%0A%09%09%7D%0A%09%09temp%5Bi%5D = true\n+%7D%0A%0A%09for _, repetida := range figurinhas %7B%0A%09%09if temp%5Brepetida%5D %3E 0 %7B%0A%09%09%09repetidas = append(repetidas, repetida)%0A%09%09%7D else %7B%0A%09%09%09temp%5Brepetida%5D++%0A%09%09%7D\n %0A%09%7D%0A\n@@ -454,16 +454,20 @@\n %09if \n-!\n temp%5Bi%5D\n+ == 0\n  %7B%0A%09\n@@ -508,23 +508,84 @@\n %09%7D%0A%09%7D%0A%0A%09\n-if len(\n+tamrepetidas := len(repetidas)%0A%09tamfaltando := len(faltando)%0A%09if tam\n repetida\n@@ -585,17 +585,16 @@\n epetidas\n-)\n  %3E 0 %7B%0A%09\n@@ -591,37 +591,32 @@\n as %3E 0 %7B%0A%09%09for i\n-, num\n  := range repeti\n@@ -609,16 +609,19 @@\n = range \n+tam\n repetida\n@@ -623,32 +623,79 @@\n etidas %7B%0A%09%09%09\n-if i %3E 0\n+fmt.Printf(%22%25d%22, repetidas%5Bi%5D)%0A%09%09%09if i %3C tamrepetidas-1\n  %7B%0A%09%09%09%09fmt.P\n@@ -710,34 +710,16 @@\n %22)%0A%09%09%09%7D%0A\n-%09%09%09fmt.Print(num)%0A\n %09%09%7D%0A%09%09fm\n@@ -767,28 +767,27 @@\n %09%7D%0A%0A%09if \n-len(\n+tam\n faltando\n ) %3E 0 %7B%0A\n@@ -778,17 +778,16 @@\n faltando\n-)\n  %3E 0 %7B%0A%09\n@@ -796,13 +796,8 @@\n or i\n-, num\n  := \n@@ -802,16 +802,19 @@\n = range \n+tam\n faltando\n@@ -823,16 +823,61 @@\n %0A%09%09%09\n-if i %3E 0\n+fmt.Printf(%22%25d%22, faltando%5Bi%5D)%0A%09%09%09if i %3C tamfaltando-1\n  %7B%0A%09\n@@ -904,26 +904,8 @@\n %09%09%7D%0A\n-%09%09%09fmt.Print(num)%0A\n %09%09%7D%0A\n",
+            "lines": "57"
+        },
+        {
+            "label": "2026-03-20_21-00-20",
+            "content": "@@ -98,16 +98,54 @@\n ossui)%0A%0A\n+%09figurinhas := make(%5B%5Dint, qtdPossui)%0A\n %09temp :=\n@@ -238,28 +238,8 @@\n i %7B%0A\n-%09%09var figurinha int%0A\n %09%09fm\n@@ -255,16 +255,20 @@\n igurinha\n+s%5Bi%5D\n )%0A%09%09if t\n@@ -271,25 +271,17 @@\n if temp%5B\n-figurinha\n+i\n %5D %7B%0A%09%09%09r\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-20_21-05-41",
+            "content": "@@ -295,25 +295,17 @@\n etidas, \n-figurinha\n+i\n )%0A%09%09%7D%0A%09%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-20_21-05-58",
+            "content": "@@ -317,25 +317,17 @@\n %0A%09%09temp%5B\n-figurinha\n+i\n %5D = true\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-20_21-07-37",
+            "content": "@@ -182,14 +182,13 @@\n  := \n-0; i %3C\n+range\n  qtd\n@@ -193,21 +193,16 @@\n tdPossui\n-; i++\n  %7B%0A%09%09var\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-20_21-08-19",
+            "content": "@@ -39,25 +39,25 @@\n ) %7B%0A%09var qtd\n-t\n+T\n otal, qtdpos\n@@ -49,25 +49,25 @@\n tdTotal, qtd\n-p\n+P\n ossui int%0A%09f\n@@ -78,17 +78,17 @@\n can(&qtd\n-t\n+T\n otal, &q\n@@ -89,17 +89,17 @@\n al, &qtd\n-p\n+P\n ossui)%0A%0A\n@@ -99,19 +99,20 @@\n ssui)%0A%0A%09\n-aux\n+temp\n  := make\n@@ -188,17 +188,17 @@\n  i %3C qtd\n-p\n+P\n ossui; i\n@@ -208,20 +208,25 @@\n %7B%0A%09%09var \n-temp\n+figurinha\n  int%0A%09%09f\n@@ -238,27 +238,38 @@\n an(&\n-temp)%0A%09%09if aux%5Btemp\n+figurinha)%0A%09%09if temp%5Bfigurinha\n %5D %7B%0A\n@@ -305,28 +305,39 @@\n as, \n-temp)%0A%09%09%7D%0A%09%09aux%5Btemp\n+figurinha)%0A%09%09%7D%0A%09%09temp%5Bfigurinha\n %5D = \n@@ -366,17 +366,17 @@\n i %3C= qtd\n-t\n+T\n otal; i+\n@@ -389,11 +389,12 @@\n if !\n-aux\n+temp\n %5Bi%5D \n@@ -472,19 +472,14 @@\n for \n-_, repetida\n+i, num\n  := \n@@ -503,49 +503,277 @@\n %0A%09%09%09\n-fmt.Printf(%22%25d%22, repetidas%5Brepetida%5D)%0A%09%09%7D\n+if i %3E 0 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%09fmt.Print(num)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D else %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D%0A%0A%09if len(faltando) %3E 0 %7B%0A%09%09for i, num := range faltando %7B%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%09fmt.Print(num)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D else %7B%0A%09%09fmt.Println(%22N%22)\n %0A%09%7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-20_22-31-51",
+            "content": "@@ -435,25 +435,35 @@\n %3E 0 %7B%0A%09%09for \n-i\n+_, repetida\n  := range re\n@@ -502,17 +502,24 @@\n petidas%5B\n-i\n+repetida\n %5D)%0A%09%09%7D%0A%09\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-20_22-32-44",
+            "content": "@@ -502,74 +502,9 @@\n )%0A%09%09\n-%09if i %3C repetidas-1 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Println()\n+%7D\n %0A%09%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-20_22-33-57",
+            "content": "@@ -444,13 +444,8 @@\n or i\n-, num\n  := \n@@ -469,16 +469,60 @@\n %0A%09%09%09\n-if i %3E 0\n+fmt.Printf(%22%25d%22, repetidas%5Bi%5D)%0A%09%09%09if i %3C repetidas-1\n  %7B%0A%09\n@@ -549,26 +549,8 @@\n %09%09%7D%0A\n-%09%09%09fmt.Print(num)%0A\n %09%09%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-20_22-36-41",
+            "content": "@@ -548,204 +548,8 @@\n n()%0A\n-%09%7D else %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D%0A%0A%09if len(faltando) %3E 0 %7B%0A%09%09for i, num := range faltando %7B%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09fmt.Printf(%22 %22)%0A%09%09%09%7D%0A%09%09%09fmt.Print(num)%0A%09%09%7D%0A%09%09fmt.Println()%0A%09%7D else %7B%0A%09%09fmt.Println(%22N%22)%0A\n %09%7D%0A%7D\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-20_22-38-31",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtdtotal, qtdpossui int\n\tfmt.Scan(&qtdtotal, &qtdpossui)\n\n\taux := make(map[int]bool)\n\tvar repetidas []int\n\tvar faltando []int\n\n\tfor i := 0; i < qtdpossui; i++ {\n\t\tvar temp int\n\t\tfmt.Scan(&temp)\n\t\tif aux[temp] {\n\t\t\trepetidas = append(repetidas, temp)\n\t\t}\n\t\taux[temp] = true\n\t}\n\n\tfor i := 1; i <= qtdtotal; i++ {\n\t\tif !aux[i] {\n\t\t\tfaltando = append(faltando, i)\n\t\t}\n\t}\n\n\tif len(repetidas) > 0 {\n\t\tfor i, num := range repetidas {\n\t\t\tif i > 0 {\n\t\t\t\tfmt.Printf(\" \")\n\t\t\t}\n\t\t\tfmt.Print(num)\n\t\t}\n\t\tfmt.Println()\n\t} else {\n\t\tfmt.Println(\"N\")\n\t}\n\n\tif len(faltando) > 0 {\n\t\tfor i, num := range faltando {\n\t\t\tif i > 0 {\n\t\t\t\tfmt.Printf(\" \")\n\t\t\t}\n\t\t\tfmt.Print(num)\n\t\t}\n\t\tfmt.Println()\n\t} else {\n\t\tfmt.Println(\"N\")\n\t}\n}\n",
+            "lines": "51"
         }
     ]
 }
