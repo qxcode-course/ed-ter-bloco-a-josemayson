@@ -7,7 +7,7 @@ func main() {
 	fmt.Scan(&qtd)
 
 	animais := make([]int, qtd)
-	solteiros := make(map[int]int)
+	solteiros := make(map[int]bool)
 
 	for i := range qtd {
 		fmt.Scan(&animais[i])
@@ -15,11 +15,11 @@ func main() {
 
 	n_pares := 0
 	for _, animal := range animais {
-		if solteiros[-animal] > 0 {
-			solteiros[-animal]--
+		if solteiros[-animal] {
+			solteiros[-animal] = false
 			n_pares++
 		} else {
-			solteiros[animal]++
+			solteiros[animal] = true
 		}
 	}
 

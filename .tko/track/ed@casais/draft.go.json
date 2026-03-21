@@ -147,7 +147,12 @@
         },
         {
             "label": "2026-03-20_22-48-49",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtd int\n\tfmt.Scan(&qtd)\n\n\tanimais := make([]int, qtd)\n\tsolteiros := make(map[int]int)\n\n\tfor i := range qtd {\n\t\tfmt.Scan(&animais[i])\n\t}\n\n\tn_pares := 0\n\tfor _, animal := range animais {\n\t\tif solteiros[-animal] > 0 {\n\t\t\tsolteiros[-animal]--\n\t\t\tn_pares++\n\t\t} else {\n\t\t\tsolteiros[animal]++\n\t\t}\n\t}\n\n\tfmt.Println(n_pares)\n}\n",
+            "content": "@@ -125,12 +125,11 @@\n int%5D\n-bool\n+int\n )%0A%0A%09\n@@ -248,16 +248,20 @@\n -animal%5D\n+ %3E 0\n  %7B%0A%09%09%09so\n@@ -280,16 +280,10 @@\n mal%5D\n- = false\n+--\n %0A%09%09%09\n@@ -327,15 +327,10 @@\n mal%5D\n- = true\n+++\n %0A%09%09%7D\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-20_22-52-33",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtd int\n\tfmt.Scan(&qtd)\n\n\tanimais := make([]int, qtd)\n\tsolteiros := make(map[int]bool)\n\n\tfor i := range qtd {\n\t\tfmt.Scan(&animais[i])\n\t}\n\n\tn_pares := 0\n\tfor _, animal := range animais {\n\t\tif solteiros[-animal] {\n\t\t\tsolteiros[-animal] = false\n\t\t\tn_pares++\n\t\t} else {\n\t\t\tsolteiros[animal] = true\n\t\t}\n\t}\n\n\tfmt.Println(n_pares)\n}\n",
             "lines": "27"
         }
     ]
