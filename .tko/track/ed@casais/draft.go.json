@@ -137,6 +137,16 @@
         },
         {
             "label": "2026-03-20_19-39-55",
+            "content": "@@ -295,17 +295,25 @@\n es++%0A%09%09%7D\n-%0A\n+ else %7B%0A%09\n %09%09soltei\n@@ -326,16 +326,20 @@\n imal%5D++%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09fmt\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-03-20_22-48-35",
+            "content": "@@ -299,17 +299,9 @@\n %0A%09%09%7D\n- else %7B%0A%09\n+%0A\n %09%09so\n@@ -318,20 +318,16 @@\n imal%5D++%0A\n-%09%09%7D%0A\n %09%7D%0A%0A%09fmt\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-20_22-48-49",
             "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtd int\n\tfmt.Scan(&qtd)\n\n\tanimais := make([]int, qtd)\n\tsolteiros := make(map[int]int)\n\n\tfor i := range qtd {\n\t\tfmt.Scan(&animais[i])\n\t}\n\n\tn_pares := 0\n\tfor _, animal := range animais {\n\t\tif solteiros[-animal] > 0 {\n\t\t\tsolteiros[-animal]--\n\t\t\tn_pares++\n\t\t} else {\n\t\t\tsolteiros[animal]++\n\t\t}\n\t}\n\n\tfmt.Println(n_pares)\n}\n",
             "lines": "27"
         }
