@@ -1,0 +1,59 @@
+2026-03-21 11:23:19, MOVE, v:1, k:ed@princesa, mode:DOWN
+2026-03-21 11:23:20, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-21 11:23:21, EXEC, v:1, k:ed@princesa, mode:FREE, size:5
+2026-03-21 11:23:32, EXEC, v:1, k:ed@princesa, mode:FREE
+2026-03-21 11:51:28, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-21 13:39:41, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-21 14:16:44, EXEC, v:1, k:ed@princesa, mode:FULL, size:22, fail:COMP
+2026-03-21 14:16:48, EXEC, v:1, k:ed@princesa, mode:FULL, fail:COMP
+2026-03-21 14:17:40, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:23
+2026-03-21 14:18:06, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:23
+2026-03-21 14:18:21, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-03-21 14:19:40, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:23
+2026-03-21 14:23:39, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:14
+2026-03-21 14:29:00, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:30
+2026-03-21 14:29:02, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0
+2026-03-21 14:29:14, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:31
+2026-03-21 14:29:37, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:32
+2026-03-21 14:29:46, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:32
+2026-03-21 14:41:40, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:36
+2026-03-21 14:42:07, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:37
+2026-03-21 14:42:42, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:37
+2026-03-21 14:45:23, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:36
+2026-03-21 14:46:39, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:39
+2026-03-21 14:47:57, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:39
+2026-03-21 14:48:18, EXEC, v:1, k:ed@princesa, mode:FULL, size:0, fail:COMP
+2026-03-21 14:48:23, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-21 14:48:29, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-21 15:04:17, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:16
+2026-03-21 15:13:56, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:14:16, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:14:27, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:14:35, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:14:48, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:14:58, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:15:05, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:15:17, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:38
+2026-03-21 15:16:29, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:37
+2026-03-21 15:16:33, EXEC, v:1, k:ed@princesa, mode:FULL, size:37, fail:COMP
+2026-03-21 15:17:01, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:40
+2026-03-21 15:18:46, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:41
+2026-03-21 15:19:17, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:40
+2026-03-21 15:29:28, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-21 18:39:23, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-21 21:00:26, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-21 21:02:59, EXEC, v:1, k:ed@princesa, mode:FULL, size:33, fail:COMP
+2026-03-21 21:03:14, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:33
+2026-03-21 21:03:48, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:35
+2026-03-21 21:14:14, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:42
+2026-03-21 21:15:22, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:45
+2026-03-21 21:45:39, EXEC, v:1, k:ed@princesa, mode:FREE
+2026-03-21 21:45:59, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-21 21:46:02, MOVE, v:1, k:ed@apagando, mode:DOWN
+2026-03-21 21:46:04, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-21 21:47:24, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-21 21:47:27, MOVE, v:1, k:ed@princesa, mode:PICK
+2026-03-21 22:00:52, EXEC, v:1, k:ed@princesa, mode:FULL, rate:0, size:37
+2026-03-21 22:01:29, EXEC, v:1, k:ed@princesa, mode:FULL, rate:100, size:39
+2026-03-21 22:02:27, MOVE, v:1, k:ed@princesa, mode:BACK
+2026-03-21 22:02:40, MOVE, v:1, k:ed@princesa, mode:PICK

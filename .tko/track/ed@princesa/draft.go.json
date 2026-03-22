@@ -2,8 +2,198 @@
     "patches": [
         {
             "label": "2026-03-10_11-10-30",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"qxcode\")\n}\n",
+            "content": "@@ -54,21 +54,14 @@\n ln(%22\n-Hello, World!\n+qxcode\n %22)%0A%7D\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-03-21_11-23-21",
+            "content": "@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -41,310 +41,35 @@\n     \n-var n, e int%0A    fmt.Scan(&n, &e)%0A    var aux %5B%5Dint%0A    for i := 1; i %3C= n; i++ %7B%0A        aux = append(aux, i)%0A    %7D%0A%0A    for i := 1; i %3C= n; i++ %7B%0A        fmt.Print(%22%25d%22, aux%5Bi%5D)%0A        if i == e %7B%0A            fmt.Print(%22%3E%22)%0A        %7D%0A        ii i %3C n - 1 %7B%0A            fmt.Print(%22 %22)%0A        %7D%0A    %7D%0A\n+fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-21_14-16-44",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -34,17 +34,20 @@\n ain() %7B%0A\n-%09\n+    \n var n, e\n@@ -51,17 +51,20 @@\n , e int%0A\n-%09\n+    \n fmt.Scan\n@@ -72,17 +72,20 @@\n &n, &e)%0A\n-%09\n+    \n var aux \n@@ -90,17 +90,20 @@\n x %5B%5Dint%0A\n-%09\n+    \n for i :=\n@@ -120,18 +120,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n aux = ap\n@@ -153,13 +153,19 @@\n  i)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n for \n@@ -186,18 +186,24 @@\n ; i++ %7B%0A\n-%09%09\n+        \n fmt.Prin\n@@ -218,18 +218,24 @@\n aux%5Bi%5D)%0A\n-%09%09\n+        \n if i == \n@@ -238,19 +238,28 @@\n  == e %7B%0A\n-%09%09%09\n+            \n fmt.Prin\n@@ -269,30 +269,53 @@\n %3E%22)%0A\n-%09%09%7D%0A%09%09if\n+        %7D%0A        ii\n  i %3C n\n--\n+ - \n 1 %7B%0A\n-%09%09%09\n+            \n fmt.\n@@ -329,13 +329,22 @@\n  %22)%0A\n-%09%09%7D%0A%09\n+        %7D%0A    \n %7D%0A%0A%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-21_14-17-40",
+            "content": "@@ -150,14 +150,15 @@\n  := \n-0\n+1\n ; i %3C\n+=\n  n; \n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-21_14-18-06",
+            "content": "@@ -173,17 +173,16 @@\n mt.Print\n-f\n (%22%25d%22, a\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-21_14-19-40",
+            "content": "@@ -96,15 +96,22 @@\n  := \n-range n\n+1; i %3C= n; i++\n  %7B%0A%09\n@@ -134,32 +134,142 @@\n x, i\n-+1\n )%0A%09%7D%0A\n-%09fmt.Println(aux)\n+%0A%09for i := 0; i %3C n; i++ %7B%0A%09%09fmt.Printf(%22%25d%22, aux%5Bi%5D)%0A%09%09if i == e %7B%0A%09%09%09fmt.Print(%22%3E%22)%0A%09%09%7D%0A%09%09if i %3C n-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%09%7D\n %0A%0A%7D%0A\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-21_14-23-39",
+            "content": "@@ -135,247 +135,24 @@\n %09%7D%0A%09\n-var temp int = 0%0A%09for i, p := range aux %7B%0A%09%09if p == e %7B%0A%09%09%09temp = i%0A%09%09%7D%0A%09%7D%0A%0A%09for len(aux) %3E 0 %7B%0A%09%09fmt.Print(%22%5B %22)%0A%09%09for i := range aux %7B%0A%09%09%09if i == temp %7B%0A%09%09%09%09fmt.Printf(%22%25d%3E %22, aux%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22%25d %22, aux%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+fmt.Println(aux)\n %0A%0A%7D%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-03-21_14-29-00",
+            "content": "@@ -372,16 +372,8 @@\n %09%09%7D%0A\n-%09%09break%0A\n %09%7D%0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-21_14-29-14",
+            "content": "@@ -372,27 +372,8 @@\n %09%09%7D%0A\n-%09%09fmt.Printf(%22 %5D%22)%0A\n %09%09br\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-21_14-29-37",
+            "content": "@@ -382,16 +382,17 @@\n Printf(%22\n+ \n %5D%22)%0A%09%09br\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-21_14-29-46",
+            "content": "@@ -383,142 +383,22 @@\n rint\n-ln()%0A%0A%09%09ivitama := (temp + 1) %25 len(aux)%0A%09%09aux = append(aux%5B:ivitama%5D, aux%5Bivitama:%5D...)%0A%09%09temp = ivitama %25 len(aux)%0A%09%09fmt.Printf(%22%5D%22)\n+f(%22%5D%22)%0A%09%09break\n %0A%09%7D%0A\n",
+            "lines": "32"
+        },
+        {
+            "label": "2026-03-21_14-41-40",
+            "content": "@@ -518,16 +518,8 @@\n %5D%22)%0A\n-%09%09break%0A\n %09%7D%0A%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-21_14-42-07",
+            "content": "@@ -372,26 +372,8 @@\n %09%09%7D%0A\n-%09%09fmt.Printf(%22%5D%22)%0A\n %09%09fm\n@@ -496,16 +496,34 @@\n en(aux)%0A\n+%09%09fmt.Printf(%22%5D%22)%0A\n %09%09break%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-21_14-42-42",
+            "content": "@@ -480,18 +480,16 @@\n ivitama:\n-+1\n %5D...)%0A%09%09\n@@ -514,14 +514,22 @@\n en(aux)%0A\n+%09%09break%0A\n %09%7D%0A%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-21_14-45-23",
+            "content": "@@ -212,16 +212,29 @@\n %7D%0A%0A%09for \n+len(aux) %3E 0 \n %7B%0A%09%09fmt.\n@@ -405,42 +405,8 @@\n ln()\n-%0A%09%09if len(aux) == 1 %7B%0A%09%09%09break%0A%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-21_14-46-38",
+            "content": "@@ -504,11 +504,11 @@\n tama\n+:\n +1\n-:\n %5D...\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-21_14-47-57",
+            "content": "@@ -0,0 +1,550 @@\n+package main%0A%0Aimport %22fmt%22%0A%0Afunc main() %7B%0A%09var n, e int%0A%09fmt.Scan(&n, &e)%0A%09var aux %5B%5Dint%0A%09for i := range n %7B%0A%09%09aux = append(aux, i+1)%0A%09%7D%0A%09var temp int = 0%0A%09for i, p := range aux %7B%0A%09%09if p == e %7B%0A%09%09%09temp = i%0A%09%09%7D%0A%09%7D%0A%0A%09for %7B%0A%09%09fmt.Print(%22%5B %22)%0A%09%09for i := range aux %7B%0A%09%09%09if i == temp %7B%0A%09%09%09%09fmt.Printf(%22%25d%3E %22, aux%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22%25d %22, aux%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Printf(%22%5D%22)%0A%09%09fmt.Println()%0A%09%09if len(aux) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%0A%09%09ivitama := (temp + 1) %25 len(aux)%0A%09%09aux = append(aux%5B:ivitama%5D, aux%5Bivitama+1:%5D...)%0A%09%09temp = ivitama %25 len(aux)%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-21_14-48-18",
+            "content": "@@ -1,196 +0,0 @@\n-package main%0A%0Aimport %22fmt%22%0A%0Afunc main() %7B%0A%09var n, e int%0A%09fmt.Scan(&n, &e)%0A%0A%09var filacircular %5B%5Dint%0A%0A%09for i := range n %7B%0A%09%09filacircular = append(filacircular, i+1)%0A%09%7D%0A%0A%09fmt.Println(filacircular)%0A%7D%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2026-03-21_15-04-17",
+            "content": "@@ -163,469 +163,34 @@\n %0A%09%7D%0A\n-%09aux := 0%0A%09for i, p := range filacircular %7B%0A%09%09if p == e %7B%0A%09%09%09aux = i%0A%09%09%7D%0A%09%7D%0A%0A%09for len(filacircular) %3C 2 %7B%0A%09%09fmt.Print(%22%5B %22)%0A%09%09for i := range filacircular %7B%0A%09%09%09if i == aux %7B%0A%09%09%09%09fmt.Printf(%22%25d%3E %22, filacircular%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22%25d %22, filacircular%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Print(%22%5D%22)%0A%09%09fmt.Println()%0A%0A%09%09indice := (aux + 1) %25 len(filacircular)%0A%09%09filacircular = append(filacircular%5B:indice%5D, filacircular%5Bindice+1:%5D...)%0A%09%09aux = indice %25 len(filacircular)%0A%09%7D%0A\n+%0A%09fmt.Println(filacircular)\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-21_15-13-56",
+            "content": "@@ -263,12 +263,11 @@\n ar) \n-== 1\n+%3C 2\n  %7B%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-14-16",
+            "content": "@@ -259,17 +259,18 @@\n rcular) \n-%3E\n+==\n  1 %7B%0A%09%09f\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-14-27",
+            "content": "@@ -261,17 +261,17 @@\n ular) %3E \n-0\n+1\n  %7B%0A%09%09fmt\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-14-35",
+            "content": "@@ -264,11 +264,10 @@\n r) %3E\n-= 1\n+ 0\n  %7B%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-14-48",
+            "content": "@@ -264,10 +264,11 @@\n r) %3E\n- 2\n+= 1\n  %7B%0A%09\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-14-58",
+            "content": "@@ -261,17 +261,17 @@\n ular) %3E \n-1\n+2\n  %7B%0A%09%09fmt\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-15-05",
+            "content": "@@ -261,17 +261,17 @@\n ular) %3E \n-0\n+1\n  %7B%0A%09%09fmt\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-15-17",
+            "content": "@@ -263,12 +263,11 @@\n ar) \n-== 1\n+%3E 0\n  %7B%0A%09\n@@ -465,16 +465,17 @@\n intln()%0A\n+%0A\n %09%09indice\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-21_15-16-29",
+            "content": "@@ -260,16 +260,17 @@\n cular) =\n+=\n  1 %7B%0A%09%09f\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-21_15-16-33",
+            "content": "@@ -241,16 +241,38 @@\n %7D%0A%0A%09for \n+len(filacircular) = 1 \n %7B%0A%09%09fmt.\n@@ -469,51 +469,8 @@\n n()%0A\n-%09%09if len(filacircular) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A\n %09%09in\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-21_15-17-01",
+            "content": "@@ -532,28 +532,8 @@\n ar)%0A\n-%09%09fmt.Print(indice)%0A\n %09%09fi\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-21_15-18-46",
+            "content": "@@ -528,16 +528,36 @@\n rcular)%0A\n+%09%09fmt.Print(indice)%0A\n %09%09filaci\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-03-21_15-19-17",
+            "content": "@@ -77,16 +77,24 @@\n var fila\n+circular\n  %5B%5Dint%0A%0A\n@@ -119,16 +119,24 @@\n %7B%0A%09%09fila\n+circular\n  = appen\n@@ -141,16 +141,24 @@\n end(fila\n+circular\n , i+1)%0A%09\n@@ -163,17 +163,16 @@\n %0A%09%7D%0A\n-%0A\n %09aux := \n o%0A%09f\n@@ -167,17 +167,17 @@\n %09aux := \n-o\n+0\n %0A%09for i,\n@@ -188,24 +188,32 @@\n = range fila\n+circular\n  %7B%0A%09%09if p ==\n@@ -243,16 +243,34 @@\n %0A%09for %7B%0A\n+%09%09fmt.Print(%22%5B %22)%0A\n %09%09for i \n@@ -282,16 +282,24 @@\n nge fila\n+circular\n  %7B%0A%09%09%09if\n@@ -329,32 +329,40 @@\n ntf(%22%25d%3E %22, fila\n+circular\n %5Bi%5D)%0A%09%09%09%7D else %7B\n@@ -388,16 +388,24 @@\n  %22, fila\n+circular\n %5Bi%5D)%0A%09%09%09\n@@ -416,13 +416,233 @@\n %7D%0A%09%09\n-break\n+fmt.Print(%22%5D%22)%0A%09%09fmt.Println()%0A%09%09if len(filacircular) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09indice := (aux + 1) %25 len(filacircular)%0A%09%09filacircular = append(filacircular%5B:indice%5D, filacircular%5Bindice+1:%5D...)%0A%09%09aux = indice %25 len(filacircular)\n %0A%09%7D%0A\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-21_21-02-59",
+            "content": "@@ -148,9 +148,9 @@\n  := \n-0\n+o\n %0A%09fo\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-21_21-03-14",
+            "content": "@@ -216,27 +216,8 @@\n r %7B%0A\n-%09%09fmt.Printf(%22%5B %22)%0A\n %09%09fo\n@@ -341,26 +341,8 @@\n %09%09%7D%0A\n-%09%09fmt.Printf(%22%5D%22)%0A\n %09%09br\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-21_21-03-48",
+            "content": "@@ -380,169 +380,13 @@\n )%0A%09%09\n-fmt.Println()%0A%09%09if len(fila) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%0A%09%09indice := (aux + 1) %25 len(fila)%0A%09%09fila = append(fila%5B:indice%5D, fila%5Bindice+1:%5D...)%0A%09%09aux = indice %25 len(fila)\n+break\n %0A%09%7D%0A\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-03-21_21-14-14",
+            "content": "@@ -30,35 +30,186 @@\n unc \n-test(aux int, fila %5B%5Dint) %7B\n+main() %7B%0A%09var n, e int%0A%09fmt.Scan(&n, &e)%0A%0A%09var fila %5B%5Dint%0A%0A%09for i := range n %7B%0A%09%09fila = append(fila, i+1)%0A%09%7D%0A%0A%09aux := 0%0A%09for i, p := range fila %7B%0A%09%09if p == e %7B%0A%09%09%09aux = i%0A%09%09%7D%0A%09%7D%0A\n %0A%09fo\n@@ -544,211 +544,8 @@\n )%0A%09%7D\n-%0A%7D%0Afunc main() %7B%0A%09var n, e int%0A%09fmt.Scan(&n, &e)%0A%0A%09var fila %5B%5Dint%0A%0A%09for i := range n %7B%0A%09%09fila = append(fila, i+1)%0A%09%7D%0A%0A%09aux := 0%0A%09for i, p := range fila %7B%0A%09%09if p == e %7B%0A%09%09%09aux = i%0A%09%09%7D%0A%09%7D%0A%0A%09test(aux, fila)\n %0A%0A%7D%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-03-21_21-15-22",
+            "content": "@@ -21,16 +21,387 @@\n  %22fmt%22%0A%0A\n+func test(aux int, fila %5B%5Dint) %7B%0A%09for %7B%0A%09%09fmt.Printf(%22%5B %22)%0A%09%09for i := range fila %7B%0A%09%09%09if i == aux %7B%0A%09%09%09%09fmt.Printf(%22%25d%3E %22, fila%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22%25d %22, fila%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Printf(%22%5D%22)%0A%09%09fmt.Println()%0A%09%09if len(fila) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%0A%09%09indice := (aux + 1) %25 len(fila)%0A%09%09fila = append(fila%5B:indice%5D, fila%5Bindice+1:%5D...)%0A%09%09aux = indice %25 len(fila)%0A%09%7D%0A%7D%0A\n func mai\n@@ -406,16 +406,16 @@\n ain() %7B%0A\n-\n %09var n, \n@@ -506,16 +506,17 @@\n i+1)%0A%09%7D%0A\n+%0A\n %09aux := \n@@ -581,306 +581,23 @@\n %7D%0A%0A%09\n-for %7B%0A%09%09fmt.Printf(%22%5B %22)%0A%09%09for i := range fila %7B%0A%09%09%09if aux == i %7B%0A%09%09%09%09fmt.Printf(%22%25d%3E %22, fila%5Bi%5D)%0A%09%09%09%7D else %7B%0A%09%09%09%09fmt.Printf(%22%25d %22, fila%5Bi%5D)%0A%09%09%09%7D%0A%09%09%7D%0A%09%09fmt.Printf(%22%5D%22)%0A%09%09fmt.Println()%0A%0A%09%09indice := (aux + 1) %25 len(fila)%0A%09%09fila = append(fila%5B:indice%5D, fila%5Bindice+1:%5D...)%0A%09%09aux = indice %25 len(fila)%0A%09%7D\n+test(aux, fila)%0A\n %0A%7D%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-21_22-00-52",
+            "content": "@@ -393,42 +393,8 @@\n n()%0A\n-%09%09if len(fila) == 1 %7B%0A%09%09%09break%0A%09%09%7D\n %0A%09%09i\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-21_22-01-29",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tvar fila []int\n\n\tfor i := range n {\n\t\tfila = append(fila, i+1)\n\t}\n\taux := 0\n\tfor i, p := range fila {\n\t\tif p == e {\n\t\t\taux = i\n\t\t}\n\t}\n\n\tfor {\n\t\tfmt.Printf(\"[ \")\n\t\tfor i := range fila {\n\t\t\tif aux == i {\n\t\t\t\tfmt.Printf(\"%d> \", fila[i])\n\t\t\t} else {\n\t\t\t\tfmt.Printf(\"%d \", fila[i])\n\t\t\t}\n\t\t}\n\t\tfmt.Printf(\"]\")\n\t\tfmt.Println()\n\t\tif len(fila) == 1 {\n\t\t\tbreak\n\t\t}\n\t\tindice := (aux + 1) % len(fila)\n\t\tfila = append(fila[:indice], fila[indice+1:]...)\n\t\taux = indice % len(fila)\n\t}\n}\n",
+            "lines": "39"
         }
     ]
 }
