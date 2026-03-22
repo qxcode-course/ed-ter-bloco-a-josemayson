@@ -20,9 +20,9 @@ sources:
   tasks: null
 expanded:
 - fup@jogos-em-modo-texto
-- fup@campanha-principal
 - ed@main-quest
-- ed@análise
+- fup@campanha-principal
+- ed@revisão
 tasks:
   fup@tres: '{self:1, rate:100, study:3, friend:nao, problem:1, code:1, debug:1, refactor:1}'
   fup@resto: '{self:1, rate:100, study:7, friend:nao, problem:1, code:1, debug:1,
@@ -55,6 +55,8 @@ tasks:
     refactor:1}'
   ed@princesa: '{self:1, rate:100, study:300, friend:nao, guided:1, problem:1, code:1,
     debug:1, refactor:1}'
+  ed@apagando: '{self:1, rate:100, study:100, friend:nao, problem:1, code:1, debug:1,
+    refactor:1}'
 flags:
   painel: 1
   quests: 2
@@ -63,4 +65,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@apagando
+selected: ed@gomos

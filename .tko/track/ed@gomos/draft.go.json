@@ -92,8 +92,13 @@
         },
         {
             "label": "2026-03-14_21-11-33",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar Q int\n\tfmt.Scan(&Q)\n\n\tvar D string\n\tfmt.Scan(&D)\n\n\tx := make([]int, Q)\n\ty := make([]int, Q)\n\n\tfor i := 0; i < Q; i++ {\n\t\tfmt.Scan(&x[i], &y[i])\n\t}\n\n\tfor i := 0; i < Q-1; i++ {\n\t\tx[Q-i-1] = x[Q-i-2]\n\t\ty[Q-i-1] = y[Q-i-2]\n\t}\n\n\tswitch D {\n\tcase \"R\":\n\t\tx[0] += 1\n\tcase \"D\":\n\t\ty[0] += 1\n\tcase \"U\":\n\t\ty[0] -= 1\n\tcase \"L\":\n\t\tx[0] -= 1\n\t}\n\n\tfor i := 0; i < Q; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", x[i], y[i])\n\t}\n\n}\n",
+            "content": "@@ -25,41 +25,8 @@\n t%22%0A%0A\n-type gomos struct %7B%0A%09x, y int%0A%7D%0A%0A\n func\n@@ -91,20 +91,38 @@\n n(&D)%0A%0A%09\n-gomo\n+x := make(%5B%5Dint, Q)%0A%09y\n  := make\n@@ -128,13 +128,11 @@\n e(%5B%5D\n-gomos\n+int\n , Q)\n@@ -175,29 +175,19 @@\n an(&\n-gomo\n+x\n %5Bi%5D\n-.x\n , &\n-gomo\n+y\n %5Bi%5D\n-.y\n )%0A%09%7D\n@@ -222,69 +222,49 @@\n %7B%0A%09%09\n-gomo\n+x\n %5BQ-i-1%5D\n-.x\n  = \n-gomo\n+x\n %5BQ-i-2%5D\n-.x\n %0A%09%09\n-gomo\n+y\n %5BQ-i-1%5D\n-.y\n  = \n-gomo\n+y\n %5BQ-i-2%5D\n-.y\n %0A%09%7D%0A\n@@ -289,25 +289,20 @@\n  %22R%22:%0A%09%09\n-gomo\n+x\n %5B0%5D\n-.x\n  += 1%0A%09c\n@@ -312,25 +312,20 @@\n  %22D%22:%0A%09%09\n-gomo\n+y\n %5B0%5D\n-.y\n  += 1%0A%09c\n@@ -339,17 +339,12 @@\n :%0A%09%09\n-gomo\n+y\n %5B0%5D\n-.y\n  -= \n@@ -362,17 +362,12 @@\n :%0A%09%09\n-gomo\n+x\n %5B0%5D\n-.x\n  -= \n@@ -426,28 +426,18 @@\n n%22, \n-gomo%5Bi%5D.x, gomo\n+x%5Bi%5D, y\n %5Bi%5D\n-.y\n )%0A%09%7D\n",
             "lines": "39"
+        },
+        {
+            "label": "2026-03-22_12-33-38",
+            "content": "package main\n\nimport \"fmt\"\n\ntype gomos struct {\n\tx, y int\n}\n\nfunc main() {\n\tvar Q int\n\tfmt.Scan(&Q)\n\n\tvar D string\n\tfmt.Scan(&D)\n\n\tgomo := make([]gomos, Q)\n\n\tfor i := 0; i < Q; i++ {\n\t\tfmt.Scan(&gomo[i].x, &gomo[i].y)\n\t}\n\n\tfor i := 0; i < Q-1; i++ {\n\t\tgomo[Q-i-1].x = gomo[Q-i-2].x\n\t\tgomo[Q-i-1].y = gomo[Q-i-2].y\n\t}\n\n\tswitch D {\n\tcase \"R\":\n\t\tgomo[0].x += 1\n\tcase \"D\":\n\t\tgomo[0].y += 1\n\tcase \"U\":\n\t\tgomo[0].y -= 1\n\tcase \"L\":\n\t\tgomo[0].x -= 1\n\t}\n\n\tfor i := 0; i < Q; i++ {\n\t\tfmt.Printf(\"%d %d\\n\", gomo[i].x, gomo[i].y)\n\t}\n\n}\n",
+            "lines": "42"
         }
     ]
 }

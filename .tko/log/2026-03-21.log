@@ -87,3 +87,14 @@
 2026-03-21 23:02:41, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100, size:39
 2026-03-21 23:03:18, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100, size:38
 2026-03-21 23:17:13, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-21 23:18:26, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-21 23:18:51, SELF, v:1, k:ed@apagando, self:1, rate:100, study:100, friend:nao, problem:1, code:1, debug:1, refactor:1
+2026-03-21 23:19:27, MOVE, v:1, k:ed@manipulacao, mode:DOWN
+2026-03-21 23:19:29, MOVE, v:1, k:ed@manipulacao, mode:PICK
+2026-03-21 23:19:51, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:0, size:106
+2026-03-21 23:21:42, EXEC, v:1, k:ed@manipulacao, mode:FULL, rate:0
+2026-03-21 23:22:34, MOVE, v:1, k:ed@manipulacao, mode:BACK
+2026-03-21 23:28:44, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-21 23:29:02, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-21 23:29:02, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-21 23:29:04, MOVE, v:1, k:ed@apagando, mode:BACK
