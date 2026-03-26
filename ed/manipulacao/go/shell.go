@@ -3,44 +3,85 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 func getMen(vet []int) []int {
-	_ = vet
-	return nil
+	var homens []int
+	for i := range vet {
+		if vet[i] > 0 {
+			homens = append(homens, vet[i])
+		}
+	}
+	return homens
 }
 
 func getCalmWomen(vet []int) []int {
-	_ = vet
-	return nil
+	var mulheres []int
+	for i := range vet {
+		if vet[i] < 0 && vet[i] > -10 {
+			mulheres = append(mulheres, vet[i])
+		}
+	}
+	return mulheres
 }
 
 func sortVet(vet []int) []int {
-	_ = vet
-	return nil
+	for i := range vet {
+		for j := i + 1; j < len(vet); j++ {
+			if vet[i] > vet[j] {
+				vet[i], vet[j] = vet[j], vet[i]
+			}
+		}
+	}
+	return vet
 }
 
 func sortStress(vet []int) []int {
-	_ = vet
-	return nil
+	for i := range vet {
+		for j := i + 1; j < len(vet); j++ {
+			if int(math.Abs(float64(vet[i])-0)) > int(math.Abs(float64(vet[j])-0)) {
+				vet[i], vet[j] = vet[j], vet[i]
+			}
+		}
+	}
+	return vet
 }
 
 func reverse(vet []int) []int {
-	_ = vet
-	return nil
+	var lista []int
+	for i := range vet {
+		aux := vet[len(vet)-1-i]
+		lista = append(lista, aux)
+	}
+	return lista
 }
 
 func unique(vet []int) []int {
-	_ = vet
-	return nil
+	lista := make(map[int]bool)
+	var aux []int
+	for i, p := range vet {
+		if !lista[p] {
+			aux = append(aux, vet[i])
+		}
+		lista[p] = true
+	}
+	return aux
 }
 
 func repeated(vet []int) []int {
-	_ = vet
-	return nil
+	lista := make(map[int]bool)
+	var aux []int
+	for i, p := range vet {
+		if lista[p] {
+			aux = append(aux, vet[i])
+		}
+		lista[p] = true
+	}
+	return aux
 }
 
 func main() {
@@ -103,4 +144,3 @@ func str2vet(s string) []int {
 	}
 	return vet
 }
-

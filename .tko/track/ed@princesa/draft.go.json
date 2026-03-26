@@ -192,6 +192,41 @@
         },
         {
             "label": "2026-03-21_22-01-29",
+            "content": "@@ -25,113 +25,8 @@\n t%22%0A%0A\n-func buffercircular(fila %5B%5Dint, e int) %7B%0A%09aux := fila%5Be%5D%0A%09fila = fila%5Be+2:%5D%0A%09fila = append(fila, aux)%0A%7D%0A%0A\n func\n@@ -67,16 +67,17 @@\n &n, &e)%0A\n+%0A\n %09var fil\n@@ -99,54 +99,17 @@\n  := \n-0; i %3C n; i++ %7B%0A%09%09var aux int%0A%09%09fmt.Scan(&aux)\n+range n %7B\n %0A%09%09f\n@@ -131,22 +131,20 @@\n la, \n-aux\n+i+1\n )%0A%09%7D%0A\n-%0A%09temp\n+%09aux\n  := \n@@ -147,24 +147,27 @@\n  := 0%0A%09for i\n+, p\n  := range fi\n@@ -172,25 +172,25 @@\n fila %7B%0A%09%09if \n-i\n+p\n  == e %7B%0A%09%09%09t\n@@ -188,20 +188,19 @@\n  e %7B%0A%09%09%09\n-temp\n+aux\n  = i%0A%09%09%7D\n@@ -217,41 +217,24 @@\n %7B%0A%09%09\n-if len(fila) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A\n+fmt.Printf(%22%5B %22)\n %0A%09%09f\n@@ -264,17 +264,16 @@\n %09if \n-i\n+aux\n  == \n-temp\n+i\n  %7B%0A%09\n@@ -333,16 +333,17 @@\n intf(%22%25d\n+ \n %22, fila%5B\n@@ -361,38 +361,188 @@\n %7D%0A%09%09\n-buffercircular(fila, temp)%0A\n+fmt.Printf(%22%5D%22)%0A%09%09fmt.Println()%0A%09%09if len(fila) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09indice := (aux + 1) %25 len(fila)%0A%09%09fila = append(fila%5B:indice%5D, fila%5Bindice+1:%5D...)%0A%09%09aux = indice %25 len(fila)\n %0A%09%7D%0A\n-%0A\n %7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-24_11-12-25",
+            "content": "@@ -63,17 +63,11 @@\n int)\n- %5B%5Dint\n  %7B%0A\n+\n %09aux\n@@ -126,22 +126,8 @@\n aux)\n-%0A%0A%09return fila\n %0A%7D%0A%0A\n@@ -277,16 +277,84 @@\n ux)%0A%09%7D%0A%0A\n+%09temp := 0%0A%09for i := range fila %7B%0A%09%09if i == e %7B%0A%09%09%09temp = i%0A%09%09%7D%0A%09%7D%0A%0A\n %09for %7B%0A%09\n@@ -419,25 +419,28 @@\n %0A%09%09%09if i == \n-e\n+temp\n  %7B%0A%09%09%09%09fmt.P\n@@ -515,23 +515,16 @@\n %7D%0A%09%09%7D%0A%09%09\n-fila = \n bufferci\n@@ -536,17 +536,20 @@\n r(fila, \n-e\n+temp\n )%0A%0A%09%7D%0A%0A%7D\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-24_11-15-20",
+            "content": "@@ -72,67 +72,8 @@\n t %7B%0A\n-%0A%09if e %3E= len(fila) %7C%7C e+2 %3E len(fila) %7B%0A%09%09return fila%0A%09%7D%0A%0A\n %09aux\n",
+            "lines": "40"
+        },
+        {
+            "label": "2026-03-24_11-17-36",
+            "content": "@@ -282,15 +282,14 @@\n  := \n-1\n+0\n ; i %3C\n-=\n  n; \n@@ -300,16 +300,36 @@\n %7B%0A%09%09\n-aux := i\n+var aux int%0A%09%09fmt.Scan(&aux)\n %0A%09%09f\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-24_11-18-12",
+            "content": "@@ -506,122 +506,40 @@\n %09%09%7D%0A\n-%0A%09%09tamanhoAnterior := len(fila)%0A%09%09fila = buffercircular(fila, e)%0A%0A%09%09if len(fila) == tamanhoAnterior %7B%0A%09%09%09break%0A%09%09%7D\n+%09%09fila = buffercircular(fila, e)\n %0A%0A%09%7D\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-03-24_11-19-38",
+            "content": "@@ -481,17 +481,16 @@\n intf(%22%25d\n- \n %22, fila%5B\n@@ -505,24 +505,8 @@\n %0A%09%09%7D\n-%0A%09%09fmt.Println()\n %0A%0A%09%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-03-24_11-20-09",
+            "content": "@@ -21,16 +21,200 @@\n  %22fmt%22%0A%0A\n+func buffercircular(fila %5B%5Dint, e int) %5B%5Dint %7B%0A%0A%09if e %3E= len(fila) %7C%7C e+2 %3E len(fila) %7B%0A%09%09return fila%0A%09%7D%0A%0A%09aux := fila%5Be%5D%0A%09fila = fila%5Be+2:%5D%0A%09fila = append(fila, aux)%0A%0A%09return fila%0A%7D%0A%0A\n func mai\n@@ -251,17 +251,16 @@\n &n, &e)%0A\n-%0A\n %09var fil\n@@ -282,17 +282,35 @@\n  := \n-range n %7B\n+1; i %3C= n; i++ %7B%0A%09%09aux := i\n %0A%09%09f\n@@ -332,110 +332,59 @@\n la, \n-i+1\n+aux\n )%0A%09%7D%0A\n-%09aux := 0%0A%09for i, p := range fila %7B%0A%09%09if p\n+%0A%09for %7B%0A%09%09if len(fila)\n  == \n-e\n+1\n  %7B%0A%09%09%09\n-aux = i%0A%09%09%7D%0A%09%7D%0A%0A%09for %7B%0A%09%09fmt.Printf(%22%5B %22)\n+break%0A%09%09%7D%0A\n %0A%09%09f\n@@ -414,16 +414,14 @@\n %09if \n-aux\n+i\n  == \n-i\n+e\n  %7B%0A%09\n@@ -518,179 +518,131 @@\n rint\n-f(%22%5D%22\n+ln(\n )%0A\n+%0A\n %09%09\n-fmt.Println()%0A%09%09if len(fila) == 1 %7B%0A%09%09%09break%0A%09%09%7D%0A%09%09indice := (aux + 1) %25 len(fila)%0A%09%09fila = append(fila%5B:indice%5D, fila%5Bindice+1:%5D...\n+tamanhoAnterior := len(fila)%0A%09%09fila = buffercircular(fila, e\n )%0A\n+%0A\n %09%09\n-aux = indice %25 len(fila)\n+if len(fila) == tamanhoAnterior %7B%0A%09%09%09break%0A%09%09%7D%0A\n %0A%09%7D%0A\n+%0A\n %7D%0A\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-03-24_11-22-43",
             "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n, e int\n\tfmt.Scan(&n, &e)\n\n\tvar fila []int\n\n\tfor i := range n {\n\t\tfila = append(fila, i+1)\n\t}\n\taux := 0\n\tfor i, p := range fila {\n\t\tif p == e {\n\t\t\taux = i\n\t\t}\n\t}\n\n\tfor {\n\t\tfmt.Printf(\"[ \")\n\t\tfor i := range fila {\n\t\t\tif aux == i {\n\t\t\t\tfmt.Printf(\"%d> \", fila[i])\n\t\t\t} else {\n\t\t\t\tfmt.Printf(\"%d \", fila[i])\n\t\t\t}\n\t\t}\n\t\tfmt.Printf(\"]\")\n\t\tfmt.Println()\n\t\tif len(fila) == 1 {\n\t\t\tbreak\n\t\t}\n\t\tindice := (aux + 1) % len(fila)\n\t\tfila = append(fila[:indice], fila[indice+1:]...)\n\t\taux = indice % len(fila)\n\t}\n}\n",
             "lines": "39"
         }
