@@ -2,8 +2,53 @@
     "patches": [
         {
             "label": "2026-03-22_11-09-48",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -19,17 +19,16 @@\n t %22fmt%22%0A\n-%0A\n func mai\n@@ -37,131 +37,39 @@\n ) %7B%0A\n-%09var n int%0A%09fmt.Scan(&n)%0A%0A%09entrada := make(%5B%5Dstring, n)%0A%09for i := range n %7B%0A%09%09fmt.Scan(&entrada%5Bi%5D)%0A%09%7D%0A%09fmt.Println(entrada\n+    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-03-30_14-45-01",
+            "content": "@@ -40,26 +40,17 @@\n  %7B%0A%09var \n-qtdentrada\n+n\n  int%0A%09fm\n@@ -57,26 +57,17 @@\n t.Scan(&\n-qtdentrada\n+n\n )%0A%0A%09entr\n@@ -88,26 +88,17 @@\n string, \n-qtdentrada\n+n\n )%0A%09for i\n@@ -111,18 +111,9 @@\n nge \n-qtdentrada\n+n\n  %7B%0A%09\n@@ -142,492 +142,28 @@\n %0A%09%7D%0A\n-    var qtdconsulta int%0A    fmt.Scan(&qtdconsulta)%0A%0A    consulta := make(%5B%5Dstring, qtdconsulta)%0A    saida := make(map%5Bstring%5Dbool) %0A    for i := range qtdconsulta %7B%0A%09%09fmt.Scan(&consulta%5Bi%5D)%0A    %7D%0A%0A    for _, p := range consulta %7B%0A        saida%5Bp%5D = true%0A    %7D%0A%0A    retorno := make(map%5Bstring%5Dint)%0A    %0A    for _, p := range entrada %7B%0A        if saida%5Bp%5D %7B%0A            retorno%5Bp%5D++%0A        %7D%0A    %7D%0A    var t %5B%5D int%0A%0A    for _, p := retorno %7B%0A        t = append(t, p)%0A    %7D%0A    retorno t\n+%09fmt.Println(entrada)\n %0A%7D%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-03-30_14-55-57",
+            "content": "@@ -599,26 +599,21 @@\n   for _,\n+ \n p :=\n- range\n  retorno\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-30_14-56-14",
+            "content": "@@ -170,25 +170,28 @@\n rada%5Bi%5D)%0A%09%7D%0A\n-%09\n+    \n var qtdconsu\n@@ -194,25 +194,28 @@\n onsulta int%0A\n-%09\n+    \n fmt.Scan(&qt\n@@ -226,17 +226,20 @@\n sulta)%0A%0A\n-%09\n+    \n consulta\n@@ -270,17 +270,20 @@\n nsulta)%0A\n-%09\n+    \n saida :=\n@@ -304,18 +304,22 @@\n ng%5Dbool)\n-%0A%09\n+ %0A    \n for i :=\n@@ -364,21 +364,27 @@\n lta%5Bi%5D)%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n for _, p\n@@ -404,18 +404,24 @@\n sulta %7B%0A\n-%09%09\n+        \n saida%5Bp%5D\n@@ -432,13 +432,19 @@\n rue%0A\n-%09%7D%0A%0A%09\n+    %7D%0A%0A    \n reto\n@@ -471,18 +471,25 @@\n ng%5Dint)%0A\n-%0A%09\n+    %0A    \n for _, p\n@@ -508,18 +508,24 @@\n trada %7B%0A\n-%09%09\n+        \n if saida\n@@ -534,11 +534,20 @@\n %5D %7B%0A\n-%09%09%09\n+            \n reto\n@@ -559,24 +559,36 @@\n %5D++%0A\n-%09%09%7D%0A%09%7D%0A%09\n+        %7D%0A    %7D%0A    \n var t %5B%5D\n int%0A\n@@ -587,21 +587,24 @@\n t %5B%5D\n+ \n int%0A%0A\n-%09\n+    \n for _,\n- \n p :=\n@@ -620,18 +620,24 @@\n torno %7B%0A\n-%09%09\n+        \n t = appe\n@@ -649,18 +649,25 @@\n  p)%0A\n-%09%7D%0A%09retu\n+    %7D%0A    reto\n rn\n+o\n  t%0A%7D\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-30_14-56-48",
+            "content": "@@ -575,57 +575,16 @@\n %0A%09%7D%0A\n-%0A%09for i := range t %7B%0A%09%09fmt.Printf(%22%25d %22, t%5Bi%5D)%0A%09%7D%0A\n+%09return t\n %0A%7D%0A\n",
+            "lines": "39"
+        },
+        {
+            "label": "2026-03-30_15-00-30",
+            "content": "@@ -503,37 +503,8 @@\n %5D++%0A\n-%09%09%7D else %7B%0A%09%09%09retorno%5Bp%5D = 0%0A\n %09%09%7D%0A\n",
+            "lines": "43"
+        },
+        {
+            "label": "2026-03-30_15-01-08",
+            "content": "@@ -287,19 +287,20 @@\n %5Bstring%5D\n-int\n+bool\n )%0A%09for i\n@@ -348,24 +348,110 @@\n lta%5Bi%5D)%0A%09%7D%0A%0A\n+%09for _, p := range consulta %7B%0A%09%09saida%5Bp%5D = true%0A%09%7D%0A%0A%09retorno := make(map%5Bstring%5Dint)%0A%0A\n %09for _, p :=\n@@ -469,24 +469,27 @@\n ada %7B%0A%09%09\n+if \n saida%5Bp%5D\n ++%0A%09%7D%0A%0A%09\n@@ -484,41 +484,146 @@\n a%5Bp%5D\n+ %7B%0A%09%09%09retorno%5Bp%5D\n ++%0A\n+%09\n %09%7D\n-%0A%0A%09for _, p := range entrada\n+ else %7B%0A%09%09%09retorno%5Bp%5D = 0%0A%09%09%7D%0A%09%7D%0A%09var t %5B%5Dint%0A%0A%09for _, p := range retorno %7B%0A%09%09t = append(t, p)%0A%09%7D%0A%0A%09for i := range t\n  %7B%0A%09\n@@ -636,12 +636,21 @@\n rint\n-ln(p\n+f(%22%25d %22, t%5Bi%5D\n )%0A%09%7D\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-03-30_15-04-45",
+            "content": "@@ -440,24 +440,17 @@\n Println(\n-saida%5Bp%5D\n+p\n )%0A%09%7D%0A%0A%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-30_15-04-56",
+            "content": "@@ -386,83 +386,18 @@\n %7B%0A%09%09\n-if entrada%5Bp%5D == consulta%5Bp%5D %7B%0A%09%09%09saida%5Bp%5D++%0A%09%09%7D else %7B%0A%09%09%09saida%5Bp%5D = 0%0A%09%09%7D\n+saida%5Bp%5D++\n %0A%09%7D%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-03-30_16-57-35",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtdentrada int\n\tfmt.Scan(&qtdentrada)\n\n\tentrada := make([]string, qtdentrada)\n\tfor i := range qtdentrada {\n\t\tfmt.Scan(&entrada[i])\n\t}\n\tvar qtdconsulta int\n\tfmt.Scan(&qtdconsulta)\n\n\tconsulta := make([]string, qtdconsulta)\n\tsaida := make(map[string]int)\n\tfor i := range qtdconsulta {\n\t\tfmt.Scan(&consulta[i])\n\t}\n\n\tfor _, p := range entrada {\n\t\tif entrada[p] == consulta[p] {\n\t\t\tsaida[p]++\n\t\t} else {\n\t\t\tsaida[p] = 0\n\t\t}\n\t}\n\n\tfor _, p := range entrada {\n\t\tfmt.Println(saida[p])\n\t}\n\n}\n",
+            "lines": "34"
         }
     ]
 }

@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -14,28 +15,110 @@ type Pair struct {
 }
 
 func occurr(vet []int) []Pair {
-	_ = vet
-	return nil
+	qtd := make(map[int]int)
+
+	var contagem []Pair
+
+	for _, p := range vet {
+		if p < 0 {
+			p *= -1
+		}
+		qtd[p]++
+	}
+	for i, p := range qtd {
+		contagem = append(contagem, Pair{One: i, Two: p})
+	}
+
+	sort.Slice(contagem, func(i, j int) bool {
+		return contagem[i].One < contagem[j].One
+	})
+	return contagem
 }
 
 func teams(vet []int) []Pair {
-	_ = vet
-	return nil
+	if len(vet) == 0 {
+		return []Pair{}
+	}
+	qtd := 0
+	temp := vet[0]
+	for i := range vet {
+		if vet[i] < 0 {
+			vet[i] *= -1
+		}
+	}
+	var time []Pair
+	for i := range vet {
+		if vet[i] == temp {
+			qtd++
+		} else {
+			time = append(time, Pair{One: temp, Two: qtd})
+			temp = vet[i]
+			qtd = 1
+		}
+	}
+	time = append(time, Pair{One: temp, Two: qtd})
+	return time
 }
 
 func mnext(vet []int) []int {
-	_ = vet
-	return nil
+	lista := make([]int, len(vet))
+
+	for i := range vet {
+		if vet[i] > 0 {
+			if i < len(vet)-1 {
+				if vet[i+1] < 0 {
+					lista[i] = 1
+				}
+			}
+		}
+		if i > 0 {
+			if vet[i-1] < 0 && vet[i] > 0 {
+				lista[i] = 1
+			}
+		}
+	}
+	return lista
 }
 
 func alone(vet []int) []int {
-	_ = vet
-	return nil
+	lista := make([]int, len(vet))
+
+	for i := range vet {
+		temp := false
+		if vet[i] > 0 {
+			if i < len(vet)-1 {
+				if vet[i+1] < 0 {
+					temp = true
+				}
+			}
+		}
+		if i > 0 {
+			if vet[i-1] < 0 && vet[i] > 0 {
+				temp = true
+			}
+		}
+		if vet[i] > 0 {
+			if temp == false {
+				lista[i] = 1
+			}
+		}
+	}
+	return lista
 }
 
 func couple(vet []int) int {
-	_ = vet
-	return nil
+	casais := make(map[int]bool)
+	qtd := 0
+
+	for _, p := range vet {
+		if casais[-p] {
+			casais[-p] = false
+			qtd++
+		} else {
+			casais[p] = true
+		}
+	}
+	return qtd
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
@@ -46,18 +129,49 @@ func hasSubseq(vet []int, seq []int, pos int) bool {
 }
 
 func subseq(vet []int, seq []int) int {
-	_ = vet
-	return nil
+	j := 0
+	for i := 0; i < len(vet); i++ {
+		if vet[i] == seq[j] {
+			j++
+			if j == len(seq) {
+				return i - len(seq) + 1
+			}
+		} else {
+			if j > 0 {
+				i -= j
+				j = 0
+			}
+		}
+	}
+	return -1
 }
 
 func erase(vet []int, posList []int) []int {
-	_ = vet
-	return nil
+	var novalista []int
+	indice := make(map[int]bool)
+
+	for _, p := range posList {
+		indice[p] = true
+	}
+
+	for i := range vet {
+		if !indice[i] {
+			novalista = append(novalista, vet[i])
+		}
+	}
+	return novalista
 }
 
 func clear(vet []int, value int) []int {
-	_ = vet
-	return nil
+	lista := make(map[int]bool)
+	var novaLista []int
+	lista[value] = true
+	for _, p := range vet {
+		if !lista[p] {
+			novaLista = append(novaLista, p)
+		}
+	}
+	return novaLista
 }
 
 func main() {
