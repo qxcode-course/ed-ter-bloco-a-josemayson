@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-27_14-12-19",
+            "content": "@@ -129,26 +129,24 @@\n t.Printf(%22%25d\n-%5Cn\n %22, a*b)%0A%09fmt\n@@ -158,18 +158,16 @@\n tf(%22%25.0f\n-%5Cn\n %22, float\n@@ -195,24 +195,22 @@\n t.Printf(%22%25d\n-%5Cn\n %22, a%25b)%0A%7D%0A\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-03-27_14-12-30",
+            "content": "@@ -162,9 +162,9 @@\n (%22%25.\n-2\n+0\n f%5Cn%22\n",
+            "lines": "14"
+        },
+        {
+            "label": "2026-03-27_14-12-40",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\n\tfmt.Printf(\"%d\\n\", a+b)\n\tfmt.Printf(\"%d\\n\", a-b)\n\tfmt.Printf(\"%d\\n\", a*b)\n\tfmt.Printf(\"%.2f\\n\", float64(a)/float64(b))\n\tfmt.Printf(\"%d\\n\", a%b)\n}\n",
+            "lines": "14"
+        }
+    ]
+}

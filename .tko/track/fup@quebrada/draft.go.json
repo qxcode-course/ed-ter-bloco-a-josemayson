@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-27_14-07-06",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n1, n2 float64\n\tfmt.Scan(&n1, &n2)\n\n\tfmt.Printf(\"%.0f\\n\", n1/n2)\n\tfmt.Printf(\"%d\\n\", int(int(n1)%int(n2)))\n\tfmt.Printf(\"%.2f\\n\", n1/n2)\n}\n",
+            "lines": "12"
+        }
+    ]
+}

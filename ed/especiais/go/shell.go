@@ -35,7 +35,7 @@ func alone(vet []int) []int {
 
 func couple(vet []int) int {
 	_ = vet
-	return 0
+	return nil
 }
 
 func hasSubseq(vet []int, seq []int, pos int) bool {
@@ -47,19 +47,16 @@ func hasSubseq(vet []int, seq []int, pos int) bool {
 
 func subseq(vet []int, seq []int) int {
 	_ = vet
-	_ = seq
-	return -1
+	return nil
 }
 
 func erase(vet []int, posList []int) []int {
 	_ = vet
-	_ = posList
 	return nil
 }
 
 func clear(vet []int, value int) []int {
 	_ = vet
-	_ = value
 	return nil
 }
 

@@ -5,12 +5,14 @@ import (
 	"fmt"
 	"math"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
 func getMen(vet []int) []int {
 	var homens []int
+
 	for i := range vet {
 		if vet[i] > 0 {
 			homens = append(homens, vet[i])
@@ -21,8 +23,9 @@ func getMen(vet []int) []int {
 
 func getCalmWomen(vet []int) []int {
 	var mulheres []int
+
 	for i := range vet {
-		if vet[i] < 0 && vet[i] > -10 {
+		if vet[i] > -10 && vet[i] < 0 {
 			mulheres = append(mulheres, vet[i])
 		}
 	}
@@ -30,58 +33,51 @@ func getCalmWomen(vet []int) []int {
 }
 
 func sortVet(vet []int) []int {
-	for i := range vet {
-		for j := i + 1; j < len(vet); j++ {
-			if vet[i] > vet[j] {
-				vet[i], vet[j] = vet[j], vet[i]
-			}
-		}
-	}
+	sort.Slice(vet, func(i, j int) bool {
+		return vet[i] < vet[j]
+	})
 	return vet
 }
 
 func sortStress(vet []int) []int {
-	for i := range vet {
-		for j := i + 1; j < len(vet); j++ {
-			if int(math.Abs(float64(vet[i])-0)) > int(math.Abs(float64(vet[j])-0)) {
-				vet[i], vet[j] = vet[j], vet[i]
-			}
-		}
-	}
+	sort.Slice(vet, func(i, j int) bool {
+		return math.Abs(float64(vet[i])) < math.Abs(float64(vet[j]))
+	})
 	return vet
 }
 
 func reverse(vet []int) []int {
-	var lista []int
-	for i := range vet {
-		aux := vet[len(vet)-1-i]
-		lista = append(lista, aux)
+	novaLista := make([]int, len(vet))
+	for i := 0; i < len(vet); i++ {
+		novaLista[i] = vet[len(vet)-i-1]
 	}
-	return lista
+	return novaLista
 }
 
 func unique(vet []int) []int {
-	lista := make(map[int]bool)
-	var aux []int
-	for i, p := range vet {
-		if !lista[p] {
-			aux = append(aux, vet[i])
+	var novaLista []int
+	repetidos := make(map[int]bool)
+
+	for _, p := range vet {
+		if !repetidos[p] {
+			novaLista = append(novaLista, p)
 		}
-		lista[p] = true
+		repetidos[p] = true
 	}
-	return aux
+	return novaLista
 }
 
 func repeated(vet []int) []int {
-	lista := make(map[int]bool)
-	var aux []int
-	for i, p := range vet {
-		if lista[p] {
-			aux = append(aux, vet[i])
+	var novaLista []int
+	repetidos := make(map[int]bool)
+
+	for _, p := range vet {
+		if repetidos[p] {
+			novaLista = append(novaLista, p)
 		}
-		lista[p] = true
+		repetidos[p] = true
 	}
-	return aux
+	return novaLista
 }
 
 func main() {

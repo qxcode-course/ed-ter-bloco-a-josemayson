@@ -1,0 +1,494 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-27_13-58-58",
+            "content": "@@ -139,41 +139,28 @@\n r %7B%0A\n-aux:%0A%090%0A%09for i := range vet %7B%0A%0A%09%7D\n+%09_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-03-27_16-10-12",
+            "content": "@@ -135,36 +135,49 @@\n %5DPair %7B%0A\n-%09_ = vet%0A%09return nil\n+aux:%0A%090%0A%09for i := range vet %7B%0A%0A%09%7D\n %0A%7D%0A%0Afunc\n",
+            "lines": "135"
+        },
+        {
+            "label": "2026-03-27_16-11-19",
+            "content": "@@ -140,202 +140,27 @@\n  %7B%0A%09\n-aux := make(map%5Bint%5Dint)%0A%09for _, p := range vet %7B%0A%09%09if p %3C 0 %7B%0A%09%09%09p *= -1%0A%09%09%7D%0A%09%09aux%5Bp%5D++%0A%09%7D%0A%09var temp %5B%5DPair%0A%0A%09for i, p := range aux %7B%0A%09%09temp = append(temp, Pair%7BOne: i, Two: p%7D)%0A%09%7D%0A%09return temp\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "132"
+        },
+        {
+            "label": "2026-03-28_21-58-35",
+            "content": "@@ -42,16 +42,8 @@\n os%22%0A\n-%09%22sort%22%0A\n %09%22st\n@@ -321,88 +321,8 @@\n )%0A%09%7D\n-%0A%0A%09sort.Slice(temp, func(i, j int) bool %7B%0A%09%09return temp%5Bi%5D.One %3C temp%5Bj%5D.One%0A%09%7D)\n %0A%09re\n",
+            "lines": "143"
+        },
+        {
+            "label": "2026-03-29_12-33-11",
+            "content": "@@ -458,202 +458,27 @@\n  %7B%0A%09\n-aux := make(map%5Bint%5Dint)%0A%09for _, p := range vet %7B%0A%09%09if p %3C 0 %7B%0A%09%09%09p *= -1%0A%09%09%7D%0A%09%09aux%5Bp%5D++%0A%09%7D%0A%09var temp %5B%5DPair%0A%0A%09for i, p := range aux %7B%0A%09%09temp = append(temp, Pair%7BOne: i, Two: p%7D)%0A%09%7D%0A%09return temp\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "148"
+        },
+        {
+            "label": "2026-03-29_12-37-13",
+            "content": "@@ -513,22 +513,31 @@\n %09if \n-aux%5Bp%5D %3C 3\n+p %3C 0\n  %7B%0A%09\n+%09%09p *= -1%0A%09%09%7D%0A\n %09%09au\n@@ -543,20 +543,16 @@\n ux%5Bp%5D++%0A\n-%09%09%7D%0A\n %09%7D%0A%09var \n",
+            "lines": "159"
+        },
+        {
+            "label": "2026-03-29_12-38-39",
+            "content": "@@ -458,55 +458,42 @@\n  %7B%0A%09\n-var temp %5B%5DPair%0A%09aux := vet%5B0%5D%0A%09qtd := 1\n+aux := make(map%5Bint%5Dint)\n %0A%09for \n-i\n+_, p\n  := \n@@ -513,128 +513,84 @@\n %09if \n-vet%5Bi%5D == aux %7B%0A%09%09%09qtd++%0A%09%09%7D else %7B%0A%09%09%09temp = append(\n+aux%5Bp%5D %3C 3 %7B%0A%09%09%09aux%5Bp%5D++%0A%09%09%7D%0A%09%7D%0A%09var \n temp\n-,\n  \n+%5B%5D\n Pair\n-%7BOne: aux, Two: qtd%7D)%0A%09%09%09qtd = 1%0A%09%09%09temp = vet%5Bi%5D%0A%09%09%7D%0A%09%7D%0A\n+%0A%0A%09for i, p := range aux %7B%0A%09\n %09tem\n@@ -620,23 +620,22 @@\n ne: \n-aux\n+i\n , Two: \n-qtd%7D)\n+p%7D)%0A%09%7D\n %0A%09re\n",
+            "lines": "158"
+        },
+        {
+            "label": "2026-03-29_12-51-49",
+            "content": "@@ -614,31 +614,32 @@\n %0A%09%09%09\n-aux = vet%5Bi%5D%0A%09%09%09qtd = 1\n+qtd = 1%0A%09%09%09temp = vet%5Bi%5D\n %0A%09%09%7D\n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-03-29_12-53-03",
+            "content": "@@ -470,16 +470,31 @@\n  %5B%5DPair%0A\n+%09aux := vet%5B0%5D%0A\n %09qtd := \n@@ -521,24 +521,8 @@\n t %7B%0A\n-%09%09aux := vet%5Bi%5D%0A\n %09%09if\n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-03-29_12-55-05",
+            "content": "@@ -474,31 +474,16 @@\n air%0A\n-%09aux := vet%5B0%5D%0A\n %09qtd := \n 0%0A%09f\n@@ -478,17 +478,17 @@\n %09qtd := \n-0\n+1\n %0A%09for i \n@@ -498,24 +498,40 @@\n range vet %7B%0A\n+%09%09aux := vet%5Bi%5D%0A\n %09%09if vet%5Bi%5D \n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-03-29_12-55-52",
+            "content": "@@ -474,45 +474,8 @@\n air%0A\n-%09if len(vet) == 0 %7B%0A%09%09return temp%0A%09%7D%0A\n %09aux\n",
+            "lines": "160"
+        },
+        {
+            "label": "2026-03-29_12-57-40",
+            "content": "@@ -470,17 +470,16 @@\n  %5B%5DPair%0A\n-%0A\n %09if len(\n@@ -507,16 +507,30 @@\n temp%0A%09%7D%0A\n+%09aux := vet%5B0%5D\n %0A%09qtd :=\n@@ -558,24 +558,8 @@\n t %7B%0A\n-%09%09aux := vet%5Bi%5D%0A\n %09%09if\n",
+            "lines": "163"
+        },
+        {
+            "label": "2026-03-29_13-00-10",
+            "content": "@@ -512,17 +512,8 @@\n %0A%09%7D%0A\n-%09aux := 0\n %0A%09qt\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-29_13-00-21",
+            "content": "@@ -508,25 +508,24 @@\n temp%0A%09%7D%0A\n-%0A\n %09aux := \n vet%5B0%5D%0A%09\n@@ -520,14 +520,9 @@\n  := \n-vet%5B0%5D\n+0\n %0A%09qt\n@@ -546,24 +546,40 @@\n range vet %7B%0A\n+%09%09aux := vet%5Bi%5D%0A\n %09%09if vet%5Bi%5D \n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-29_13-00-40",
+            "content": "@@ -38,16 +38,24 @@\n %22%0A%09%22os%22%0A\n+%09%22sort%22%0A\n %09%22strcon\n@@ -144,20 +144,19 @@\n Pair %7B%0A%09\n-temp\n+aux\n  := make\n@@ -169,17 +169,16 @@\n nt%5Dint)%0A\n-%0A\n %09for _, \n@@ -224,20 +224,19 @@\n 1%0A%09%09%7D%0A%09%09\n-temp\n+aux\n %5Bp%5D++%0A%09%7D\n@@ -240,17 +240,17 @@\n %0A%09%7D%0A\n-%0A\n %09var \n-aux\n+temp\n  %5B%5DP\n@@ -277,20 +277,20 @@\n nge \n-temp\n+aux\n  %7B%0A%09%09\n-aux\n+temp\n  = a\n@@ -295,19 +295,20 @@\n  append(\n-aux\n+temp\n , Pair%7BO\n@@ -330,54 +330,421 @@\n %0A%09%7D%0A\n-%09return aux%0A%7D%0A%0Afunc teams(vet %5B%5Dint) %5B%5DPair %7B%0A\n+%0A%09sort.Slice(temp, func(i, j int) bool %7B%0A%09%09return temp%5Bi%5D.One %3C temp%5Bj%5D.One%0A%09%7D)%0A%09return temp%0A%7D%0A%0Afunc teams(vet %5B%5Dint) %5B%5DPair %7B%0A%09var temp %5B%5DPair%0A%0A%09if len(vet) == 0 %7B%0A%09%09return temp%0A%09%7D%0A%0A%09aux := vet%5B0%5D%0A%09qtd := 0%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D == aux %7B%0A%09%09%09qtd++%0A%09%09%7D else %7B%0A%09%09%09temp = append(temp, Pair%7BOne: aux, Two: qtd%7D)%0A%09%09%09aux = vet%5Bi%5D%0A%09%09%09qtd = 1%0A%09%09%7D%0A%09%7D%0A%09temp = append(temp, Pair%7BOne: aux, Two: qtd%7D)%0A%09return temp\n %0A%7D%0A%0A\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-29_14-37-52",
+            "content": "@@ -370,29 +370,8 @@\n r %7B%0A\n-%09_ = temp%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "144"
+        },
+        {
+            "label": "2026-03-29_14-38-11",
+            "content": "@@ -363,35 +363,36 @@\n ) %5B%5DPair %7B%0A%09_ = \n-vet\n+temp\n %0A%09return nil%0A%7D%0A%0A\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-03-29_14-38-22",
+            "content": "@@ -42,16 +42,8 @@\n os%22%0A\n-%09%22sort%22%0A\n %09%22st\n@@ -323,85 +323,8 @@\n )%0A%09%7D\n-%0A%0A%09sort.Slice(aux, func(i, j int) bool %7B%0A%09%09return aux%5Bi%5D.One %3C aux%5Bi%5D.Two%0A%09%7D)\n %0A%09re\n",
+            "lines": "145"
+        },
+        {
+            "label": "2026-03-29_14-39-25",
+            "content": "@@ -397,19 +397,19 @@\n  aux%5Bi%5D.\n-One\n+Two\n %0A%09%7D)%0A%09re\n",
+            "lines": "150"
+        },
+        {
+            "label": "2026-03-29_14-39-38",
+            "content": "@@ -394,17 +394,17 @@\n e %3C aux%5B\n-j\n+i\n %5D.One%0A%09%7D\n",
+            "lines": "150"
+        },
+        {
+            "label": "2026-03-29_14-39-49",
+            "content": "@@ -456,228 +456,27 @@\n  %7B%0A%09\n-var temp %5B%5DPair%0A%0A%09aux := vet%5B0%5D%0A%09qtd := 0%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D == aux %7B%0A%09%09%09qtd++%0A%09%09%7D else %7B%0A%09%09%09temp = append(temp, Pair%7BOne: aux, Two: qtd%7D)%0A%09%09%7D%0A%09%7D%0A%09temp = append(temp, Pair%7BOne: aux, Two: qtd%7D)%0A%09return temp\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "150"
+        },
+        {
+            "label": "2026-03-29_14-48-31",
+            "content": "@@ -472,44 +472,8 @@\n air%0A\n-%09if len(vet) == 0 %7B%0A%09%09return temp%0A%09%7D\n %0A%09au\n",
+            "lines": "161"
+        },
+        {
+            "label": "2026-03-29_14-49-00",
+            "content": "@@ -646,35 +646,8 @@\n d%7D)%0A\n-%09%09%09aux = vet%5Bi%5D%0A%09%09%09qtd = 0%0A\n %09%09%7D%0A\n",
+            "lines": "163"
+        },
+        {
+            "label": "2026-03-29_14-49-38",
+            "content": "@@ -468,17 +468,16 @@\n  %5B%5DPair%0A\n-%0A\n %09if len(\n@@ -667,17 +667,17 @@\n %09%09qtd = \n-1\n+0\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "165"
+        },
+        {
+            "label": "2026-03-29_14-51-21",
+            "content": "@@ -469,16 +469,53 @@\n %5B%5DPair%0A%0A\n+%09if len(vet) == 0 %7B%0A%09%09return temp%0A%09%7D%0A\n %09aux := \n",
+            "lines": "166"
+        },
+        {
+            "label": "2026-03-29_14-53-28",
+            "content": "@@ -473,45 +473,8 @@\n ir%0A%0A\n-%09if len(vet) == 0 %7B%0A%09%09return temp%0A%09%7D%0A\n %09aux\n",
+            "lines": "163"
+        },
+        {
+            "label": "2026-03-29_14-53-37",
+            "content": "@@ -775,306 +775,27 @@\n  %7B%0A%09\n-var aux %5B%5Dint%0A%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09aux = append(aux, 0)%0A%09%09%7D else %7B%0A%09%09%09aux = append(aux, 1)%0A%09%09%7D%0A%09%7D%0A%0A%09for i := range aux %7B%0A%09%09if aux%5Bi%5D == 0 && aux%5Bi+1%5D == 1 %7B%0A%09%09%09aux%5Bi%5D = 1%0A%09%09%09aux%5Bi+1%5D = 0%0A%09%09%7D%0A%09%09if aux%5Bi-1%5D == 0 && aux%5Bi%5D == 1 %7B%0A%09%09%09aux%5Bi-1%5D = 1%0A%09%09%09aux%5Bi%5D = 0%0A%09%09%7D%0A%09%7D%0A%09return aux\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "166"
+        },
+        {
+            "label": "2026-03-29_15-07-34",
+            "content": "@@ -774,36 +774,8 @@\n t %7B%0A\n-%09temp := make(map%5Bint%5Dbool)%0A\n %09var\n@@ -784,35 +784,32 @@\n ux %5B%5Dint%0A%0A%09for i\n-, p\n  := range vet %7B%0A\n@@ -830,26 +830,8 @@\n 0 %7B%0A\n-%09%09%09temp%5Bp%5D = true%0A\n %09%09%09a\n@@ -865,27 +865,8 @@\n e %7B%0A\n-%09%09%09temp%5Bp%5D = false%0A\n %09%09%09a\n@@ -896,25 +896,15 @@\n %0A%09%7D%0A\n-%09t := 0\n %0A%09for i\n-, p\n  := \n@@ -924,25 +924,36 @@\n %09if \n-!temp%5Bp%5D && t %3E 0\n+aux%5Bi%5D == 0 && aux%5Bi+1%5D == 1\n  %7B%0A%09\n@@ -963,15 +963,13 @@\n ux%5Bi\n--1\n %5D = \n-0\n+1\n %0A%09%09%09\n@@ -977,16 +977,18 @@\n ux%5Bi\n++1\n %5D = 0%0A%09%09\n %09t =\n@@ -987,40 +987,75 @@\n 0%0A%09%09\n-%09t = 0%0A%09%09%7D%0A%09%09if temp%5Bp%5D %7B%0A%09%09%09t++\n+%7D%0A%09%09if aux%5Bi-1%5D == 0 && aux%5Bi%5D == 1 %7B%0A%09%09%09aux%5Bi-1%5D = 1%0A%09%09%09aux%5Bi%5D = 0\n %0A%09%09%7D\n@@ -1070,17 +1070,16 @@\n urn aux%0A\n-%0A\n %7D%0A%0Afunc \n",
+            "lines": "185"
+        },
+        {
+            "label": "2026-03-29_15-13-28",
+            "content": "@@ -946,25 +946,25 @@\n append(aux, \n-0\n+1\n )%0A%09%09%7D%0A%09%7D%0A%09t \n@@ -1070,14 +1070,15 @@\n %09if \n-i == 0\n+temp%5Bp%5D\n  %7B%0A%09\n@@ -1087,17 +1087,16 @@\n t++%0A%09%09%7D%0A\n-%0A\n %09%7D%0A%09retu\n",
+            "lines": "189"
+        },
+        {
+            "label": "2026-03-29_15-14-55",
+            "content": "@@ -1068,17 +1068,17 @@\n %0A%09%09if i \n-!\n+=\n = 0 %7B%0A%09%09\n",
+            "lines": "190"
+        },
+        {
+            "label": "2026-03-29_15-15-21",
+            "content": "@@ -960,16 +960,24 @@\n %0A%09%09%7D%0A%09%7D%0A\n+%09t := 0%0A\n %09for i, \n@@ -1006,16 +1006,25 @@\n !temp%5Bp%5D\n+ && t %3E 0\n  %7B%0A%09%09%09au\n@@ -1048,16 +1048,50 @@\n %5Bi%5D = 0%0A\n+%09%09%09t = 0%0A%09%09%7D%0A%09%09if i != 0 %7B%0A%09%09%09t++%0A\n %09%09%7D%0A%0A%09%7D%0A\n",
+            "lines": "190"
+        },
+        {
+            "label": "2026-03-29_15-15-45",
+            "content": "@@ -770,16 +770,44 @@\n %5B%5Dint %7B%0A\n+%09temp := make(map%5Bint%5Dbool)%0A\n %09var aux\n@@ -824,35 +824,118 @@\n or i\n+, p\n  := \n-0; i %3C len(vet); i++ %7B%0A\n+range vet %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09temp%5Bp%5D = true%0A%09%09%09aux = append(aux, 0)%0A%09%09%7D else %7B%0A%09%09%09temp%5Bp%5D = false%0A%09\n %09%09au\n@@ -953,16 +953,20 @@\n aux, 0)%0A\n+%09%09%7D%0A\n %09%7D%0A%09for \n@@ -962,24 +962,27 @@\n %09%7D%0A%09%7D%0A%09for i\n+, p\n  := range le\n@@ -983,63 +983,46 @@\n nge \n-len(vet - 1) %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09if vet%5Bi+1%5D %3C 0 %7B%0A%09\n+aux %7B%0A%09%09if !temp%5Bp%5D %7B%0A%09%09%09aux%5Bi-1%5D = 0%0A\n %09%09%09a\n@@ -1033,18 +1033,14 @@\n %5D = \n-1%0A%09\n+0%0A\n %09%09%7D%0A\n-%09%09%7D\n %0A%09%7D%0A\n",
+            "lines": "185"
+        },
+        {
+            "label": "2026-03-29_15-20-48",
+            "content": "@@ -868,16 +868,20 @@\n  len(vet\n+ - 1\n ) %7B%0A%09%09if\n",
+            "lines": "178"
+        },
+        {
+            "label": "2026-03-29_15-21-09",
+            "content": "@@ -894,32 +894,8 @@\n 0 %7B%0A\n-%09%09%09if i %3C len(vet-1) %7B%0A%09\n %09%09%09i\n@@ -915,17 +915,16 @@\n 0 %7B%0A%09%09%09%09\n-%09\n aux%5Bi%5D =\n@@ -933,38 +933,9 @@\n %0A%09%09%09\n-%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if vet%5Bi%5D %3C 0 %7B%0A\n+%7D\n %0A%09%09%7D\n",
+            "lines": "178"
+        },
+        {
+            "label": "2026-03-29_15-22-20",
+            "content": "@@ -907,19 +907,19 @@\n  len(vet\n-)\n -1\n+)\n  %7B%0A%09%09%09%09i\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-03-29_15-22-33",
+            "content": "@@ -961,52 +961,8 @@\n %09%09%7D%0A\n-%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09aux%5Bi%5D = 1%0A%09%09%09%09%7D%0A\n %09%09%09%7D\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-03-29_15-27-13",
+            "content": "@@ -1006,16 +1006,39 @@\n %09%7D%0A%09%09%09%7D%0A\n+%09%09%7D%0A%09%09if vet%5Bi%5D %3C 0 %7B%0A%0A\n %09%09%7D%0A%09%7D%0A%09\n",
+            "lines": "186"
+        },
+        {
+            "label": "2026-03-29_15-27-24",
+            "content": "@@ -957,16 +957,60 @@\n 1%0A%09%09%09%09%7D%0A\n+%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09aux%5Bi%5D = 1%0A%09%09%09%09%7D%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "183"
+        },
+        {
+            "label": "2026-03-29_15-27-37",
+            "content": "@@ -775,37 +775,81 @@\n  %7B%0A%09\n-aux := make(%5B%5Dint, len(vet))%0A\n+var aux %5B%5Dint%0A%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09aux = append(aux, 0)%0A%09%7D\n %0A%09fo\n@@ -973,32 +973,33 @@\n %0A%09%7D%0A%09return aux%0A\n+%0A\n %7D%0A%0Afunc alone(ve\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-03-29_15-29-30",
+            "content": "@@ -845,17 +845,8 @@\n i%5D %3E\n- 0 && i %3E\n  0 %7B\n@@ -924,65 +924,9 @@\n %7D%0A%09%09\n-%09if vet%5Bi-1%5D %3C 0 && vet%5Bi%5D %3E 0 %7B%0A%09%09%09%09aux%5Bi%5D = 1%0A%09%09%09%7D%0A%09%09%7D%0A\n+%7D\n %0A%09%7D%0A\n",
+            "lines": "176"
+        },
+        {
+            "label": "2026-03-29_15-32-18",
+            "content": "@@ -833,32 +833,41 @@\n  %7B%0A%09%09if vet%5Bi%5D %3E\n+ 0 && i %3E\n  0 %7B%0A%09%09%09if i %3C l\n@@ -876,25 +876,16 @@\n (vet)-1 \n-&& i %3E 0 \n %7B%0A%09%09%09%09if\n@@ -982,24 +982,25 @@\n  1%0A%09%09%09%7D%0A%09%09%7D%0A\n+%0A\n %09%7D%0A%09return a\n",
+            "lines": "180"
+        },
+        {
+            "label": "2026-03-29_15-34-31",
+            "content": "@@ -867,16 +867,25 @@\n (vet)-1 \n+&& i %3E 0 \n %7B%0A%09%09%09%09if\n@@ -945,25 +945,30 @@\n i-1%5D %3C 0 && \n-i\n+vet%5Bi%5D\n  %3E 0 %7B%0A%09%09%09%09a\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-35-07",
+            "content": "@@ -914,16 +914,20 @@\n %0A%09%09%09%09%7D%0A%09\n+%09%09%7D%0A\n %09%09%09if ve\n@@ -944,33 +944,32 @@\n  && i %3E 0 %7B%0A%09%09%09%09\n-%09\n aux%5Bi%5D = 1%0A%09%09%09%09%7D\n@@ -959,30 +959,24 @@\n %09aux%5Bi%5D = 1%0A\n-%09%09%09%09%7D%0A\n %09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-35-51",
+            "content": "@@ -914,20 +914,16 @@\n %0A%09%09%09%09%7D%0A%09\n-%09%09%7D%0A\n %09%09%09if ve\n@@ -926,29 +926,39 @@\n f vet%5Bi-1%5D %3C\n+ 0 && i %3E\n  0 %7B%0A\n+%09\n %09%09%09%09aux%5Bi%5D =\n@@ -960,16 +960,22 @@\n %5Bi%5D = 1%0A\n+%09%09%09%09%7D%0A\n %09%09%09%7D%0A%09%09%7D\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-36-13",
+            "content": "@@ -938,22 +938,8 @@\n 1%5D %3C\n- 0 && vet%5Bi%5D %3E\n  0 %7B\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-36-33",
+            "content": "@@ -919,19 +919,16 @@\n %7D%0A%09%09%09%7D%0A%09\n-%09%7D%0A\n %09%09if vet\n@@ -956,16 +956,17 @@\n  0 %7B%0A%09%09%09\n+%09\n aux%5Bi%5D =\n@@ -964,24 +964,29 @@\n %09aux%5Bi%5D = 1%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09retu\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-37-12",
+            "content": "@@ -845,17 +845,8 @@\n i%5D %3E\n- 0 && i %3E\n  0 %7B\n@@ -919,16 +919,19 @@\n %7D%0A%09%09%09%7D%0A%09\n+%09%7D%0A\n %09%09if vet\n@@ -959,17 +959,16 @@\n  0 %7B%0A%09%09%09\n-%09\n aux%5Bi%5D =\n@@ -970,21 +970,16 @@\n %5Bi%5D = 1%0A\n-%09%09%09%7D%0A\n %09%09%7D%0A%09%7D%0A%09\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-37-28",
+            "content": "@@ -833,32 +833,41 @@\n  %7B%0A%09%09if vet%5Bi%5D %3E\n+ 0 && i %3E\n  0 %7B%0A%09%09%09if i %3C l\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-41-02",
+            "content": "@@ -922,23 +922,8 @@\n %09%09%7D%0A\n-%09%09%09if i %3E 0 %7B%0A%09\n %09%09%09i\n@@ -949,33 +949,32 @@\n et%5Bi%5D %3E 0 %7B%0A%09%09%09%09\n-%09\n aux%5Bi%5D = 1%0A%09%09%09%09%7D\n@@ -964,30 +964,24 @@\n %09aux%5Bi%5D = 1%0A\n-%09%09%09%09%7D%0A\n %09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "179"
+        },
+        {
+            "label": "2026-03-29_15-41-34",
+            "content": "@@ -945,24 +945,38 @@\n f vet%5Bi-1%5D %3C\n+ 0 && vet%5Bi%5D %3E\n  0 %7B%0A%09%09%09%09%09au\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-03-29_15-48-00",
+            "content": "@@ -767,28 +767,27 @@\n t) %5B%5Dint %7B%0A%09\n-temp\n+aux\n  := make(%5B%5Di\n@@ -809,35 +809,40 @@\n %09for i := range \n+len(\n vet\n+)\n  %7B%0A%09%09if vet%5Bi%5D %3E\n@@ -888,35 +888,35 @@\n i+1%5D %3C 0 %7B%0A%09%09%09%09%09\n-vet\n+aux\n %5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09\n@@ -959,19 +959,19 @@\n  %7B%0A%09%09%09%09%09\n-vet\n+aux\n %5Bi%5D = 1%0A\n@@ -988,36 +988,35 @@\n %0A%09%09%7D%0A%09%7D%0A%09return \n-temp\n+aux\n %0A%7D%0A%0Afunc alone(v\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-03-29_16-54-59",
+            "content": "@@ -884,36 +884,35 @@\n i+1%5D %3C 0 %7B%0A%09%09%09%09%09\n-temp\n+vet\n %5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09\n@@ -955,20 +955,19 @@\n  %7B%0A%09%09%09%09%09\n-temp\n+vet\n %5Bi%5D = 1%0A\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-03-29_16-58-26",
+            "content": "@@ -1037,297 +1037,27 @@\n  %7B%0A%09\n-temp := make(%5B%5Dint, len(vet))%0A%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09temp = append(temp, 1)%0A%09%7D%0A%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09if i %3C len(vet)-1 %7B%0A%09%09%09%09if vet%5Bi+1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return temp\n+_ = vet%0A%09return nil\n %0A%7D%0A%0A\n",
+            "lines": "181"
+        },
+        {
+            "label": "2026-03-29_17-43-36",
+            "content": "@@ -1126,16 +1126,200 @@\n  1)%0A%09%7D%0A%0A\n+%09for i := range vet %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09if i %3C len(vet)-1 %7B%0A%09%09%09%09if vet%5Bi+1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A\n %09return \n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-03-29_17-44-19",
+            "content": "@@ -1107,203 +1107,30 @@\n temp\n-%5Bi%5D = 1%0A%09%7D%0A%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09if i %3C len(vet)-1 %7B%0A%09%09%09%09if vet%5Bi+1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 0%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+ = append(temp, 1)%0A%09%7D%0A\n %0A%09re\n",
+            "lines": "186"
+        },
+        {
+            "label": "2026-03-29_17-45-05",
+            "content": "@@ -1207,33 +1207,33 @@\n %0A%09%09%09%09%09temp%5Bi%5D = \n-1\n+0\n %0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09i\n@@ -1271,33 +1271,33 @@\n %0A%09%09%09%09%09temp%5Bi%5D = \n-1\n+0\n %0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A\n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-03-29_17-45-27",
+            "content": "@@ -1198,15 +1198,62 @@\n +1%5D \n-== 0 &&\n+%3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if\n  vet\n@@ -1258,18 +1258,17 @@\n et%5Bi-1%5D \n-==\n+%3C\n  0 %7B%0A%09%09%09\n@@ -1269,19 +1269,20 @@\n  %7B%0A%09%09%09%09%09\n-vet\n+temp\n %5Bi%5D = 1%0A\n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-03-29_17-48-12",
+            "content": "@@ -1056,32 +1056,83 @@\n int, len(vet))%0A%0A\n+%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09temp%5Bi%5D = 1%0A%09%7D%0A%0A\n %09for i := range \n",
+            "lines": "195"
+        },
+        {
+            "label": "2026-03-29_17-48-29",
+            "content": "@@ -1147,62 +1147,15 @@\n +1%5D \n-%3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if\n+== 0 &&\n  vet\n@@ -1152,33 +1152,34 @@\n = 0 && vet%5Bi-1%5D \n-%3C\n+==\n  0 %7B%0A%09%09%09%09%09temp%5Bi\n@@ -1164,36 +1164,35 @@\n -1%5D == 0 %7B%0A%09%09%09%09%09\n-temp\n+vet\n %5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09\n",
+            "lines": "191"
+        },
+        {
+            "label": "2026-03-29_17-57-33",
+            "content": "@@ -1156,33 +1156,33 @@\n %0A%09%09%09%09%09temp%5Bi%5D = \n-0\n+1\n %0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09i\n@@ -1228,17 +1228,17 @@\n mp%5Bi%5D = \n-0\n+1\n %0A%09%09%09%09%7D%0A%09\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-03-29_17-57-56",
+            "content": "@@ -1068,59 +1068,8 @@\n ))%0A%0A\n-%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09temp%5Bi%5D = 1%0A%09%7D%0A%0A\n %09for\n",
+            "lines": "196"
+        },
+        {
+            "label": "2026-03-29_17-58-19",
+            "content": "@@ -1078,38 +1078,70 @@\n  := \n-range vet %7B%0A%09%09mulher := false%0A\n+0; i %3C len(vet); i++ %7B%0A%09%09temp%5Bi%5D = 1%0A%09%7D%0A%0A%09for i := range vet %7B\n %0A%09%09i\n@@ -1155,35 +1155,44 @@\n %5D %3E 0 %7B%0A%09%09%09if i \n-%3E 0\n+%3C len(vet)-1\n  %7B%0A%09%09%09%09if vet%5Bi-\n@@ -1182,33 +1182,33 @@\n 1 %7B%0A%09%09%09%09if vet%5Bi\n--\n++\n 1%5D %3C 0 %7B%0A%09%09%09%09%09mu\n@@ -1201,37 +1201,35 @@\n  %3C 0 %7B%0A%09%09%09%09%09\n-mulher = true\n+temp%5Bi%5D = 0\n %0A%09%09%09%09%7D%0A%09%09%09%7D%0A\n@@ -1232,36 +1232,27 @@\n %09%09%7D%0A%09%09%09if i \n-%3C len(vet)-1\n+%3E 0\n  %7B%0A%09%09%09%09if ve\n@@ -1246,33 +1246,33 @@\n 0 %7B%0A%09%09%09%09if vet%5Bi\n-+\n+-\n 1%5D %3C 0 %7B%0A%09%09%09%09%09mu\n@@ -1273,72 +1273,25 @@\n %09%09%09%09\n-mulher = true%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%0A%09%09%09if mulher == true %7B%0A%09%09%09%09temp%5Bi%5D = 1\n+temp%5Bi%5D = 0%0A%09%09%09%09%7D\n %0A%09%09%09\n",
+            "lines": "200"
+        },
+        {
+            "label": "2026-03-29_18-04-59",
+            "content": "@@ -1281,20 +1281,19 @@\n lher == \n-fals\n+tru\n e %7B%0A%09%09%09%09\n",
+            "lines": "202"
+        },
+        {
+            "label": "2026-03-29_18-05-28",
+            "content": "@@ -1367,123 +1367,15 @@\n  %7B%0A%09\n-casais := make(map%5Bint%5Dbool)%0A%09qtd := 0%0A%09for _, p := range vet %7B%0A%09%09if casais%5Bp%5D %7B%0A%09%09%09qtd++%0A%09%09%7D%0A%09%09casais%5Bp%5D = true%0A%09%7D\n+_ = vet\n %0A%09re\n@@ -1379,19 +1379,17 @@\n %09return \n-qtd\n+0\n %0A%7D%0A%0Afunc\n",
+            "lines": "202"
+        },
+        {
+            "label": "2026-03-29_18-08-45",
+            "content": "@@ -1443,36 +1443,13 @@\n ais%5B\n--\n p%5D %7B%0A\n-%09%09%09casais%5B-p%5D = false%0A\n %09%09%09q\n",
+            "lines": "209"
+        },
+        {
+            "label": "2026-03-29_18-10-18",
+            "content": "@@ -1479,25 +1479,17 @@\n td++%0A%09%09%7D\n- else %7B%0A%09\n+%0A\n %09%09casais\n@@ -1499,21 +1499,16 @@\n  = true%0A\n-%09%09%7D%0A%0A\n %09%7D%0A%09retu\n",
+            "lines": "210"
+        },
+        {
+            "label": "2026-03-29_18-11-31",
+            "content": "@@ -1672,179 +1672,35 @@\n  %7B%0A%09\n-qtd := 0%0A%09j := 0%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D == seq%5Bj%5D %7B%0A%09%09%09if vet%5Bi%5D != seq%5Bj%5D %7B%0A%09%09%09%09return -1%0A%09%09%09%7D%0A%09%09%09if qtd == len(seq) %7B%0A%09%09%09%09break%0A%09%09%09%7D%0A%09%09%09j++%0A%09%09%7D%0A%09%7D%0A%09return qtd\n+_ = vet%0A%09_ = seq%0A%09return -1\n %0A%7D%0A%0A\n",
+            "lines": "212"
+        },
+        {
+            "label": "2026-03-29_18-19-20",
+            "content": "@@ -1819,17 +1819,18 @@\n %09%7D%0A%09\n-%09%7D%0A\n %09%09j++%0A\n+%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "223"
+        },
+        {
+            "label": "2026-03-29_18-19-49",
+            "content": "@@ -1814,25 +1814,16 @@\n ak%0A%09%09%09%7D%0A\n-%09%09%09qtd++%0A\n %09%09%7D%0A%09%09j+\n",
+            "lines": "223"
+        },
+        {
+            "label": "2026-03-29_18-20-15",
+            "content": "@@ -1731,25 +1731,16 @@\n eq%5Bj%5D %7B%0A\n-%09%09%09qtd++%0A\n %09%09%09if ve\n@@ -1810,24 +1810,33 @@\n %09break%0A%09%09%09%7D%0A\n+%09%09%09qtd++%0A\n %09%09%7D%0A%09%09j++%0A%09%7D\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-20-29",
+            "content": "@@ -1741,19 +1741,16 @@\n %09qtd++%0A%09\n-%09%7D%0A\n %09%09if vet\n@@ -1764,24 +1764,25 @@\n seq%5Bj%5D %7B%0A%09%09%09\n+%09\n return -1%0A%09%09\n@@ -1781,18 +1781,20 @@\n rn -1%0A%09%09\n+%09\n %7D%0A\n+%09\n %09%09if qtd\n@@ -1807,30 +1807,36 @@\n n(seq) %7B%0A%09%09%09\n+%09\n break%0A\n+%09%09%09%7D%0A\n %09%09%7D%0A%09%09j++%0A%09%7D\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-22-35",
+            "content": "@@ -1744,15 +1744,8 @@\n d++%0A\n-%09%09%09j++%0A\n %09%09%7D%0A\n@@ -1817,24 +1817,30 @@\n %09%09break%0A%09%09%7D%0A\n+%09%09j++%0A\n %09%7D%0A%09return q\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-24-16",
+            "content": "@@ -1776,19 +1776,8 @@\n q%5Bj%5D\n- && qtd %3E 0\n  %7B%0A%09\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-25-00",
+            "content": "@@ -1847,58 +1847,18 @@\n %09%7D%0A%09\n-if qtd %3E 0 %7B%0A%09%09return qtd%0A%09%7D else %7B%0A%09%09return -1%0A%09%7D\n+return qtd\n %0A%7D%0A%0A\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-26-33",
+            "content": "@@ -1672,59 +1672,24 @@\n  %7B%0A%09\n-fila := make(%5B%5Dint, len(seq))%0A%09j := 0%0A%09fila%5B0%5D = -1\n+qtd := 0%0A%09j := 0\n %0A%09fo\n@@ -1722,19 +1722,19 @@\n t%5Bi%5D == \n-vet\n+seq\n %5Bj%5D %7B%0A%09%09\n@@ -1738,49 +1738,167 @@\n %0A%09%09%09\n-fila\n+qtd++%0A%09%09%09j++%0A%09%09%7D%0A%09%09if vet\n %5Bi%5D \n+!\n = \n-i%0A%09%09%09j++%0A%09%09%7D%0A%09%7D%0A%09return fila%5B0%5D\n+seq%5Bj%5D && qtd %3E 0 %7B%0A%09%09%09return -1%0A%09%09%7D%0A%09%09if qtd == len(seq) %7B%0A%09%09%09break%0A%09%09%7D%0A%09%7D%0A%09if qtd %3E 0 %7B%0A%09%09return qtd%0A%09%7D else %7B%0A%09%09return -1%0A%09%7D\n %0A%7D%0A%0A\n",
+            "lines": "228"
+        },
+        {
+            "label": "2026-03-29_18-30-28",
+            "content": "@@ -1757,19 +1757,19 @@\n t%5Bi%5D == \n-seq\n+vet\n %5Bj%5D %7B%0A%09%09\n",
+            "lines": "219"
+        },
+        {
+            "label": "2026-03-29_18-31-39",
+            "content": "@@ -1774,17 +1774,17 @@\n %09%09%09fila%5B\n-j\n+i\n %5D = i%0A%09%09\n",
+            "lines": "219"
+        },
+        {
+            "label": "2026-03-29_18-35-29",
+            "content": "@@ -1792,45 +1792,8 @@\n j++%0A\n-%09%09%09if j == len(seq) %7B%0A%09%09%09%09break%0A%09%09%09%7D%0A\n %09%09%7D%0A\n",
+            "lines": "219"
+        },
+        {
+            "label": "2026-03-29_18-37-27",
+            "content": "@@ -1702,24 +1702,38 @@\n q))%0A%09j := 0%0A\n+%09fila%5B0%5D = -1%0A\n %09for i := ra\n@@ -1837,57 +1837,22 @@\n %09%7D%0A%09\n-if j == len(seq) %7B%0A%09%09return fila%5B0%5D%0A%09%7D%0A%09return -1\n+return fila%5B0%5D\n %0A%7D%0A%0A\n",
+            "lines": "222"
+        },
+        {
+            "label": "2026-03-29_18-40-40",
+            "content": "@@ -1710,22 +1710,8 @@\n = 0%0A\n-%09fila%5B0%5D = -1%0A\n %09for\n@@ -1823,22 +1823,57 @@\n %09%7D%0A%09\n-return fila%5B0%5D\n+if j == len(seq) %7B%0A%09%09return fila%5B0%5D%0A%09%7D%0A%09return -1\n %0A%7D%0A%0A\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-41-00",
+            "content": "@@ -1702,24 +1702,38 @@\n q))%0A%09j := 0%0A\n+%09fila%5B0%5D = -1%0A\n %09for i := ra\n@@ -1837,57 +1837,22 @@\n %09%7D%0A%09\n-if j == len(seq) %7B%0A%09%09return fila%5B0%5D%0A%09%7D%0A%09return -1\n+return fila%5B0%5D\n %0A%7D%0A%0A\n",
+            "lines": "222"
+        },
+        {
+            "label": "2026-03-29_18-41-45",
+            "content": "@@ -1737,91 +1737,27 @@\n %09if \n-i %3C len(vet)-1 %7C%7C j %3C len(seq) %7B%0A%09%09%09if vet%5Bi%5D == seq%5Bj%5D && vet%5Bi+1%5D == seq%5Bj+1\n+vet%5Bi%5D == seq%5Bj\n %5D %7B%0A\n-%09\n %09%09%09f\n@@ -1774,18 +1774,12 @@\n %0A%09%09%09\n-%09\n j++%0A\n-%09%09%09%7D%0A\n %09%09%09i\n",
+            "lines": "224"
+        },
+        {
+            "label": "2026-03-29_18-46-26",
+            "content": "@@ -1743,24 +1743,40 @@\n %3C len(vet)-1\n+ %7C%7C j %3C len(seq)\n  %7B%0A%09%09%09if vet\n",
+            "lines": "226"
+        },
+        {
+            "label": "2026-03-29_18-46-35",
+            "content": "@@ -1672,26 +1672,45 @@\n  %7B%0A%09\n-j := 0%0A%09aux\n+fila := make(%5B%5Dint, len(seq))%0A%09j\n  := \n--1%0A\n+0\n %0A%09fo\n@@ -1720,10 +1720,24 @@\n  := \n-0;\n+range vet %7B%0A%09%09if\n  i %3C\n@@ -1749,18 +1749,16 @@\n vet)\n-; i++\n+-1\n  %7B%0A%09%09\n+%09\n if v\n@@ -1777,49 +1777,62 @@\n %5Bj%5D \n-%7B%0A%09%09%09if j == 0 %7B%0A%09%09%09%09aux\n+&& vet%5Bi+1%5D == seq%5Bj+1%5D %7B%0A%09%09%09%09fila%5Bj%5D\n  = i%0A%09\n-%09%09%7D%0A\n %09%09%09j++%0A\n+%09%09%09%7D\n %0A%09%09%09\n@@ -1854,26 +1854,21 @@\n ) %7B%0A%09%09%09%09\n+b\n re\n-turn aux\n+ak\n %0A%09%09%09%7D%0A%09%09\n@@ -1872,73 +1872,48 @@\n %0A%09%09%7D\n- else %7B%0A%09%09%09if j %3E 0 %7B%0A%09%09%09%09i = aux%0A%09%09%09%09j = 0%0A%09%09%09%09aux = -1%0A%09%09%09%7D%0A%09%09%7D\n+%0A%09%7D%0A%09if j == len(seq) %7B%0A%09%09return fila%5B0%5D\n %0A%09%7D%0A\n@@ -1912,35 +1912,34 @@\n a%5B0%5D%0A%09%7D%0A%09return \n-aux\n+-1\n %0A%7D%0A%0Afunc erase(v\n",
+            "lines": "226"
+        },
+        {
+            "label": "2026-03-29_19-32-14",
+            "content": "@@ -1671,43 +1671,8 @@\n t %7B%0A\n-%09if len(seq) == 0 %7B%0A%09%09return -1%0A%09%7D%0A\n %09j :\n",
+            "lines": "231"
+        },
+        {
+            "label": "2026-03-29_19-32-38",
+            "content": "@@ -1667,16 +1667,51 @@\n ) int %7B%0A\n+%09if len(seq) == 0 %7B%0A%09%09return -1%0A%09%7D%0A\n %09j := 0%0A\n",
+            "lines": "234"
+        },
+        {
+            "label": "2026-03-29_19-32-50",
+            "content": "@@ -1906,18 +1906,19 @@\n %09return \n--1\n+aux\n %0A%7D%0A%0Afunc\n",
+            "lines": "231"
+        },
+        {
+            "label": "2026-03-29_19-37-15",
+            "content": "@@ -1898,35 +1898,34 @@\n %0A%09%09%7D%0A%09%7D%0A%09return \n-aux\n+-1\n %0A%7D%0A%0Afunc erase(v\n",
+            "lines": "231"
+        },
+        {
+            "label": "2026-03-29_19-40-31",
+            "content": "@@ -1906,18 +1906,19 @@\n %09return \n--1\n+aux\n %0A%7D%0A%0Afunc\n",
+            "lines": "231"
+        },
+        {
+            "label": "2026-03-29_19-40-59",
+            "content": "@@ -1962,185 +1962,28 @@\n  %7B%0A%09\n-fila := make(map%5Bint%5Dbool)%0A%09var novaFila %5B%5Dint%0A%09for _, p := range posList %7B%0A%09%09fila%5Bp%5D = true%0A%09%7D%0A%09for _, p := range vet %7B%0A%09%09if !fila%5Bp%5D %7B%0A%09%09%09novaFila = append(novaFila, p)%0A%09%09%7D%0A%09%7D\n+_ = vet%0A%09_ = posList\n %0A%09re\n@@ -1992,15 +1992,10 @@\n rn n\n-ovaF\n il\n-a\n %0A%7D%0A%0A\n",
+            "lines": "231"
+        },
+        {
+            "label": "2026-03-29_19-47-18",
+            "content": "@@ -2006,25 +2006,28 @@\n  %5B%5Dint%0A%09for \n-i\n+_, p\n  := range po\n@@ -2041,17 +2041,17 @@\n %0A%09%09fila%5B\n-i\n+p\n %5D = true\n@@ -2055,25 +2055,25 @@\n rue%0A%09%7D%0A%09for \n-i\n+_\n , p := range\n@@ -2090,17 +2090,17 @@\n f !fila%5B\n-i\n+p\n %5D %7B%0A%09%09%09n\n",
+            "lines": "239"
+        },
+        {
+            "label": "2026-03-29_19-48-17",
+            "content": "@@ -2053,24 +2053,27 @@\n ue%0A%09%7D%0A%09for i\n+, p\n  := range ve\n@@ -2123,17 +2123,17 @@\n vaFila, \n-i\n+p\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "239"
+        },
+        {
+            "label": "2026-03-29_19-49-57",
+            "content": "@@ -2006,28 +2006,25 @@\n  %5B%5Dint%0A%09for \n-_, p\n+i\n  := range po\n@@ -2038,17 +2038,17 @@\n %0A%09%09fila%5B\n-p\n+i\n %5D = true\n@@ -2078,16 +2078,17 @@\n  %7B%0A%09%09if \n+!\n fila%5Bi%5D \n@@ -2120,22 +2120,17 @@\n vaFila, \n-vet%5Bi%5D\n+i\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "239"
+        },
+        {
+            "label": "2026-03-29_19-56-11",
+            "content": "@@ -2081,17 +2081,16 @@\n  %7B%0A%09%09if \n-!\n fila%5Bi%5D \n",
+            "lines": "239"
+        },
+        {
+            "label": "2026-03-29_19-56-21",
+            "content": "@@ -2204,158 +2204,26 @@\n  %7B%0A%09\n-fila := make(map%5Bint%5Dbool)%0A%09var novaFila %5B%5Dint%0A%09fila%5Bvalue%5D = true%0A%09for i := range vet %7B%0A%09%09if !fila%5Bi%5D %7B%0A%09%09%09novaFila = append(novaFila, vet%5Bi%5D)%0A%09%09%7D%0A%09%7D\n+_ = vet%0A%09_ = value\n %0A%09re\n@@ -2220,39 +2220,34 @@\n  value%0A%09return n\n-ovaF\n il\n-a\n %0A%7D%0A%0Afunc main() \n",
+            "lines": "239"
+        },
+        {
+            "label": "2026-03-29_19-59-45",
+            "content": "@@ -2268,28 +2268,25 @@\n = true%0A%09for \n-_, p\n+i\n  := range ve\n@@ -2300,17 +2300,17 @@\n f !fila%5B\n-p\n+i\n %5D %7B%0A%09%09%09n\n@@ -2336,17 +2336,22 @@\n vaFila, \n-p\n+vet%5Bi%5D\n )%0A%09%09%7D%0A%09%7D\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-03-29_20-01-12",
+            "content": "@@ -38,16 +38,24 @@\n %22%0A%09%22os%22%0A\n+%09%22sort%22%0A\n %09%22strcon\n@@ -148,124 +148,849 @@\n  %7B%0A%09\n-_ = vet%0A%09return nil%0A%7D%0A%0Afunc teams(vet %5B%5Dint) %5B%5DPair %7B%0A%09_ = vet%0A%09return nil%0A%7D%0A%0Afunc mnext(vet %5B%5Dint) %5B%5Dint %7B%0A%09_ = vet\n+temp := make(map%5Bint%5Dint)%0A%0A%09for _, p := range vet %7B%0A%09%09if p %3C 0 %7B%0A%09%09%09p *= -1%0A%09%09%7D%0A%09%09temp%5Bp%5D++%0A%09%7D%0A%0A%09var aux %5B%5DPair%0A%0A%09for i, p := range temp %7B%0A%09%09aux = append(aux, Pair%7BOne: i, Two: p%7D)%0A%09%7D%0A%0A%09sort.Slice(aux, func(i, j int) bool %7B%0A%09%09return aux%5Bi%5D.One %3C aux%5Bj%5D.One%0A%09%7D)%0A%09return aux%0A%7D%0A%0Afunc teams(vet %5B%5Dint) %5B%5DPair %7B%0A%09var temp %5B%5DPair%0A%0A%09if len(vet) == 0 %7B%0A%09%09return temp%0A%09%7D%0A%09aux := vet%5B0%5D%0A%09qtd := 0%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D == aux %7B%0A%09%09%09qtd++%0A%09%09%7D else %7B%0A%09%09%09temp = append(temp, Pair%7BOne: aux, Two: qtd%7D)%0A%09%09%09aux = vet%5Bi%5D%0A%09%09%09qtd = 1%0A%09%09%7D%0A%09%7D%0A%09temp = append(temp, Pair%7BOne: aux, Two: qtd%7D)%0A%09return temp%0A%7D%0A%0Afunc mnext(vet %5B%5Dint) %5B%5Dint %7B%0A%09temp := make(%5B%5Dint, len(vet))%0A%0A%09for i := range vet %7B%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09if i %3C len(vet)-1 %7B%0A%09%09%09%09if vet%5Bi+1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09temp%5Bi%5D = 1%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n %0A%09re\n@@ -986,35 +986,36 @@\n %0A%09%09%7D%0A%09%7D%0A%09return \n-nil\n+temp\n %0A%7D%0A%0Afunc alone(v\n@@ -1037,68 +1037,489 @@\n  %7B%0A%09\n-_ = vet%0A%09return nil%0A%7D%0A%0Afunc couple(vet %5B%5Dint) int %7B%0A%09_ = vet\n+temp := make(%5B%5Dint, len(vet))%0A%0A%09for i := range vet %7B%0A%09%09mulher := false%0A%0A%09%09if vet%5Bi%5D %3E 0 %7B%0A%09%09%09if i %3E 0 %7B%0A%09%09%09%09if vet%5Bi-1%5D %3C 0 %7B%0A%09%09%09%09%09mulher = true%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%09%09%09if i %3C len(vet)-1 %7B%0A%09%09%09%09if vet%5Bi+1%5D %3C 0 %7B%0A%09%09%09%09%09mulher = true%0A%09%09%09%09%7D%0A%09%09%09%7D%0A%0A%09%09%09if mulher == false %7B%0A%09%09%09%09temp%5Bi%5D = 1%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return temp%0A%7D%0A%0Afunc couple(vet %5B%5Dint) int %7B%0A%09casais := make(map%5Bint%5Dbool)%0A%09qtd := 0%0A%09for _, p := range vet %7B%0A%09%09if casais%5B-p%5D %7B%0A%09%09%09casais%5B-p%5D = false%0A%09%09%09qtd++%0A%09%09%7D else %7B%0A%09%09%09casais%5Bp%5D = true%0A%09%09%7D%0A%0A%09%7D\n %0A%09re\n@@ -1515,35 +1515,35 @@\n %09%09%7D%0A%0A%09%7D%0A%09return \n-nil\n+qtd\n %0A%7D%0A%0Afunc hasSubs\n@@ -1672,84 +1672,477 @@\n  %7B%0A%09\n-_ = vet%0A%09return nil%0A%7D%0A%0Afunc erase(vet %5B%5Dint, posList %5B%5Dint) %5B%5Dint %7B%0A%09_ = vet\n+j := 0%0A%09aux := -1%0A%0A%09for i := 0; i %3C len(vet); i++ %7B%0A%09%09if vet%5Bi%5D == seq%5Bj%5D %7B%0A%09%09%09if j == 0 %7B%0A%09%09%09%09aux = i%0A%09%09%09%7D%0A%09%09%09j++%0A%0A%09%09%09if j == len(seq) %7B%0A%09%09%09%09return aux%0A%09%09%09%7D%0A%09%09%7D else %7B%0A%09%09%09if j %3E 0 %7B%0A%09%09%09%09i = aux%0A%09%09%09%09j = 0%0A%09%09%09%09aux = -1%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%09return -1%0A%7D%0A%0Afunc erase(vet %5B%5Dint, posList %5B%5Dint) %5B%5Dint %7B%0A%09fila := make(map%5Bint%5Dbool)%0A%09var novaFila %5B%5Dint%0A%09for _, p := range posList %7B%0A%09%09fila%5Bp%5D = true%0A%09%7D%0A%09for i := range vet %7B%0A%09%09if !fila%5Bi%5D %7B%0A%09%09%09novaFila = append(novaFila, vet%5Bi%5D)%0A%09%09%7D%0A%09%7D\n %0A%09re\n@@ -2139,34 +2139,39 @@\n %09%09%7D%0A%09%7D%0A%09return n\n+ovaF\n il\n+a\n %0A%7D%0A%0Afunc clear(v\n@@ -2200,23 +2200,164 @@\n %5Dint %7B%0A%09\n-_ = vet\n+fila := make(map%5Bint%5Dbool)%0A%09var novaFila %5B%5Dint%0A%09fila%5Bvalue%5D = true%0A%09for _, p := range vet %7B%0A%09%09if !fila%5Bp%5D %7B%0A%09%09%09novaFila = append(novaFila, p)%0A%09%09%7D%0A%09%7D\n %0A%09return\n@@ -2358,18 +2358,23 @@\n return n\n+ovaF\n il\n+a\n %0A%7D%0A%0Afunc\n",
+            "lines": "245"
+        },
+        {
+            "label": "2026-03-29_23-22-45",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\ntype Pair struct {\n\tOne int\n\tTwo int\n}\n\nfunc occurr(vet []int) []Pair {\n\t_ = vet\n\treturn nil\n}\n\nfunc teams(vet []int) []Pair {\n\t_ = vet\n\treturn nil\n}\n\nfunc mnext(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc alone(vet []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc couple(vet []int) int {\n\t_ = vet\n\treturn nil\n}\n\nfunc hasSubseq(vet []int, seq []int, pos int) bool {\n\t_ = vet\n\t_ = seq\n\t_ = pos\n\treturn false\n}\n\nfunc subseq(vet []int, seq []int) int {\n\t_ = vet\n\treturn nil\n}\n\nfunc erase(vet []int, posList []int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc clear(vet []int, value int) []int {\n\t_ = vet\n\treturn nil\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tfor {\n\t\tfmt.Print(\"$\")\n\t\tif !scanner.Scan() {\n\t\t\tbreak\n\t\t}\n\t\tline := scanner.Text()\n\t\targs := strings.Split(line, \" \")\n\t\tfmt.Println(line)\n\n\t\tswitch args[0] {\n\t\tcase \"occurr\":\n\t\t\tprintSlice(occurr(str2vet(args[1])))\n\t\tcase \"teams\":\n\t\t\tprintSlice(teams(str2vet(args[1])))\n\t\tcase \"mnext\":\n\t\t\tprintSlice(mnext(str2vet(args[1])))\n\t\tcase \"alone\":\n\t\t\tprintSlice(alone(str2vet(args[1])))\n\t\tcase \"erase\":\n\t\t\tprintSlice(erase(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"clear\":\n\t\t\tval, _ := strconv.Atoi(args[2])\n\t\t\tprintSlice(clear(str2vet(args[1]), val))\n\t\tcase \"subseq\":\n\t\t\tfmt.Println(subseq(str2vet(args[1]), str2vet(args[2])))\n\t\tcase \"couple\":\n\t\t\tfmt.Println(couple(str2vet(args[1])))\n\t\tcase \"end\":\n\t\t\treturn\n\t\tdefault:\n\t\t\tfmt.Println(\"Invalid command\")\n\t\t}\n\t}\n}\n\n// Fun\u00e7\u00f5es auxiliares\n\nfunc str2vet(str string) []int {\n\tif str == \"[]\" {\n\t\treturn nil\n\t}\n\tstr = str[1 : len(str)-1]\n\tparts := strings.Split(str, \",\")\n\tvar vet []int\n\tfor _, part := range parts {\n\t\tnum, _ := strconv.Atoi(strings.TrimSpace(part))\n\t\tvet = append(vet, num)\n\t}\n\treturn vet\n}\n\nfunc printSlice[T any](vet []T) {\n\tfmt.Print(\"[\")\n\tfor i, x := range vet {\n\t\tif i > 0 {\n\t\t\tfmt.Print(\", \")\n\t\t}\n\t\tfmt.Print(x)\n\t}\n\tfmt.Println(\"]\")\n}\n\nfunc (p Pair) String() string {\n\treturn fmt.Sprintf(\"(%v, %v)\", p.One, p.Two)\n}\n",
+            "lines": "129"
+        }
+    ]
+}
