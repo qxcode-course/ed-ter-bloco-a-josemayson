@@ -38,18 +38,19 @@ tasks:
     refactor:1}'
   fup@quebrada: '{rate:100}'
   fup@operacoes: '{rate:100}'
-  ed@pintando: '{self:1, rate:100, study:19, friend:nao, concept:1}'
-  ed@mumia: '{self:1, rate:100, study:8, friend:nao, guided:1, concept:1}'
-  ed@fuga: '{self:1, rate:100, study:35, friend:nao, guided:1, concept:1}'
-  ed@pedra: '{self:1, rate:100, study:160, friend:nao, guided:1, concept:1}'
-  ed@casais: '{self:1, rate:100, study:56, friend:nao, concept:1}'
-  ed@baruel: '{self:1, rate:100, study:250, friend:nao, concept:1, refactor:1}'
-  ed@gomos: '{self:1, rate:100, study:161, friend:nao, concept:1}'
+  ed@pintando: '{self:1, rate:100, study:19, concept:1}'
+  ed@mumia: '{self:1, rate:100, study:8, concept:1}'
+  ed@fuga: '{self:1, rate:100, study:35, friend:nao, concept:1}'
+  ed@pedra: '{self:1, rate:100, study:160, concept:1}'
+  ed@casais: '{self:1, rate:100, study:56, concept:1}'
+  ed@baruel: '{self:1, rate:100, study:250, concept:1, refactor:1}'
+  ed@gomos: '{self:1, rate:100, study:161, concept:1}'
   ed@analise: '{self:1, rate:100}'
-  ed@princesa: '{self:1, rate:100, study:300, friend:nao, concept:1, refactor:1}'
-  ed@apagando: '{self:1, rate:100, study:100, friend:nao, concept:1}'
-  ed@manipulacao: '{self:1, rate:100, study:100, friend:nao, concept:1}'
+  ed@princesa: '{self:1, rate:100, study:300, concept:1, refactor:1}'
+  ed@apagando: '{self:1, rate:100, study:100, concept:1}'
+  ed@manipulacao: '{self:1, rate:100, study:100, concept:1, refactor:1}'
   ed@especiais: '{self:1, rate:100, study:360, concept:1, refactor:1}'
+  ed@buscas: '{self:1, rate:100, study:120, concept:1, refactor:1}'
 flags:
   panel: 1
   inbox: 0
@@ -57,4 +58,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@buscas
+selected: ed@vector

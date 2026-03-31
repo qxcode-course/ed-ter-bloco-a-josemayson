@@ -47,8 +47,113 @@
         },
         {
             "label": "2026-03-30_16-57-35",
-            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar qtdentrada int\n\tfmt.Scan(&qtdentrada)\n\n\tentrada := make([]string, qtdentrada)\n\tfor i := range qtdentrada {\n\t\tfmt.Scan(&entrada[i])\n\t}\n\tvar qtdconsulta int\n\tfmt.Scan(&qtdconsulta)\n\n\tconsulta := make([]string, qtdconsulta)\n\tsaida := make(map[string]int)\n\tfor i := range qtdconsulta {\n\t\tfmt.Scan(&consulta[i])\n\t}\n\n\tfor _, p := range entrada {\n\t\tif entrada[p] == consulta[p] {\n\t\t\tsaida[p]++\n\t\t} else {\n\t\t\tsaida[p] = 0\n\t\t}\n\t}\n\n\tfor _, p := range entrada {\n\t\tfmt.Println(saida[p])\n\t}\n\n}\n",
+            "content": "@@ -174,17 +174,16 @@\n %5Bi%5D)%0A%09%7D%0A\n-%0A\n %09var qtd\n@@ -219,16 +219,17 @@\n nsulta)%0A\n+%0A\n %09consult\n@@ -261,16 +261,47 @@\n nsulta)%0A\n+%09saida := make(map%5Bstring%5Dint)%0A\n %09for i :\n@@ -351,10 +351,178 @@\n i%5D)%0A%09%7D%0A%0A\n+%09for _, p := range entrada %7B%0A%09%09if entrada%5Bp%5D == consulta%5Bp%5D %7B%0A%09%09%09saida%5Bp%5D++%0A%09%09%7D else %7B%0A%09%09%09saida%5Bp%5D = 0%0A%09%09%7D%0A%09%7D%0A%0A%09for _, p := range entrada %7B%0A%09%09fmt.Println(saida%5Bp%5D)%0A%09%7D%0A%0A\n %7D%0A\n",
             "lines": "34"
+        },
+        {
+            "label": "2026-03-30_23-13-44",
+            "content": "@@ -98,19 +98,22 @@\n  make(%5B%5D\n+str\n in\n-t\n+g\n , qtdent\n@@ -322,181 +322,8 @@\n )%0A%09%7D\n-%0A%09temp := make(map%5Bstring%5Dint)%0A%09for i, p := range qtdentrada %7B%0A%09%09for j := range qtdconsulta %7B%0A%09%09%09if entrada%5Bi%5D == consulta%5Bj%5D %7B%0A%09%09%09%09temp%5Bp%5D++%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(temp)\n %0A%0A%7D%0A\n",
+            "lines": "21"
+        },
+        {
+            "label": "2026-03-30_23-13-51",
+            "content": "@@ -94,30 +94,27 @@\n a := make(%5B%5D\n-str\n in\n-g\n+t\n , qtdentrada\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-30_23-15-24",
+            "content": "@@ -134,16 +134,19 @@\n = range \n+qtd\n entrada \n@@ -277,16 +277,19 @@\n = range \n+qtd\n consulta\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-30_23-17-35",
+            "content": "@@ -354,32 +354,35 @@\n r i, p := range \n+qtd\n entrada %7B%0A%09%09for \n@@ -384,32 +384,35 @@\n %09for j := range \n+qtd\n consulta %7B%0A%09%09%09if\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-30_23-18-08",
+            "content": "@@ -456,97 +456,35 @@\n %09%09%09%7D\n- else %7B%0A%09%09%09%09temp%5Bp%5D = 0%0A%09%09%09%7D%0A%0A%09%09%7D%0A%09%7D%0A%0A%09for _, p := range temp %7B%0A%09%09fmt.Printf(%22%25d %22, p)%0A%09%7D\n+%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(temp)\n %0A%0A%7D%0A\n",
+            "lines": "31"
+        },
+        {
+            "label": "2026-03-30_23-19-49",
+            "content": "@@ -358,31 +358,30 @@\n  p := range \n-consult\n+entrad\n a %7B%0A%09%09for j \n@@ -385,30 +385,31 @@\n  j := range \n-entrad\n+consult\n a %7B%0A%09%09%09if en\n@@ -414,17 +414,17 @@\n entrada%5B\n-j\n+i\n %5D == con\n@@ -429,17 +429,17 @@\n onsulta%5B\n-i\n+j\n %5D %7B%0A%09%09%09%09\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-30_23-20-45",
+            "content": "@@ -452,16 +452,45 @@\n %5D++%0A%09%09%09%7D\n+ else %7B%0A%09%09%09%09temp%5Bp%5D = 0%0A%09%09%09%7D%0A\n %0A%09%09%7D%0A%09%7D%0A\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-30_23-21-45",
+            "content": "@@ -347,55 +347,8 @@\n nt)%0A\n-%09for _, p := range consulta %7B%0A%09%09temp%5Bp%5D = 0%0A%09%7D%0A\n %09for\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-30_23-22-45",
+            "content": "@@ -343,16 +343,63 @@\n ng%5Dint)%0A\n+%09for _, p := range consulta %7B%0A%09%09temp%5Bp%5D = 0%0A%09%7D%0A\n %09for i, \n@@ -509,25 +509,28 @@\n %09%7D%0A%09%7D%0A%0A%09for \n-i\n+_, p\n  := range co\n@@ -523,32 +523,28 @@\n  p := range \n-consulta\n+temp\n  %7B%0A%09%09fmt.Pri\n@@ -558,25 +558,9 @@\n  %22, \n-temp%5Bconsulta%5Bi%5D%5D\n+p\n )%0A%09%7D\n",
+            "lines": "36"
+        },
+        {
+            "label": "2026-03-30_23-24-07",
+            "content": "@@ -533,23 +533,8 @@\n )%0A%09%7D\n-%0A%09fmt.Println()\n %0A%0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-30_23-24-31",
+            "content": "@@ -504,16 +504,17 @@\n intf(%22%25d\n+ \n %22, temp%5B\n@@ -531,57 +531,8 @@\n %5D%5D)%0A\n-%09%09if i %3C len(consulta)-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-03-30_23-25-09",
+            "content": "@@ -352,9 +352,9 @@\n for \n-_\n+i\n , p \n@@ -362,26 +362,90 @@\n = range \n-entrada %7B%0A\n+consulta %7B%0A%09%09for j := range entrada %7B%0A%09%09%09if entrada%5Bj%5D == consulta%5Bi%5D %7B%0A%09%09\n %09%09temp%5Bp\n@@ -448,16 +448,25 @@\n mp%5Bp%5D++%0A\n+%09%09%09%7D%0A%09%09%7D%0A\n %09%7D%0A%0A%09for\n@@ -526,17 +526,16 @@\n ta%5Bi%5D%5D)%0A\n-%0A\n %09%09if i %3C\n@@ -575,14 +575,29 @@\n  %22)%0A%09%09%7D%0A\n-\n %09%7D\n+%0A%09fmt.Println()\n %0A%0A%7D%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-30_23-30-10",
+            "content": "@@ -510,21 +510,7 @@\n %0A%09%7D%0A\n-%09fmt.Println()\n %0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-30_23-30-56",
+            "content": "@@ -11,21 +11,520 @@\n in%0A%0A\n-func main() %7B%0A\n+import %22fmt%22%0A%0Afunc main() %7B%0A%09var qtdentrada int%0A%09fmt.Scan(&qtdentrada)%0A%0A%09entrada := make(%5B%5Dstring, qtdentrada)%0A%09for i := range entrada %7B%0A%09%09fmt.Scan(&entrada%5Bi%5D)%0A%09%7D%0A%0A%09var qtdconsulta int%0A%09fmt.Scan(&qtdconsulta)%0A%09consulta := make(%5B%5Dstring, qtdconsulta)%0A%09for i := range consulta %7B%0A%09%09fmt.Scan(&consulta%5Bi%5D)%0A%09%7D%0A%09temp := make(map%5Bstring%5Dint)%0A%09for _, p := range entrada %7B%0A%09%09temp%5Bp%5D++%0A%09%7D%0A%0A%09for i := range consulta %7B%0A%09%09fmt.Printf(%22%25d%22, temp%5Bconsulta%5Bi%5D%5D)%0A%0A%09%09if i %3C len(consulta)-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%09%7D%0A%09fmt.Println()\n %0A%7D%0A\n",
+            "lines": "33"
+        },
+        {
+            "label": "2026-03-30_23-47-19",
+            "content": "@@ -11,467 +11,21 @@\n in%0A%0A\n-import %22fmt%22%0A%0Afunc main() %7B%0A%09var n int%0A%09fmt.Scan(&n)%0A%0A%09entrada := make(%5B%5Dstring, n)%0A%0A%09for i := range entrada %7B%0A%09%09fmt.Scan(&entrada%5Bi%5D)%0A%09%7D%0A%0A%09var x int%0A%09fmt.Scan(&x)%0A%0A%09consulta := make(%5B%5Dstring, x)%0A%0A%09for i := range consulta %7B%0A%09%09fmt.Scan(consulta%5Bi%5D)%0A%09%7D%0A%0A%09temp := make(map%5Bstring%5Dint)%0A%0A%09for _, p := range entrada %7B%0A%09%09temp%5Bp%5D++%0A%09%7D%0A%0A%09for i := range consulta %7B%0A%09%09fmt.Printf(%22%25d%22, temp%5Bconsulta%5Bi%5D%5D)%0A%0A%09%09if i %3C len(consulta)-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A%09%7D%0A%09fmt.Println()\n+func main() %7B%0A\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-03-31_00-42-18",
+            "content": "@@ -386,22 +386,23 @@\n %22, temp%5B\n-entrad\n+consult\n a%5Bi%5D%5D)%0A%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-31_00-42-40",
+            "content": "@@ -305,31 +305,30 @@\n  p := range \n-consult\n+entrad\n a %7B%0A%09%09temp%5Bp\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-31_00-42-54",
+            "content": "@@ -305,30 +305,31 @@\n  p := range \n-entrad\n+consult\n a %7B%0A%09%09temp%5Bp\n@@ -387,23 +387,22 @@\n %22, temp%5B\n-consult\n+entrad\n a%5Bi%5D%5D)%0A%0A\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-31_00-43-09",
+            "content": "@@ -400,16 +400,17 @@\n ta%5Bi%5D%5D)%0A\n+%0A\n %09%09if i %3C\n",
+            "lines": "38"
+        },
+        {
+            "label": "2026-03-31_00-48-02",
+            "content": "@@ -242,17 +242,16 @@\n mt.Scan(\n-&\n consulta\n",
+            "lines": "37"
+        },
+        {
+            "label": "2026-03-31_00-48-21",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\n\tentrada := make([]string, n)\n\n\tfor i := range entrada {\n\t\tfmt.Scan(&entrada[i])\n\t}\n\n\tvar x int\n\tfmt.Scan(&x)\n\n\tconsulta := make([]string, x)\n\n\tfor i := range consulta {\n\t\tfmt.Scan(&consulta[i])\n\t}\n\n\ttemp := make(map[string]int)\n\n\tfor _, p := range entrada {\n\t\ttemp[p]++\n\t}\n\n\tfor i := range consulta {\n\t\tfmt.Printf(\"%d\", temp[consulta[i]])\n\t\tif i < len(consulta)-1 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\tfmt.Println()\n}\n",
+            "lines": "37"
         }
     ]
 }

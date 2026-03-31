@@ -1,0 +1,36 @@
+2026-03-31 00:42:18, EXEC, v:1, k:ed@buscas, mode:FULL, rate:22, size:38
+2026-03-31 00:42:40, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:38
+2026-03-31 00:42:54, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:38
+2026-03-31 00:43:09, EXEC, v:1, k:ed@buscas, mode:FULL, rate:22, size:38
+2026-03-31 00:48:02, EXEC, v:1, k:ed@buscas, mode:FULL, rate:22, size:37
+2026-03-31 00:48:21, EXEC, v:1, k:ed@buscas, mode:FULL, rate:100, size:37
+2026-03-31 00:48:24, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-03-31 00:48:35, SELF, v:1, k:ed@princesa, self:1, rate:100, study:300, friend:nao, concept:1, refactor:1
+2026-03-31 00:48:39, SELF, v:1, k:ed@apagando, self:1, rate:100, study:100, friend:nao, concept:1
+2026-03-31 00:48:39, MOVE, v:1, k:ed@apagando, mode:PICK
+2026-03-31 00:48:39, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-31 00:48:40, EXEC, v:1, k:ed@apagando, mode:FULL, rate:100
+2026-03-31 00:48:40, MOVE, v:1, k:ed@apagando, mode:BACK
+2026-03-31 00:48:51, SELF, v:1, k:ed@manipulacao, self:1, rate:100, study:100, friend:nao, concept:1, refactor:1
+2026-03-31 00:49:06, SELF, v:1, k:ed@especiais, self:1, rate:100, study:360, concept:1, refactor:1
+2026-03-31 00:49:22, SELF, v:1, k:ed@buscas, self:1, rate:100, concept:1, refactor:1
+2026-03-31 00:49:29, SELF, v:1, k:ed@analise, self:1, rate:100
+2026-03-31 00:49:36, SELF, v:1, k:ed@princesa, self:1, rate:100, study:300, concept:1, refactor:1
+2026-03-31 00:49:40, SELF, v:1, k:ed@apagando, self:1, rate:100, study:100, concept:1
+2026-03-31 00:49:46, SELF, v:1, k:ed@manipulacao, self:1, rate:100, study:100, concept:1, refactor:1
+2026-03-31 00:49:58, SELF, v:1, k:ed@buscas, self:1, rate:100, study:120, concept:1, refactor:1
+2026-03-31 00:50:11, SELF, v:1, k:ed@pintando, self:1, rate:100, study:19, concept:1
+2026-03-31 00:50:15, SELF, v:1, k:ed@mumia, self:1, rate:100, study:8, guided:1, concept:1
+2026-03-31 00:50:15, MOVE, v:1, k:ed@mumia, mode:PICK
+2026-03-31 00:50:16, EXEC, v:1, k:ed@mumia, mode:FULL, rate:100
+2026-03-31 00:50:16, MOVE, v:1, k:ed@mumia, mode:BACK
+2026-03-31 00:50:28, SELF, v:1, k:ed@fuga, self:1, rate:100, study:35, friend:nao, concept:1
+2026-03-31 00:50:33, SELF, v:1, k:ed@mumia, self:1, rate:100, study:8, concept:1
+2026-03-31 00:50:40, SELF, v:1, k:ed@pedra, self:1, rate:100, study:160, concept:1
+2026-03-31 00:50:40, MOVE, v:1, k:ed@pedra, mode:PICK
+2026-03-31 00:50:41, MOVE, v:1, k:ed@pedra, mode:BACK
+2026-03-31 00:51:03, SELF, v:1, k:ed@casais, self:1, rate:100, study:56, concept:1
+2026-03-31 00:51:12, SELF, v:1, k:ed@baruel, self:1, rate:100, study:250, concept:1, refactor:1
+2026-03-31 00:51:17, SELF, v:1, k:ed@gomos, self:1, rate:100, study:161, concept:1
+2026-03-31 00:52:03, SELF, v:1, k:ed@especiais, self:1, rate:100, study:360, concept:1, refactor:1
+2026-03-31 00:52:14, SELF, v:1, k:ed@buscas, self:1, rate:100, study:120, concept:1, refactor:1

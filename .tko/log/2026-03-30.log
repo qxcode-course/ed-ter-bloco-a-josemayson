@@ -58,3 +58,28 @@
 2026-03-30 16:57:20, MOVE, v:1, k:ed@buscas, mode:PICK
 2026-03-30 16:57:35, EXEC, v:1, k:ed@buscas, mode:FULL, size:34, fail:COMP
 2026-03-30 17:01:48, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-03-30 22:49:07, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-30 23:13:44, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:21
+2026-03-30 23:13:51, EXEC, v:1, k:ed@buscas, mode:FULL, size:31, fail:COMP
+2026-03-30 23:15:24, EXEC, v:1, k:ed@buscas, mode:FULL, size:31, fail:COMP
+2026-03-30 23:15:30, EXEC, v:1, k:ed@buscas, mode:FULL, fail:COMP
+2026-03-30 23:17:35, EXEC, v:1, k:ed@buscas, mode:FULL, size:31, fail:COMP
+2026-03-30 23:17:39, EXEC, v:1, k:ed@buscas, mode:FULL, fail:COMP
+2026-03-30 23:18:08, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:31
+2026-03-30 23:19:49, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:36
+2026-03-30 23:20:45, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:36
+2026-03-30 23:21:45, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-30 23:22:45, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:36
+2026-03-30 23:24:07, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-30 23:24:31, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:34
+2026-03-30 23:25:09, EXEC, v:1, k:ed@buscas, mode:FULL, rate:88, size:37
+2026-03-30 23:30:10, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:33
+2026-03-30 23:30:56, EXEC, v:1, k:ed@buscas, mode:FULL, rate:100, size:33
+2026-03-30 23:47:19, EXEC, v:1, k:ed@buscas, mode:FULL, rate:0, size:5
+2026-03-30 23:47:20, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-03-30 23:47:30, MOVE, v:1, k:ed@alternando, mode:DOWN
+2026-03-30 23:47:32, MOVE, v:1, k:ed@alternando, mode:PICK
+2026-03-30 23:51:46, MOVE, v:1, k:ed@alternando, mode:BACK
+2026-03-30 23:51:50, MOVE, v:1, k:ed@buscas, mode:PICK
+2026-03-30 23:51:51, MOVE, v:1, k:ed@buscas, mode:BACK
+2026-03-30 23:51:52, MOVE, v:1, k:ed@buscas, mode:PICK
