@@ -51,6 +51,7 @@ tasks:
   ed@manipulacao: '{self:1, rate:100, study:100, concept:1, refactor:1}'
   ed@especiais: '{self:1, rate:100, study:360, concept:1, refactor:1}'
   ed@buscas: '{self:1, rate:100, study:120, concept:1, refactor:1}'
+  ed@rotacoes: '{self:1, rate:100, study:50, concept:1, debug:1, refactor:1}'
 flags:
   panel: 1
   inbox: 0
@@ -58,4 +59,4 @@ flags:
   task_graph_mode: 0
   show_time: 0
 lang: go
-selected: ed@vector
+selected: ed@map_set

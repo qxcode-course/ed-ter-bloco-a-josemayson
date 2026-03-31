@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2026-03-31_08-20-54",
+            "content": "@@ -146,154 +146,8 @@\n )%0A%09%7D\n-%0A%0A%09for i := 0; i %3C r; i++ %7B%0A%09%09aux := lista%5Blen(lista)-1%5D%0A%09%09lista = append(lista, 0)%0A%09%09copy(lista%5B0+i:%5D, lista%5Bi:%5D)%0A%09%09lista = append(lista, aux)%0A%09%7D\n %0A%09fm\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-03-31_08-34-03",
+            "content": "@@ -199,16 +199,43 @@\n sta)-1%5D%0A\n+%09%09lista = append(lista, 0)%0A\n %09%09copy(l\n",
+            "lines": "23"
+        },
+        {
+            "label": "2026-03-31_08-34-31",
+            "content": "@@ -241,17 +241,29 @@\n ista\n-%5B0%5D\n  =\n+ append(lista,\n  aux\n+)\n %0A%09%7D%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-31_08-35-56",
+            "content": "@@ -212,16 +212,18 @@\n y(lista%5B\n+0+\n i:%5D, lis\n@@ -229,23 +229,9 @@\n sta%5B\n-:len(lista) - 1\n+i\n :%5D)%0A\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-31_08-36-30",
+            "content": "@@ -234,18 +234,21 @@\n n(lista)\n--1\n+ - 1:\n %5D)%0A%09%09lis\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-31_08-37-01",
+            "content": "@@ -212,17 +212,17 @@\n y(lista%5B\n-1\n+i\n :%5D, list\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-31_08-38-51",
+            "content": "@@ -273,86 +273,16 @@\n rint\n-(%22%5B %22)%0A%09for i := range lista %7B%0A%09%09fmt.Printf(%22%25d %22, lista%5Bi%5D)%0A%09%7D%0A%09fmt.Print(%22%5D%22\n+ln(lista\n )%0A%0A%7D\n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-03-31_08-45-20",
+            "content": "@@ -350,10 +350,8 @@\n t(%22%5D\n-%5Cn\n %22)%0A%0A\n",
+            "lines": "26"
+        },
+        {
+            "label": "2026-03-31_08-55-33",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc main() {\n\tvar t, r int\n\tfmt.Scan(&t, &r)\n\n\tvar lista []int\n\n\tfor i := 1; i <= t; i++ {\n\t\tlista = append(lista, i)\n\t}\n\n\tfor i := 0; i < r; i++ {\n\t\taux := lista[len(lista)-1]\n\t\tcopy(lista[1:], lista[:len(lista)-1])\n\t\tlista[0] = aux\n\t}\n\tfmt.Print(\"[ \")\n\tfor i := range lista {\n\t\tfmt.Printf(\"%d \", lista[i])\n\t}\n\tfmt.Print(\"]\\n\")\n\n}\n",
+            "lines": "26"
+        }
+    ]
+}
