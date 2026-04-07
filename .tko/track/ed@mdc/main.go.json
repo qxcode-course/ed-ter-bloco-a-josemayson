@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-06_16-00-19",
+            "content": "@@ -55,83 +55,8 @@\n t %7B%0A\n-%09if a == 0 && b != 0 %7B%0A%09%09return b%0A%09%7D%0A%09if a != 0 && b == 0 %7B%0A%09%09return a%0A%09%7D%0A%0A\n %09ret\n",
+            "lines": "15"
+        },
+        {
+            "label": "2026-04-06_16-06-28",
+            "content": "@@ -61,31 +61,25 @@\n f a \n-%3E b %7B%0A%09%09if a%25b =\n+== 0 && b !\n = 0 %7B%0A\n-%09\n %09%09re\n@@ -85,20 +85,16 @@\n eturn b%0A\n-%09%09%7D%0A\n %09%7D%0A%09if a\n@@ -98,30 +98,25 @@\n f a \n-%3C b %7B%0A%09%09if b%25a\n+!= 0 && b\n  == 0 %7B%0A\n %09%09%09r\n@@ -111,17 +111,16 @@\n  == 0 %7B%0A\n-%09\n %09%09return\n@@ -126,48 +126,11 @@\n n a%0A\n-%09\n %09%7D%0A\n-%09%7D%0A%09a = a / b%0A%09b = a %25 b%0A%0A%09mdc(a, b)\n %0A%09re\n@@ -136,17 +136,16 @@\n eturn 0%0A\n-%0A\n %7D%0A%0Afunc \n",
+            "lines": "22"
+        },
+        {
+            "label": "2026-04-06_16-18-21",
+            "content": "@@ -55,16 +55,31 @@\n t %7B%0A%09if \n+a %3E b %7B%0A%09%09if a%25\n b == 0 %7B\n@@ -79,16 +79,17 @@\n  == 0 %7B%0A\n+%09\n %09%09return\n@@ -93,33 +93,108 @@\n urn \n-a%0A%09%7D%0A%0A%09return \n+b%0A%09%09%7D%0A%09%7D%0A%09if a %3C b %7B%0A%09%09if b%25a == 0 %7B%0A%09%09%09return a%0A%09%09%7D%0A%09%7D%0A%09a = a / b%0A%09b = a %25 b%0A%0A%09\n mdc(\n-b\n+a\n , \n-a%25\n b)\n+%0A%09return 0%0A\n %0A%7D%0A%0A\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-04-06_16-19-59",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\nfunc mdc(a, b int) int {\n\tif b == 0 {\n\t\treturn a\n\t}\n\n\treturn mdc(b, a%b)\n}\n\nfunc main() {\n\tvar a, b int\n\tfmt.Scan(&a, &b)\n\tfmt.Println(mdc(a, b))\n}\n",
+            "lines": "19"
+        }
+    ]
+}

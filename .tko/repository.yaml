@@ -2,61 +2,32 @@ version: '0.2'
 sources:
 - name: sandbox
   target: sandbox
+  index: README.md
   type: local
   writeable: true
   quests: null
   tasks: null
 - name: fup
   target: https://github.com/qxcodefup/arcade.git
+  index: README.md
   type: git
   writeable: false
   quests: null
   tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
+  index: README.md
   type: git
   writeable: false
   quests: null
   tasks: null
 expanded:
-- ed@map_set
-tasks:
-  fup@tres: '{self:1, rate:100, study:3, friend:nao, problem:1, code:1, debug:1, refactor:1}'
-  fup@resto: '{self:1, rate:100, study:7, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@media: '{self:1, rate:100, study:2, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@sobrou: '{self:1, rate:100, study:45, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@segundos: '{self:1, rate:100, study:8, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@celsius: '{self:1, rate:100, study:8, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@pintando: '{self:1, rate:100, study:13, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@bala: '{self:1, rate:100, study:10, friend:nao, problem:1, code:1, debug:1,
-    refactor:1}'
-  fup@quebrada: '{rate:100}'
-  fup@operacoes: '{rate:100}'
-  ed@pintando: '{self:1, rate:100, study:19, concept:1}'
-  ed@mumia: '{self:1, rate:100, study:8, concept:1}'
-  ed@fuga: '{self:1, rate:100, study:35, friend:nao, concept:1}'
-  ed@pedra: '{self:1, rate:100, study:160, concept:1}'
-  ed@casais: '{self:1, rate:100, study:56, concept:1}'
-  ed@baruel: '{self:1, rate:100, study:250, concept:1, refactor:1}'
-  ed@gomos: '{self:1, rate:100, study:161, concept:1}'
-  ed@analise: '{self:1, rate:100}'
-  ed@princesa: '{self:1, rate:100, study:300, concept:1, refactor:1}'
-  ed@apagando: '{self:1, rate:100, study:100, concept:1}'
-  ed@manipulacao: '{self:1, rate:100, study:100, concept:1, refactor:1}'
-  ed@especiais: '{self:1, rate:100, study:360, concept:1, refactor:1}'
-  ed@buscas: '{self:1, rate:100, study:120, concept:1, refactor:1}'
-  ed@rotacoes: '{self:1, rate:100, study:50, concept:1, debug:1, refactor:1}'
+- ed@rec
 flags:
-  panel: 1
-  inbox: 0
-  show_panel: 1
-  task_graph_mode: 0
-  show_time: 0
+  inbox: all
+  panel: help
+  show_panel: 'true'
+  task_graph_mode: executions
+  show_time: 'true'
 lang: go
-selected: ed@map_set
+selected: ed@enesimo

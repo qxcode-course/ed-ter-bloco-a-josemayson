@@ -2,8 +2,23 @@
     "patches": [
         {
             "label": "2026-03-03_11-21-17",
-            "content": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"qxcode\")\n}\n",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,229 +23,46 @@\n mt%22%0A\n-%0A\n func \n-imprimir(inteiro int) %7B%0A%09if inteiro == 1 %7B%0A%09%09return%0A%09%7D%0A%09aux := inteiro / 2%0A%09temp := inteiro %25 2%0A%09imprimir(inteiro / 2)%0A%09fmt.Println(aux, temp)%0A%0A%7D%0Afunc main() %7B%0A%09var inteiro int%0A%09fmt.Scan(&inteiro)%0A%0A%09imprimir(inteiro\n+main() %7B%0A    fmt.Println(%22qxcode%22\n )%0A%7D%0A\n",
             "lines": "5"
+        },
+        {
+            "label": "2026-04-06_15-52-09",
+            "content": "@@ -66,9 +66,10 @@\n iro \n-%3C\n+==\n  1 %7B\n@@ -162,17 +162,17 @@\n tln(\n-temp, aux\n+aux, temp\n )%0A%0A%7D\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-06_15-52-33",
+            "content": "@@ -161,17 +161,17 @@\n tln(\n-aux, temp\n+temp, aux\n )%0A%0A%7D\n",
+            "lines": "20"
+        },
+        {
+            "label": "2026-04-06_15-52-45",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimir(inteiro int) {\n\tif inteiro < 1 {\n\t\treturn\n\t}\n\taux := inteiro / 2\n\ttemp := inteiro % 2\n\timprimir(inteiro / 2)\n\tfmt.Println(aux, temp)\n\n}\nfunc main() {\n\tvar inteiro int\n\tfmt.Scan(&inteiro)\n\n\timprimir(inteiro)\n}\n",
+            "lines": "20"
         }
     ]
 }
