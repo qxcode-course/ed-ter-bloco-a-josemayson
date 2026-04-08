@@ -1,0 +1,10 @@
+2026-04-08 16:06:49, MOVE, v:1, k:ed@vetequals, mode:DOWN
+2026-04-08 16:06:50, MOVE, v:1, k:ed@vetequals, mode:PICK
+2026-04-08 16:06:52, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:70, size:49
+2026-04-08 16:08:32, EXEC, v:1, k:ed@vetequals, mode:FULL, rate:100, size:59
+2026-04-08 16:08:34, MOVE, v:1, k:ed@vetequals, mode:BACK
+2026-04-08 16:09:10, SELF, v:1, k:ed@vetequals, self:1, rate:100, study:100, refactor:1
+2026-04-08 16:11:05, MOVE, v:1, k:ed@treinando, mode:PICK
+2026-04-08 16:12:11, EXEC, v:1, k:ed@treinando, mode:FULL, rate:50
+2026-04-08 16:12:38, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:118
+2026-04-08 16:12:39, MOVE, v:1, k:ed@treinando, mode:BACK

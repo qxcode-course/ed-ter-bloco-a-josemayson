@@ -9,18 +9,41 @@ import (
 )
 
 func tostr(vet []int) string {
-	_ = vet
-	return ""
+	if len(vet) == 0 {
+		return "[]"
+	}
+
+	if len(vet) == 1 {
+		return "[" + strconv.Itoa(vet[0]) + "]"
+	}
+
+	resto := tostr(vet[1:])
+
+	return "[" + strconv.Itoa(vet[0]) + ", " + resto[1:]
 }
 
 func tostrrev(vet []int) string {
-	_ = vet
-	return ""
+	if len(vet) == 0 {
+		return "[]"
+	}
+
+	if len(vet) == 1 {
+		return "[" + strconv.Itoa(vet[0]) + "]"
+	}
+
+	resto := tostrrev(vet[1:])
+
+	return resto[:len(resto)-1] + ", " + strconv.Itoa(vet[0]) + "]"
 }
 
 // reverse: inverte os elementos do slice
 func reverse(vet []int) {
-	return
+	if len(vet) <= 1 {
+		return
+	}
+
+	vet[0], vet[len(vet)-1] = vet[len(vet)-1], vet[0]
+	reverse(vet[1 : len(vet)-1])
 }
 
 // sum: soma dos elementos do slice

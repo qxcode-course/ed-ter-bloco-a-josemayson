@@ -24,10 +24,10 @@ sources:
 expanded:
 - ed@rec
 flags:
-  inbox: all
+  inbox: inbox
   panel: help
   show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@resto
+selected: ed@treinando
