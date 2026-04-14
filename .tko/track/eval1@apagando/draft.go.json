@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-41-17",
+            "content": "@@ -146,18 +146,16 @@\n %22)%0A%09%09%7D%0A%09\n-%7D%0A\n %09fmt.Pri\n@@ -161,16 +161,19 @@\n intln()%0A\n+%09%7D%0A\n %7D%0Afunc m\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_10-41-33",
+            "content": "@@ -554,26 +554,8 @@\n  p)%0A\n-%09%09%09temp%5Bp%5D = true%0A\n %09%09%7D%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_10-41-54",
+            "content": "@@ -505,16 +505,17 @@\n  %7B%0A%09%09if \n+!\n temp%5Bp%5D \n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-14_10-42-08",
+            "content": "@@ -549,16 +549,34 @@\n ila, p)%0A\n+%09%09%09temp%5Bp%5D = true%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-14_10-42-18",
+            "content": "@@ -231,19 +231,20 @@\n map%5Bint%5D\n-int\n+bool\n )%0A%09fila \n@@ -455,27 +455,24 @@\n r%5Bi%5D)%0A%09%09\n-if \n temp%5Bp%5D \n %3C 1 %7B%0A%09%09\n@@ -467,30 +467,14 @@\n %5Bp%5D \n-%3C 1 %7B%0A%09%09%09temp%5Bp%5D++%0A%09%09%7D\n+= true\n %0A%09%7D%0A\n@@ -516,13 +516,8 @@\n p%5Bp%5D\n- == 1\n  %7B%0A%09\n",
+            "lines": "44"
+        },
+        {
+            "label": "2026-04-14_10-43-20",
+            "content": "@@ -523,33 +523,34 @@\n  %7B%0A%09%09if temp%5Bp%5D \n-%3C\n+==\n  1 %7B%0A%09%09%09novafila\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_10-43-40",
+            "content": "@@ -235,12 +235,11 @@\n int%5D\n-bool\n+int\n )%0A%09f\n@@ -461,16 +461,19 @@\n %09if \n-!\n temp%5Bp%5D\n+ %3C 1\n  %7B%0A%09\n@@ -485,15 +485,10 @@\n p%5Bp%5D\n- = true\n+++\n %0A%09%09%7D\n@@ -530,16 +530,20 @@\n  temp%5Bp%5D\n+ %3C 1\n  %7B%0A%09%09%09no\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_10-44-52",
+            "content": "@@ -522,25 +522,24 @@\n fila %7B%0A%09%09if \n-!\n temp%5Bp%5D %7B%0A%09%09\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_10-44-59",
+            "content": "@@ -408,24 +408,27 @@\n air)%0A%0A%09for i\n+, p\n  := range sa\n@@ -458,37 +458,24 @@\n %5D)%0A%09\n-%7D%0A%0A%09for _, p := range sair\n+%09if !temp%5Bp%5D\n  %7B%0A\n+%09\n %09%09te\n@@ -487,16 +487,20 @@\n  = true%0A\n+%09%09%7D%0A\n %09%7D%0A%0A%09for\n@@ -571,34 +571,16 @@\n ila, p)%0A\n-%09%09%09temp%5Bp%5D = true%0A\n %09%09%7D%0A%09%7D%0A%0A\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-14_10-46-13",
+            "content": "@@ -118,16 +118,18 @@\n en(temp)\n+-1\n  %7B%0A%09%09%09fm\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-14_10-46-26",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimir(temp []int) {\n\tfor i := range temp {\n\t\tfmt.Printf(\"%d\", temp[i])\n\t\tif i < len(temp) {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\tfmt.Println()\n}\nfunc main() {\n\tvar qtd int\n\tfmt.Scan(&qtd)\n\n\ttemp := make(map[int]bool)\n\tfila := make([]int, qtd)\n\tfor i := 0; i < qtd; i++ {\n\t\tfmt.Scan(&fila[i])\n\t}\n\n\tvar novafila []int\n\n\tvar qtdsair int\n\tfmt.Scan(&qtdsair)\n\n\tsair := make([]int, qtdsair)\n\n\tfor i := range sair {\n\t\tfmt.Scan(&sair[i])\n\t}\n\n\tfor _, p := range sair {\n\t\ttemp[p] = true\n\t}\n\n\tfor _, p := range fila {\n\t\tif !temp[p] {\n\t\t\tnovafila = append(novafila, p)\n\t\t\ttemp[p] = true\n\t\t}\n\t}\n\n\timprimir(novafila)\n\n}\n",
+            "lines": "48"
+        }
+    ]
+}

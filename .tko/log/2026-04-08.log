@@ -8,3 +8,5 @@
 2026-04-08 16:12:11, EXEC, v:1, k:ed@treinando, mode:FULL, rate:50
 2026-04-08 16:12:38, EXEC, v:1, k:ed@treinando, mode:FULL, rate:100, size:118
 2026-04-08 16:12:39, MOVE, v:1, k:ed@treinando, mode:BACK
+2026-04-08 16:12:38, MOVE, v:1, k:ed@treinando, mode:EDIT
+2026-04-08 16:12:36, MOVE, v:1, k:ed@treinando, mode:EDIT

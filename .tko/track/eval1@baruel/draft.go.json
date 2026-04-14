@@ -1,0 +1,34 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-14_10-24-15",
+            "content": "@@ -136,10 +136,8 @@\n nt%0A%09\n-//\n var \n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-14_10-24-22",
+            "content": "@@ -132,16 +132,18 @@\n  %5B%5Dint%0A%09\n+//\n var falt\n@@ -337,138 +337,30 @@\n %0A%09%7D%0A\n-%0A%09for i := 1; i %3C= n; i++ %7B%0A%09%09if !aux%5Bi%5D %7B%0A%09%09%09faltando = append(faltando, i)%0A%09%09%7D%0A%09%7D%0A%0A%09fmt.Println(repetidas)%0A%09fmt.Println(faltando\n+%09fmt.Println(repetidas\n )%0A%0A%7D\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-04-14_10-26-07",
+            "content": "@@ -416,16 +416,40 @@\n %09%09%7D%0A%09%7D%0A%0A\n+%09fmt.Println(repetidas)%0A\n %09fmt.Pri\n",
+            "lines": "35"
+        },
+        {
+            "label": "2026-04-14_10-26-34",
+            "content": "@@ -25,109 +25,8 @@\n t%22%0A%0A\n-func imprimir(temp %5B%5Dint) %7B%0A%09for i := range temp %7B%0A%09%09fmt.Printf(%22%25d %22, temp%5Bi%5D)%0A%09%7D%0A%09fmt.Println()%0A%7D%0A%0A\n func\n@@ -421,165 +421,29 @@\n %7D%0A%0A%09\n-if len(repetidas) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09imprimir(repetidas)%0A%09%7D%0A%0A%09if len(faltando) == 0 %7B%0A%09%09fmt.Println(%22N%22)%0A%09%7D else %7B%0A%09%09imprimir(faltando)%0A%09%7D\n+fmt.Println(faltando)\n %0A%0A%7D%0A\n",
+            "lines": "34"
+        },
+        {
+            "label": "2026-04-14_10-30-06",
+            "content": "@@ -88,16 +88,17 @@\n intf(%22%25d\n+ \n %22, temp%5B\n@@ -105,53 +105,8 @@\n i%5D)%0A\n-%09%09if i %3C len(temp)-1 %7B%0A%09%09%09fmt.Print(%22 %22)%0A%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "51"
+        },
+        {
+            "label": "2026-04-14_10-30-58",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc imprimir(temp []int) {\n\tfor i := range temp {\n\t\tfmt.Printf(\"%d\", temp[i])\n\t\tif i < len(temp)-1 {\n\t\t\tfmt.Print(\" \")\n\t\t}\n\t}\n\tfmt.Println()\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tvar e int\n\tfmt.Scan(&e)\n\talbum := make([]int, e)\n\tvar repetidas []int\n\tvar faltando []int\n\taux := make(map[int]bool)\n\n\tfor i := 0; i < e; i++ {\n\t\tfmt.Scan(&album[i])\n\t}\n\n\tfor _, p := range album {\n\t\tif aux[p] {\n\t\t\trepetidas = append(repetidas, p)\n\t\t}\n\t\taux[p] = true\n\t}\n\n\tfor i := 1; i <= n; i++ {\n\t\tif !aux[i] {\n\t\t\tfaltando = append(faltando, i)\n\t\t}\n\t}\n\n\tif len(repetidas) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\timprimir(repetidas)\n\t}\n\n\tif len(faltando) == 0 {\n\t\tfmt.Println(\"N\")\n\t} else {\n\t\timprimir(faltando)\n\t}\n\n}\n",
+            "lines": "54"
+        }
+    ]
+}
