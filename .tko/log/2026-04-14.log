@@ -210,3 +210,5 @@
 2026-04-14 15:41:13, SELF, v:1, k:ed@resto, self:1, rate:100, study:15
 2026-04-14 15:41:22, SELF, v:1, k:ed@treinando, self:1, rate:100, study:147
 2026-04-14 15:41:29, SELF, v:1, k:ed@triangulo, self:1, rate:100, study:49
+2026-04-14 15:43:45, MOVE, v:1, k:ed@fractais_png, mode:PICK
+2026-04-14 15:46:03, MOVE, v:1, k:ed@fractais_png, mode:BACK
