@@ -23,108 +23,121 @@ func NewVector(capacity int) *Vector {
 	}
 }
 
-func (vet *Vector) Status() string {
-	return fmt.Sprintf("size:%v capacity:%v", vet.size, vet.capacity)
+func (v *Vector) Reserve(capacity int) {
+	v.capacity = capacity
 }
 
-func (vet *Vector) String() string {
-	return "[" + Join(vet.data[0:vet.size], ", ") + "]"
+func (v *Vector) Status() string {
+	return fmt.Sprintf("size:%v capacity:%v", v.size, v.capacity)
 }
 
-func (vet *Vector) Reserve(newCapacity int) {
-	vet.capacity = newCapacity
+func (v *Vector) String() string {
+	return "[" + Join(v.data[0:v.size], ", ") + "]"
 }
 
-func (vet *Vector) PushBack(value int) {
-	if vet.size == vet.capacity {
-		if vet.capacity == 0 {
-			vet.capacity++
+func (v *Vector) PushBack(value int) {
+	if v.size == v.capacity {
+		if v.capacity == 0 {
+			v.capacity++
 		} else {
-			vet.capacity *= 2
+			v.capacity *= 2
 		}
-		newData := make([]int, vet.capacity)
-		copy(newData, vet.data)
-		vet.data = newData
+		novoVetor := make([]int, v.capacity)
+		copy(novoVetor, v.data)
+		v.data = novoVetor
 	}
-	vet.data[vet.size] = value
-	vet.size++
+	v.data[v.size] = value
+	v.size++
 }
 
-func (vet *Vector) Capacity() int {
-	return vet.capacity
+func (v *Vector) Clear() {
+	v.size = 0
 }
 
-func (vet *Vector) Size() int {
-	return vet.size
+func (v *Vector) Size() int {
+	return v.size
 }
 
-func (vet *Vector) Clear() {
-	vet.size = 0
+func (v *Vector) Capacity() int {
+	return v.capacity
 }
 
-func (vet *Vector) IndexOf(value int) int {
-	for i := range vet.data {
-		if value == vet.data[i] {
+func (v *Vector) Get(index int) int {
+	return v.data[index]
+}
+
+func (v *Vector) Set(index, value int) error {
+	if index > v.size {
+		return errors.New("index out of range")
+	}
+	v.data[index] = value
+	return nil
+}
+
+func (v *Vector) At(index int) (int, error) {
+	if index > v.size {
+		return 0, errors.New("index out of range")
+	}
+	return v.data[index], nil
+}
+
+func (v *Vector) IndexOf(value int) int {
+	for i := range v.data {
+		if v.data[i] == value {
 			return i
 		}
 	}
 	return -1
 }
 
-func (vet *Vector) Contains(value int) bool {
-	for i := range vet.data {
-		if value == vet.data[i] {
+func (v *Vector) Contains(value int) bool {
+	for i := range v.data {
+		if v.data[i] == value {
 			return true
 		}
 	}
 	return false
 }
 
-func (vet *Vector) PopBack() error {
-	if vet.size == 0 {
+func (v *Vector) Erase(index int) error {
+	if index > v.size {
+		return errors.New("index out of range")
+	}
+	v.data = append(v.data[:index], v.data[index+1:]...)
+	v.size--
+	return nil
+}
+
+func (v *Vector) PopBack() error {
+	if v.size == 0 {
 		return errors.New("vector is empty")
 	}
-	vet.size--
+	v.size--
 	return nil
 }
 
-func (vet *Vector) Get(index int) int {
-	return vet.data[index]
-}
-
-func (vet *Vector) At(index int) (int, error) {
-	if index >= vet.size {
-		return 0, errors.New("index out of range")
-	}
-	return vet.data[index], nil
-}
-
-func (vet *Vector) Set(index, value int) error {
-	if index >= vet.size || index < 0 {
+func (v *Vector) Insert(index, value int) error {
+	if index > v.size {
 		return errors.New("index out of range")
 	}
-	vet.data[index] = value
+	if v.size == v.capacity {
+		v.capacity *= 2
+	}
+	v.size++
+	v.data = append(v.data, 0)
+	copy(v.data[index+1:], v.data[index:])
+	v.data[index] = value
 	return nil
 }
 
-func (vet *Vector) Insert(index, value int) error {
-	if vet.capacity <= vet.size {
-		vet.capacity *= 2
+func (v *Vector) Slice(start, end int) *Vector {
+	start = ((start % v.size) + v.size) % v.size
+	end = ((end % v.size) + v.size) % v.size
+	return &Vector{
+		data:     v.data[start:end],
+		size:     end - start,
+		capacity: v.size,
 	}
-	vet.data = append(vet.data, 0)
-	vet.size++
-	copy(vet.data[index+1:], vet.data[index:])
-	vet.data[index] = value
-	return nil
-}
-
-func (vet *Vector) Erase(index int) error {
-	if index > vet.capacity {
-		return errors.New("index out of range")
-	}
-	vet.data = append(vet.data[:index], vet.data[index+1:]...)
-	vet.size--
-	return nil
 }
 
 func Join(slice []int, sep string) string {
@@ -224,10 +237,10 @@ func main() {
 			newCapacity, _ := strconv.Atoi(parts[1])
 			v.Reserve(newCapacity)
 		case "slice":
-			// start, _ := strconv.Atoi(parts[1])
-			// end, _ := strconv.Atoi(parts[2])
-			// slice := v.Slice(start, end)
-			// fmt.Println(slice)
+			start, _ := strconv.Atoi(parts[1])
+			end, _ := strconv.Atoi(parts[2])
+			slice := v.Slice(start, end)
+			fmt.Println(slice)
 		default:
 			fmt.Println("fail: comando invalido")
 		}
