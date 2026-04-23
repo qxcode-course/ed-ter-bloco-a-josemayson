@@ -1,0 +1,69 @@
+{
+    "patches": [
+        {
+            "label": "2026-04-22_16-26-32",
+            "content": "@@ -115,210 +115,27 @@\n  %7B%0A%09\n-esquerda := slice%5B0%5D%0A%09direita := len(slice) - 1%0A%0A%09for esquerda %3C= direita %7B%0A%09%09meio := (esquerda + direita) / 2%0A%0A%09%09if value != slice%5Bmeio%5D %7B%0A%09%09%09if slice%5Bmeio-1%5D == value %7B%0A%09%09%09%09return meio - 1%0A%09%09%09%7D%0A%09%09%7D%0A%09%7D\n+_, _ = slice, value\n %0A%09re\n",
+            "lines": "30"
+        },
+        {
+            "label": "2026-04-22_16-31-04",
+            "content": "@@ -315,91 +315,8 @@\n %09%09%7D%0A\n-%09%09if esquerda %3C meio %7B%0A%09%09%09esquerda = meio + 1%0A%09%09%7D else %7B%0A%09%09%09direita = meio - 1%0A%09%09%7D%0A\n %09%7D%0A%09\n",
+            "lines": "41"
+        },
+        {
+            "label": "2026-04-22_16-31-49",
+            "content": "@@ -123,17 +123,24 @@\n erda := \n-0\n+slice%5B0%5D\n %0A%09direit\n@@ -311,17 +311,16 @@\n %09%09%7D%0A%09%09%7D%0A\n-%0A\n %09%09if esq\n",
+            "lines": "46"
+        },
+        {
+            "label": "2026-04-22_16-32-36",
+            "content": "@@ -307,54 +307,8 @@\n %0A%09%09%7D\n-%0A%09%09if value == direita %7B%0A%09%09%09return direita%0A%09%09%7D\n %0A%0A%09%09\n",
+            "lines": "47"
+        },
+        {
+            "label": "2026-04-22_16-33-40",
+            "content": "@@ -322,22 +322,15 @@\n  == \n-slice%5B\n direita\n-%5D\n  %7B%0A%09\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-22_16-34-11",
+            "content": "@@ -147,16 +147,20 @@\n n(slice)\n+ - 1\n %0A%0A%09for e\n@@ -168,16 +168,17 @@\n querda %3C\n+=\n  direita\n@@ -231,9 +231,9 @@\n lue \n-%3E\n+!\n = sl\n@@ -244,16 +244,153 @@\n meio%5D %7B%0A\n+%09%09%09if slice%5Bmeio-1%5D == value %7B%0A%09%09%09%09return meio - 1%0A%09%09%09%7D%0A%09%09%7D%0A%09%09if value == slice%5Bdireita%5D %7B%0A%09%09%09return direita%0A%09%09%7D%0A%0A%09%09if esquerda %3C meio %7B%0A\n %09%09%09esque\n@@ -432,22 +432,25 @@\n a = meio\n+ - 1\n %0A%09%09%7D%0A\n-%0A\n %09%7D%0A%09retu\n@@ -452,24 +452,17 @@\n %09return \n-esquerda\n+0\n %0A%7D%0A%0Afunc\n",
+            "lines": "50"
+        },
+        {
+            "label": "2026-04-22_16-39-31",
+            "content": "@@ -151,29 +151,8 @@\n ice)\n- - 1%0A%09resultado := -1\n %0A%0A%09f\n@@ -164,17 +164,16 @@\n querda %3C\n-=\n  direita\n@@ -222,17 +222,17 @@\n f value \n-=\n+%3E\n = slice%5B\n@@ -268,120 +268,40 @@\n 1%0A%09%09\n-%09resultado = meio%0A%09%09%7D else if value %3C slice%5Bmeio%5D %7B%0A%09%09%09direita = meio - 1%0A%09%09%7D else %7B%0A%09%09%09esquerda = meio + 1\n+%7D else %7B%0A%09%09%09direita = meio\n %0A%09%09%7D%0A\n+%0A\n %09%7D%0A%09\n@@ -311,17 +311,16 @@\n urn \n-r\n es\n-ultado\n+querda\n %0A%7D%0A%0A\n",
+            "lines": "42"
+        },
+        {
+            "label": "2026-04-22_16-47-57",
+            "content": "@@ -406,66 +406,24 @@\n %09%7D%0A%09\n-if resultado != -1 %7B%0A%09%09return resultado%0A%09%7D%0A%09return direita\n+return resultado\n %0A%7D%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-23_11-05-48",
+            "content": "@@ -453,23 +453,22 @@\n %09return \n-esquerd\n+direit\n a%0A%7D%0A%0Afun\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-23_11-05-59",
+            "content": "@@ -406,24 +406,67 @@\n %09%7D%0A%09\n-return resultado\n+if resultado != -1 %7B%0A%09%09return resultado%0A%09%7D%0A%09return esquerda\n %0A%7D%0A%0A\n",
+            "lines": "48"
+        },
+        {
+            "label": "2026-04-23_11-06-23",
+            "content": "@@ -405,68 +405,25 @@\n %0A%09%7D%0A\n-%0A%09if resultado != -1 %7B%0A%09%09return resultado%0A%09%7D%0A%09return direita\n+%09return resultado\n %0A%7D%0A%0A\n",
+            "lines": "45"
+        },
+        {
+            "label": "2026-04-23_15-15-37",
+            "content": "@@ -454,23 +454,22 @@\n %09return \n-esquerd\n+direit\n a%0A%7D%0A%0Afun\n",
+            "lines": "49"
+        },
+        {
+            "label": "2026-04-23_15-15-54",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tesquerda := 0\n\tdireita := len(slice) - 1\n\tresultado := -1\n\n\tfor esquerda <= direita {\n\t\tmeio := (esquerda + direita) / 2\n\n\t\tif value == slice[meio] {\n\t\t\tesquerda = meio + 1\n\t\t\tresultado = meio\n\t\t} else if value < slice[meio] {\n\t\t\tdireita = meio - 1\n\t\t} else {\n\t\t\tesquerda = meio + 1\n\t\t}\n\t}\n\n\tif resultado != -1 {\n\t\treturn resultado\n\t}\n\treturn esquerda\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "49"
+        }
+    ]
+}
