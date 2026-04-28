@@ -1,0 +1,62 @@
+2026-04-27 13:10:35, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-04-27 13:10:36, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100
+2026-04-27 13:10:36, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-04-27 13:12:58, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-04-27 13:12:59, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0
+2026-04-27 13:10:35, MOVE, v:1, k:ed@setbuild, mode:EDIT
+2026-04-27 13:12:59, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:19:58, EXEC, v:1, k:ed@multiset, mode:FULL, size:100, fail:COMP
+2026-04-27 13:20:15, EXEC, v:1, k:ed@multiset, mode:FULL, fail:COMP
+2026-04-27 13:20:20, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:99
+2026-04-27 13:20:17, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:20:20, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:23:47, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:34:35, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:40:18, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:40:33, EXEC, v:1, k:ed@multiset, mode:FULL, size:148, fail:COMP
+2026-04-27 13:41:03, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:148
+2026-04-27 13:42:12, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:148
+2026-04-27 13:42:55, EXEC, v:1, k:ed@multiset, mode:FULL, size:148, fail:COMP
+2026-04-27 13:43:02, EXEC, v:1, k:ed@multiset, mode:FULL, fail:COMP
+2026-04-27 13:43:05, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:148
+2026-04-27 13:43:04, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:43:05, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:50:24, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:50:37, EXEC, v:1, k:ed@multiset, mode:FULL, rate:16, size:150
+2026-04-27 13:53:17, EXEC, v:1, k:ed@multiset, mode:FULL, rate:0, size:148
+2026-04-27 13:53:54, EXEC, v:1, k:ed@multiset, mode:FULL, rate:16, size:150
+2026-04-27 13:54:30, EXEC, v:1, k:ed@multiset, mode:FULL, rate:33, size:151
+2026-04-27 13:54:27, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:54:30, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:59:40, EXEC, v:1, k:ed@multiset, mode:FULL, rate:50, size:162
+2026-04-27 13:59:38, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 13:59:40, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:01:35, EXEC, v:1, k:ed@multiset, mode:FULL, size:167, fail:COMP
+2026-04-27 14:02:02, EXEC, v:1, k:ed@multiset, mode:FULL, rate:50, size:167
+2026-04-27 14:04:55, EXEC, v:1, k:ed@multiset, mode:FULL, rate:50, size:178
+2026-04-27 14:05:17, EXEC, v:1, k:ed@multiset, mode:FULL, rate:66, size:179
+2026-04-27 14:05:14, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:05:17, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:09:10, EXEC, v:1, k:ed@multiset, mode:FULL, rate:66, size:188
+2026-04-27 14:09:08, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:09:09, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:13:54, EXEC, v:1, k:ed@multiset, mode:FULL, rate:83, size:208
+2026-04-27 14:15:25, EXEC, v:1, k:ed@multiset, mode:FULL, rate:83, size:209
+2026-04-27 14:15:23, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:15:25, MOVE, v:1, k:ed@multiset, mode:EDIT
+2026-04-27 14:15:57, EXEC, v:1, k:ed@multiset, mode:FULL, rate:83, size:209
+2026-04-27 14:17:52, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100, size:212
+2026-04-27 14:19:19, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100, size:212
+2026-04-27 14:19:19, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-27 14:19:33, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-04-27 14:19:34, EXEC, v:1, k:ed@setbuild, mode:FULL, rate:100
+2026-04-27 14:19:35, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-04-27 14:19:37, MOVE, v:1, k:ed@multiset, mode:PICK
+2026-04-27 14:19:37, EXEC, v:1, k:ed@multiset, mode:FULL, rate:100
+2026-04-27 14:19:38, MOVE, v:1, k:ed@multiset, mode:BACK
+2026-04-27 14:19:55, SELF, v:1, k:ed@multiset, self:1, rate:100, study:88
+2026-04-27 14:20:01, MOVE, v:1, k:ed@setbuild, mode:PICK
+2026-04-27 14:20:41, MOVE, v:1, k:ed@setbuild, mode:BACK
+2026-04-27 14:20:46, MOVE, v:1, k:ed@bettersearch, mode:PICK
+2026-04-27 14:21:07, EXEC, v:1, k:ed@bettersearch, mode:FULL, rate:100
+2026-04-27 14:21:08, MOVE, v:1, k:ed@bettersearch, mode:BACK

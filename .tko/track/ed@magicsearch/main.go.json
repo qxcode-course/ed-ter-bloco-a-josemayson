@@ -62,8 +62,13 @@
         },
         {
             "label": "2026-04-23_15-15-54",
-            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tesquerda := 0\n\tdireita := len(slice) - 1\n\tresultado := -1\n\n\tfor esquerda <= direita {\n\t\tmeio := (esquerda + direita) / 2\n\n\t\tif value == slice[meio] {\n\t\t\tesquerda = meio + 1\n\t\t\tresultado = meio\n\t\t} else if value < slice[meio] {\n\t\t\tdireita = meio - 1\n\t\t} else {\n\t\t\tesquerda = meio + 1\n\t\t}\n\t}\n\n\tif resultado != -1 {\n\t\treturn resultado\n\t}\n\treturn esquerda\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "content": "@@ -307,19 +307,22 @@\n meio%0A%09%09%7D\n-%0A%09%09\n+ else \n if value\n",
             "lines": "49"
+        },
+        {
+            "label": "2026-04-26_22-53-17",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n\t\"strconv\"\n\t\"strings\"\n)\n\nfunc MagicSearch(slice []int, value int) int {\n\tesquerda := 0\n\tdireita := len(slice) - 1\n\tresultado := -1\n\n\tfor esquerda <= direita {\n\t\tmeio := (esquerda + direita) / 2\n\n\t\tif value == slice[meio] {\n\t\t\tesquerda = meio + 1\n\t\t\tresultado = meio\n\t\t}\n\t\tif value < slice[meio] {\n\t\t\tdireita = meio - 1\n\t\t} else {\n\t\t\tesquerda = meio + 1\n\t\t}\n\t}\n\n\tif resultado != -1 {\n\t\treturn resultado\n\t}\n\treturn esquerda\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\tscanner.Scan()\n\tparts := strings.Fields(scanner.Text())\n\tslice := make([]int, 0, 1)\n\tfor _, elem := range parts[1 : len(parts)-1] {\n\t\tvalue, _ := strconv.Atoi(elem)\n\t\tslice = append(slice, value)\n\t}\n\n\tscanner.Scan()\n\tvalue, _ := strconv.Atoi(scanner.Text())\n\tresult := MagicSearch(slice, value)\n\tfmt.Println(result)\n}\n",
+            "lines": "50"
         }
     ]
 }

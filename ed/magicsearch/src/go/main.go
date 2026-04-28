@@ -19,7 +19,8 @@ func MagicSearch(slice []int, value int) int {
 		if value == slice[meio] {
 			esquerda = meio + 1
 			resultado = meio
-		} else if value < slice[meio] {
+		}
+		if value < slice[meio] {
 			direita = meio - 1
 		} else {
 			esquerda = meio + 1
