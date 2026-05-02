@@ -7,13 +7,6 @@ sources:
   writeable: true
   quests: null
   tasks: null
-- name: fup
-  target: https://github.com/qxcodefup/arcade.git
-  index: README.md
-  type: git
-  writeable: false
-  quests: null
-  tasks: null
 - name: ed
   target: https://github.com/qxcodeed/arcade.git
   index: README.md
@@ -32,10 +25,10 @@ expanded:
 - ed@list
 flags:
   inbox: all
-  panel: graph
-  show_panel: 'false'
+  panel: skills
+  show_panel: 'true'
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@lista_d1
-selected_index: 20
+selected: ed@lista_d2
+selected_index: 7

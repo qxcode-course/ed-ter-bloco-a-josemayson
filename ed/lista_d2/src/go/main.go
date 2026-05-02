@@ -9,9 +9,24 @@ import (
 )
 
 type Node struct {
-	info int
-	next *Node
-	prev *Node
+	Value int
+	next  *Node
+	prev  *Node
+	root  *Node
+}
+
+func (no *Node) Prev() *Node {
+	if no.prev == no.root {
+		return nil
+	}
+	return no.prev
+}
+
+func (no *Node) Next() *Node {
+	if no.next == no.root {
+		return nil
+	}
+	return no.next
 }
 
 type LList struct {
@@ -24,15 +39,15 @@ func NewLList() *LList {
 	list.head = &Node{}
 	list.head.prev = list.head
 	list.head.next = list.head
+	list.head.root = list.head
 	list.size = 0
 	return list
 }
 
 func (list *LList) String() string {
 	saida := "["
-
 	for it := list.head.next; it != list.head; it = it.next {
-		saida += fmt.Sprint(it.info)
+		saida += fmt.Sprint(it.Value)
 		if it.next != list.head {
 			saida += ", "
 		}
@@ -43,9 +58,10 @@ func (list *LList) String() string {
 func (list *LList) Insert(b *Node, value int) {
 	a := b.prev
 	c := &Node{
-		info: value,
-		prev: a,
-		next: b,
+		Value: value,
+		prev:  a,
+		next:  b,
+		root:  list.head,
 	}
 	a.next = c
 	b.prev = c
@@ -60,33 +76,50 @@ func (list *LList) PushFront(value int) {
 	list.Insert(list.head.next, value)
 }
 
-func (list *LList) Remover(b *Node) {
+func (list *LList) Remove(b *Node) {
 	a := b.prev
 	c := b.next
-	c.prev = a
 	a.next = c
+	c.prev = a
 	b.prev = nil
 	b.next = nil
 	list.size--
 }
 
 func (list *LList) PopBack() {
-	if list.head.next == list.head {
-		return
-	}
-	list.Remover(list.head.prev)
+	list.Remove(list.head.prev)
 }
 
 func (list *LList) PopFront() {
-	if list.head.next == list.head {
-		return
+	list.Remove(list.head.next)
+}
+
+func (list *LList) Search(value int) *Node {
+	for it := list.head.next; it != list.head; it = it.next {
+		if it.Value == value {
+			return it
+		}
 	}
-	list.Remover(list.head.next)
+	return nil
+}
+
+func (list *LList) Back() *Node {
+	if list.size == 0 {
+		return nil
+	}
+	return list.head.prev
+}
+
+func (list *LList) Front() *Node {
+	if list.size == 0 {
+		return nil
+	}
+	return list.head.next
 }
 
 func (list *LList) Clear() {
-	list.head.next = list.head
 	list.head.prev = list.head
+	list.head.next = list.head
 	list.size = 0
 }
 
@@ -134,6 +167,42 @@ func main() {
 			ll.PopFront()
 		case "clear":
 			ll.Clear()
+		case "walk":
+			fmt.Print("[ ")
+			for node := ll.Front(); node != nil; node = node.Next() {
+				fmt.Printf("%v ", node.Value)
+			}
+			fmt.Print("]\n[ ")
+			for node := ll.Back(); node != nil; node = node.Prev() {
+				fmt.Printf("%v ", node.Value)
+			}
+			fmt.Println("]")
+		case "replace":
+			oldvalue, _ := strconv.Atoi(args[1])
+			newvalue, _ := strconv.Atoi(args[2])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				node.Value = newvalue
+			} else {
+				fmt.Println("fail: not found")
+			}
+		case "insert":
+			oldvalue, _ := strconv.Atoi(args[1])
+			newvalue, _ := strconv.Atoi(args[2])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				ll.Insert(node, newvalue)
+			} else {
+				fmt.Println("fail: not found")
+			}
+		case "remove":
+			oldvalue, _ := strconv.Atoi(args[1])
+			node := ll.Search(oldvalue)
+			if node != nil {
+				ll.Remove(node)
+			} else {
+				fmt.Println("fail: not found")
+			}
 		case "end":
 			return
 		default:
