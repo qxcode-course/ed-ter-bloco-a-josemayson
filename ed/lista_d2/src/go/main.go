@@ -30,25 +30,23 @@ func (no *Node) Next() *Node {
 }
 
 type LList struct {
-	head *Node
+	root *Node
 	size int
 }
 
 func NewLList() *LList {
-	list := &LList{}
-	list.head = &Node{}
-	list.head.prev = list.head
-	list.head.next = list.head
-	list.head.root = list.head
-	list.size = 0
-	return list
+	root := &Node{}
+	root.prev = root
+	root.next = root
+	root.root = root
+	return &LList{root: root, size: 0}
 }
 
 func (list *LList) String() string {
 	saida := "["
-	for it := list.head.next; it != list.head; it = it.next {
+	for it := list.root.next; it != list.root; it = it.next {
 		saida += fmt.Sprint(it.Value)
-		if it.next != list.head {
+		if it.next != list.root {
 			saida += ", "
 		}
 	}
@@ -61,7 +59,7 @@ func (list *LList) Insert(b *Node, value int) {
 		Value: value,
 		prev:  a,
 		next:  b,
-		root:  list.head,
+		root:  list.root,
 	}
 	a.next = c
 	b.prev = c
@@ -69,11 +67,11 @@ func (list *LList) Insert(b *Node, value int) {
 }
 
 func (list *LList) PushBack(value int) {
-	list.Insert(list.head, value)
+	list.Insert(list.root, value)
 }
 
 func (list *LList) PushFront(value int) {
-	list.Insert(list.head.next, value)
+	list.Insert(list.root.next, value)
 }
 
 func (list *LList) Remove(b *Node) {
@@ -87,15 +85,15 @@ func (list *LList) Remove(b *Node) {
 }
 
 func (list *LList) PopBack() {
-	list.Remove(list.head.prev)
+	list.Remove(list.root.prev)
 }
 
 func (list *LList) PopFront() {
-	list.Remove(list.head.next)
+	list.Remove(list.root.next)
 }
 
 func (list *LList) Search(value int) *Node {
-	for it := list.head.next; it != list.head; it = it.next {
+	for it := list.root.next; it != list.root; it = it.next {
 		if it.Value == value {
 			return it
 		}
@@ -107,19 +105,19 @@ func (list *LList) Back() *Node {
 	if list.size == 0 {
 		return nil
 	}
-	return list.head.prev
+	return list.root.prev
 }
 
 func (list *LList) Front() *Node {
 	if list.size == 0 {
 		return nil
 	}
-	return list.head.next
+	return list.root.next
 }
 
 func (list *LList) Clear() {
-	list.head.prev = list.head
-	list.head.next = list.head
+	list.root.prev = list.root
+	list.root.next = list.root
 	list.size = 0
 }
 

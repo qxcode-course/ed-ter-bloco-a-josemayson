@@ -20,12 +20,10 @@ type LList struct {
 }
 
 func NewLList() *LList {
-	list := &LList{}
-	list.head = &Node{}
-	list.head.prev = list.head
-	list.head.next = list.head
-	list.size = 0
-	return list
+	head := &Node{}
+	head.next = head
+	head.prev = head
+	return &LList{head: head, size: 0}
 }
 
 func (list *LList) Inserir(b *Node, value int) {
