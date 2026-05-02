@@ -28,70 +28,68 @@ func NewLList() *LList {
 	return list
 }
 
-func (list *LList) String() string {
-	saida := "["
-
-	for it := list.head.next; it != list.head; it = it.next {
-		saida += fmt.Sprint(it.info)
-		if it.next != list.head {
-			saida += ", "
-		}
-	}
-	return saida + "]"
-}
-
-func (list *LList) Insert(b *Node, value int) {
+func (list *LList) Inserir(b *Node, value int) {
 	a := b.prev
 	c := &Node{
 		info: value,
-		prev: a,
 		next: b,
+		prev: a,
 	}
 	a.next = c
 	b.prev = c
 	list.size++
 }
 
+func (list *LList) String() string {
+	saida := "["
+	for i := list.head.next; i != list.head; i = i.next {
+		saida += fmt.Sprint(i.info)
+		if i.next != list.head {
+			saida += ", "
+		}
+	}
+	return saida + "]"
+}
+
 func (list *LList) PushBack(value int) {
-	list.Insert(list.head, value)
+	list.Inserir(list.head, value)
 }
 
 func (list *LList) PushFront(value int) {
-	list.Insert(list.head.next, value)
+	list.Inserir(list.head.next, value)
 }
 
-func (list *LList) Remover(b *Node) {
+func (list *LList) Remove(b *Node) {
 	a := b.prev
 	c := b.next
-	c.prev = a
 	a.next = c
+	c.prev = a
 	b.prev = nil
 	b.next = nil
 	list.size--
 }
 
 func (list *LList) PopBack() {
-	if list.head.next == list.head {
+	if list.head == list.head.next {
 		return
 	}
-	list.Remover(list.head.prev)
+	list.Remove(list.head.prev)
 }
 
 func (list *LList) PopFront() {
-	if list.head.next == list.head {
+	if list.head == list.head.next {
 		return
 	}
-	list.Remover(list.head.next)
+	list.Remove(list.head.next)
+}
+
+func (list *LList) Size() int {
+	return list.size
 }
 
 func (list *LList) Clear() {
 	list.head.next = list.head
 	list.head.prev = list.head
-	list.size = 0
-}
-
-func (list *LList) Size() int {
-	return list.size
 }
 
 func main() {

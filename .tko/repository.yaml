@@ -22,7 +22,6 @@ sources:
   quests: null
   tasks: null
 expanded:
-- ed@rec
 - ed@list
 flags:
   inbox: all
@@ -31,5 +30,5 @@ flags:
   task_graph_mode: executions
   show_time: 'true'
 lang: go
-selected: ed@labirinto
-selected_index: 9
+selected: ed@lista_d1
+selected_index: 6
