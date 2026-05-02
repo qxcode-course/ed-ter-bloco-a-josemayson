@@ -62,3 +62,8 @@
 2026-05-02 01:21:24, MOVE, v:1, k:ed@labirinto, mode:PICK
 2026-05-02 01:21:25, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
 2026-05-02 01:21:25, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-05-02 01:22:50, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-05-02 01:22:51, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
+2026-05-02 01:22:51, MOVE, v:1, k:ed@labirinto, mode:BACK
+2026-05-02 01:23:09, MOVE, v:1, k:ed@labirinto, mode:PICK
+2026-05-02 01:23:10, EXEC, v:1, k:ed@labirinto, mode:FULL, rate:100
