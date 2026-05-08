@@ -1,0 +1,6 @@
+2026-05-04 07:49:22, MOVE, v:1, k:ed@lista_d3, mode:DOWN
+2026-05-04 07:49:22, MOVE, v:1, k:ed@lista_d3, mode:PICK
+2026-05-04 07:49:23, EXEC, v:1, k:ed@lista_d3, mode:FULL, rate:0, size:109
+2026-05-04 07:49:26, MOVE, v:1, k:ed@lista_d3, mode:BACK
+2026-05-04 07:50:53, MOVE, v:1, k:eval1@casais, mode:PICK
+2026-05-04 07:51:07, MOVE, v:1, k:eval1@casais, mode:BACK

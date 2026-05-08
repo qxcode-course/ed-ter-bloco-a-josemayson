@@ -1,0 +1,364 @@
+{
+    "patches": [
+        {
+            "label": "2026-05-02_21-46-50",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,163 +23,53 @@\n mt%22%0A\n-%0A// \n func \n-editor(c rune) %7B%0A//     if c ==%0A// %7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09for _, c := range palavra %7B%0A%09%09fmt.Print(string(c))%0A%09%7D\n+main() %7B%0A    fmt.Println(%22Hello, World!%22)\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-02_21-56-57",
+            "content": "@@ -21,16 +21,19 @@\n  %22fmt%22%0A%0A\n+// \n func edi\n@@ -40,130 +40,36 @@\n tor(\n-palavra string) %7B%0A%09for _, c := range palavra %7B%0A%09%09if c == 'R' %7B%0A%09%09%09fmt.Println()%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(string(c))%0A%09%09%7D%0A%09%7D%0A\n+c rune) %7B%0A//     if c ==%0A// \n %7D%0A%0Af\n@@ -125,23 +125,62 @@\n ra)%0A\n-%09editor(palavra)\n+%0A%09for _, c := range palavra %7B%0A%09%09fmt.Print(string(c))%0A%09%7D\n %0A%7D%0A\n",
+            "lines": "16"
+        },
+        {
+            "label": "2026-05-02_22-02-49",
+            "content": "@@ -51,16 +51,119 @@\n ring) %7B%0A\n+%09for _, c := range palavra %7B%0A%09%09if c == 'R' %7B%0A%09%09%09fmt.Println()%0A%09%09%7D else %7B%0A%09%09%09fmt.Print(string(c))%0A%09%09%7D%0A%09%7D\n %0A%7D%0A%0Afunc\n@@ -217,21 +217,22 @@\n a)%0A%09\n-palavra += %22%7C%22\n+editor(palavra)\n %0A%7D%0A\n",
+            "lines": "19"
+        },
+        {
+            "label": "2026-05-02_22-26-02",
+            "content": "@@ -25,924 +25,110 @@\n t%22%0A%0A\n-type Node struct %7B%0A%09info rune%0A%09next *Node%0A%09prev *Node%0A%7D%0A%0Atype Editor struct %7B%0A%09head  *Node%0A%09curso *Node%0A%7D%0A%0Afunc NewEditor() *Editor %7B%0A%09no := &Node%7B%7D%0A%09no.next = no%0A%09no.prev = no%0A%09return &Editor%7Bhead: no, curso: no%7D%0A%7D%0A%0Afunc (e *Editor) Insert(b *Node, char rune) %7B%0A%09a := b.prev%0A%09novo := &Node%7B%0A%09%09info: char,%0A%09%09next: b,%0A%09%09prev: a,%0A%09%7D%0A%09a.next = novo%0A%09b.prev = novo%0A%09e.curso = novo%0A%7D%0A%0Afunc (e *Editor) MoveLeft() %7B%0A%09if e.curso.prev != e.head %7B%0A%09%09e.curso = e.curso.prev%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) MoveRight() %7B%0A%09if e.curso.next != e.head %7B%0A%09%09e.curso = e.curso.next%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) Remove(b *Node) %7B%0A%09if e.curso != e.head %7B%0A%09%09a := b.prev%0A%09%09c := b.next%0A%09%09a.next = c%0A%09%09c.prev = a%0A%09%09b.prev = nil%0A%09%09b.next = nil%0A%09%09e.curso = a%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09editor := NewEditor()%0A%0A%09for _, p := range palavra %7B%0A%09%09if p == 'R' %7B%0A%09%09%09editor.Insert(editor.curso.next, '%5Cn')%0A%09%09%7D%0A%09%7D%0A%09fmt.Println(editor)\n+func editor(palavra string) %7B%0A%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%09palavra += %22%7C%22\n %0A%7D%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2026-05-02_23-21-44",
+            "content": "@@ -941,18 +941,8 @@\n itor\n-.head.info\n )%0A%7D%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-02_23-22-03",
+            "content": "@@ -18,29 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A%09%22strings%22%0A)\n %0A%0Aty\n@@ -434,32 +434,37 @@\n () %7B%0A%09if e.curso\n+.prev\n  != e.head %7B%0A%09%09e\n@@ -754,678 +754,205 @@\n unc \n-(e *Editor) print() string %7B%0A%09var sb strings.Builder%0A%0A%09if e.curso == e.head %7B%0A%09%09sb.WriteRune('%7C')%0A%09%7D%0A%0A%09atual := e.head.next%0A%09for atual != e.head %7B%0A%09%09sb.WriteRune(atual.info)%0A%09%09if e.curso == atual %7B%0A%09%09%09sb.WriteRune('%7C')%0A%09%09%7D%0A%09%09atual = atual.next%0A%09%7D%0A%09return sb.String()%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09editor := NewEditor()%0A%0A%09for _, p := range palavra %7B%0A%09%09if p == 'R' %7B%0A%09%09%09editor.Insert(editor.curso.next, '%5Cn')%0A%09%09%7D else if p == 'B' %7B%0A%09%09%09editor.Remove(editor.curso)%0A%09%09%7D else if p == 'D' %7B%0A%09%09%09editor.Remove(editor.curso.next)%0A%09%09%7D else if p == '%3E' %7B%0A%09%09%09editor.MoveRight()%0A%09%09%7D else if p == '%3C' %7B%0A%09%09%09editor.MoveLeft()%0A%09%09%7D%0A%09%7D%0A%09fmt.Print(editor.print()\n+main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09editor := NewEditor()%0A%0A%09for _, p := range palavra %7B%0A%09%09if p == 'R' %7B%0A%09%09%09editor.Insert(editor.curso.next, '%5Cn')%0A%09%09%7D%0A%09%7D%0A%09fmt.Println(editor.head.info\n )%0A%7D%0A\n",
+            "lines": "71"
+        },
+        {
+            "label": "2026-05-02_23-29-14",
+            "content": "@@ -1403,58 +1403,8 @@\n t()%0A\n-%09%09%7D else %7B%0A%09%09%09editor.Insert(editor.curso.next, p)%0A\n %09%09%7D%0A\n",
+            "lines": "100"
+        },
+        {
+            "label": "2026-05-02_23-30-28",
+            "content": "@@ -1145,30 +1145,21 @@\n %7B%0A%09%09\n-switch p %7B%0A%09%09case\n+if p ==\n  'R'\n-:\n+ %7B\n %0A%09%09%09\n@@ -1179,20 +1179,21 @@\n (editor.\n-head\n+curso\n .next, '\n@@ -1203,17 +1203,28 @@\n )%0A%09%09\n-case\n+%7D else if p ==\n  'B'\n-:\n+ %7B\n %0A%09%09%09\n@@ -1257,17 +1257,28 @@\n )%0A%09%09\n-case\n+%7D else if p ==\n  'D'\n-:\n+ %7B\n %0A%09%09%09\n@@ -1316,17 +1316,28 @@\n )%0A%09%09\n-case\n+%7D else if p ==\n  '%3E'\n-:\n+ %7B\n %0A%09%09%09\n@@ -1361,17 +1361,28 @@\n )%0A%09%09\n-case\n+%7D else if p ==\n  '%3C'\n-:\n+ %7B\n %0A%09%09%09\n@@ -1405,16 +1405,16 @@\n )%0A%09%09\n-default:\n+%7D else %7B\n %0A%09%09%09\n@@ -1443,34 +1443,22 @@\n urso\n-, editor.curso.info\n+.next, p\n )%0A%09%09%7D%0A\n-%0A\n %09%7D%0A%09\n@@ -1470,10 +1470,8 @@\n rint\n-ln\n (edi\n",
+            "lines": "102"
+        },
+        {
+            "label": "2026-05-02_23-34-06",
+            "content": "@@ -1412,20 +1412,21 @@\n  editor.\n-head\n+curso\n .info)%0A%09\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-02_23-34-21",
+            "content": "@@ -1402,20 +1402,31 @@\n tor.\n-head.next, p\n+curso, editor.head.info\n )%0A%09%09\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-02_23-35-10",
+            "content": "@@ -1394,29 +1394,28 @@\n sert(editor.\n-curso\n+head\n .next, p)%0A%09%09\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-02_23-35-33",
+            "content": "@@ -1184,29 +1184,28 @@\n sert(editor.\n-curso\n+head\n .next, '%5Cn')\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-02_23-36-07",
+            "content": "@@ -11,21 +11,1450 @@\n in%0A%0A\n-func main() %7B%0A\n+import (%0A%09%22fmt%22%0A%09%22strings%22%0A)%0A%0Atype Node struct %7B%0A%09info rune%0A%09next *Node%0A%09prev *Node%0A%7D%0A%0Atype Editor struct %7B%0A%09head  *Node%0A%09curso *Node%0A%7D%0A%0Afunc NewEditor() *Editor %7B%0A%09no := &Node%7B%7D%0A%09no.next = no%0A%09no.prev = no%0A%09return &Editor%7Bhead: no, curso: no%7D%0A%7D%0A%0Afunc (e *Editor) Insert(b *Node, char rune) %7B%0A%09a := b.prev%0A%09novo := &Node%7B%0A%09%09info: char,%0A%09%09next: b,%0A%09%09prev: a,%0A%09%7D%0A%09a.next = novo%0A%09b.prev = novo%0A%09e.curso = novo%0A%7D%0A%0Afunc (e *Editor) MoveLeft() %7B%0A%09if e.curso != e.head %7B%0A%09%09e.curso = e.curso.prev%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) MoveRight() %7B%0A%09if e.curso.next != e.head %7B%0A%09%09e.curso = e.curso.next%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) Remove(b *Node) %7B%0A%09if e.curso != e.head %7B%0A%09%09a := b.prev%0A%09%09c := b.next%0A%09%09a.next = c%0A%09%09c.prev = a%0A%09%09b.prev = nil%0A%09%09b.next = nil%0A%09%09e.curso = a%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) print() string %7B%0A%09var sb strings.Builder%0A%0A%09if e.curso == e.head %7B%0A%09%09sb.WriteRune('%7C')%0A%09%7D%0A%0A%09atual := e.head.next%0A%09for atual != e.head %7B%0A%09%09sb.WriteRune(atual.info)%0A%09%09if e.curso == atual %7B%0A%09%09%09sb.WriteRune('%7C')%0A%09%09%7D%0A%09%09atual = atual.next%0A%09%7D%0A%09return sb.String()%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09editor := NewEditor()%0A%0A%09for _, p := range palavra %7B%0A%09%09switch p %7B%0A%09%09case 'R':%0A%09%09%09editor.Insert(editor.curso.next, '%5Cn')%0A%09%09case 'B':%0A%09%09%09editor.Remove(editor.curso)%0A%09%09case 'D':%0A%09%09%09editor.Remove(editor.curso.next)%0A%09%09case '%3E':%0A%09%09%09editor.MoveRight()%0A%09%09case '%3C':%0A%09%09%09editor.MoveLeft()%0A%09%09default:%0A%09%09%09editor.Insert(editor.curso.next, p)%0A%09%09%7D%0A%0A%09%7D%0A%09fmt.Println(editor.print())\n %0A%7D%0A\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-02_23-46-41",
+            "content": "@@ -11,1450 +11,21 @@\n in%0A%0A\n-import (%0A%09%22fmt%22%0A%09%22strings%22%0A)%0A%0Atype Node struct %7B%0A%09info rune%0A%09next *Node%0A%09prev *Node%0A%7D%0A%0Atype Editor struct %7B%0A%09head  *Node%0A%09curso *Node%0A%7D%0A%0Afunc NewEditor() *Editor %7B%0A%09no := &Node%7B%7D%0A%09no.next = no%0A%09no.prev = no%0A%09return &Editor%7Bhead: no, curso: no%7D%0A%7D%0A%0Afunc (e *Editor) Insert(b *Node, char rune) %7B%0A%09a := b.prev%0A%09novo := &Node%7B%0A%09%09info: char,%0A%09%09next: b,%0A%09%09prev: a,%0A%09%7D%0A%09a.next = novo%0A%09b.prev = novo%0A%09e.curso = novo%0A%7D%0A%0Afunc (e *Editor) MoveLeft() %7B%0A%09if e.curso != e.head %7B%0A%09%09e.curso = e.curso.prev%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) MoveRight() %7B%0A%09if e.curso.next != e.head %7B%0A%09%09e.curso = e.curso.next%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) Remove(b *Node) %7B%0A%09if e.curso != e.head %7B%0A%09%09a := b.prev%0A%09%09c := b.next%0A%09%09a.next = c%0A%09%09c.prev = a%0A%09%09b.prev = nil%0A%09%09b.next = nil%0A%09%09e.curso = a%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) print() string %7B%0A%09var sb strings.Builder%0A%0A%09if e.curso == e.head %7B%0A%09%09sb.WriteRune('%7C')%0A%09%7D%0A%0A%09atual := e.head.next%0A%09for atual != e.head %7B%0A%09%09sb.WriteRune(atual.info)%0A%09%09if e.curso == atual %7B%0A%09%09%09sb.WriteRune('%7C')%0A%09%09%7D%0A%09%09atual = atual.next%0A%09%7D%0A%09return sb.String()%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09editor := NewEditor()%0A%0A%09for _, p := range palavra %7B%0A%09%09switch p %7B%0A%09%09case 'R':%0A%09%09%09editor.Insert(editor.curso.next, '%5Cn')%0A%09%09case 'B':%0A%09%09%09editor.Remove(editor.curso)%0A%09%09case 'D':%0A%09%09%09editor.Remove(editor.curso.next)%0A%09%09case '%3E':%0A%09%09%09editor.MoveRight()%0A%09%09case '%3C':%0A%09%09%09editor.MoveLeft()%0A%09%09default:%0A%09%09%09editor.Insert(editor.curso.next, p)%0A%09%09%7D%0A%0A%09%7D%0A%09fmt.Println(editor.print())\n+func main() %7B%0A\n %0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-02_23-47-56",
+            "content": "@@ -11,21 +11,1450 @@\n in%0A%0A\n-func main() %7B%0A\n+import (%0A%09%22fmt%22%0A%09%22strings%22%0A)%0A%0Atype Node struct %7B%0A%09info rune%0A%09next *Node%0A%09prev *Node%0A%7D%0A%0Atype Editor struct %7B%0A%09head  *Node%0A%09curso *Node%0A%7D%0A%0Afunc NewEditor() *Editor %7B%0A%09no := &Node%7B%7D%0A%09no.next = no%0A%09no.prev = no%0A%09return &Editor%7Bhead: no, curso: no%7D%0A%7D%0A%0Afunc (e *Editor) Insert(b *Node, char rune) %7B%0A%09a := b.prev%0A%09novo := &Node%7B%0A%09%09info: char,%0A%09%09next: b,%0A%09%09prev: a,%0A%09%7D%0A%09a.next = novo%0A%09b.prev = novo%0A%09e.curso = novo%0A%7D%0A%0Afunc (e *Editor) MoveLeft() %7B%0A%09if e.curso != e.head %7B%0A%09%09e.curso = e.curso.prev%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) MoveRight() %7B%0A%09if e.curso.next != e.head %7B%0A%09%09e.curso = e.curso.next%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) Remove(b *Node) %7B%0A%09if e.curso != e.head %7B%0A%09%09a := b.prev%0A%09%09c := b.next%0A%09%09a.next = c%0A%09%09c.prev = a%0A%09%09b.prev = nil%0A%09%09b.next = nil%0A%09%09e.curso = a%0A%09%7D%0A%7D%0A%0Afunc (e *Editor) print() string %7B%0A%09var sb strings.Builder%0A%0A%09if e.curso == e.head %7B%0A%09%09sb.WriteRune('%7C')%0A%09%7D%0A%0A%09atual := e.head.next%0A%09for atual != e.head %7B%0A%09%09sb.WriteRune(atual.info)%0A%09%09if e.curso == atual %7B%0A%09%09%09sb.WriteRune('%7C')%0A%09%09%7D%0A%09%09atual = atual.next%0A%09%7D%0A%09return sb.String()%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09editor := NewEditor()%0A%0A%09for _, p := range palavra %7B%0A%09%09switch p %7B%0A%09%09case 'R':%0A%09%09%09editor.Insert(editor.curso.next, '%5Cn')%0A%09%09case 'B':%0A%09%09%09editor.Remove(editor.curso)%0A%09%09case 'D':%0A%09%09%09editor.Remove(editor.curso.next)%0A%09%09case '%3E':%0A%09%09%09editor.MoveRight()%0A%09%09case '%3C':%0A%09%09%09editor.MoveLeft()%0A%09%09default:%0A%09%09%09editor.Insert(editor.curso.next, p)%0A%09%09%7D%0A%0A%09%7D%0A%09fmt.Println(editor.print())\n %0A%7D%0A\n",
+            "lines": "104"
+        },
+        {
+            "label": "2026-05-02_23-48-54",
+            "content": "@@ -11,343 +11,8 @@\n in%0A%0A\n-type Node%5BT comparable%5D struct %7B%0A%09info T%0A%09next *Node%5BT%5D%0A%09Prev *Node%5BT%5D%0A%7D%0A%0Atype List%5BT comparable%5D struct %7B%0A%09head   *Node%5BT%5D%0A%09cursor *Node%5BT%5D%0A%7D%0A%0Afunc NewList%5BT comparable%5D() *List%5BT%5D %7B%0A%09list := &Node%5BT%5D%7B%7D%0A%09list.next = list%0A%09list.Prev = list%0A%09return &List%5BT%5D%7Bhead: list, cursor: list%7D%0A%7D%0A%0A// func (list *List%5BT%5D) String() string %7B%0A%0A// %7D%0A%0A\n func\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-05-05_08-29-24",
+            "content": "@@ -11,22 +11,8 @@\n in%0A%0A\n-import %22fmt%22%0A%0A\n type\n@@ -64,17 +64,17 @@\n ode%5BT%5D%0A%09\n-p\n+P\n rev *Nod\n@@ -235,17 +235,17 @@\n t%0A%09list.\n-p\n+P\n rev = li\n@@ -297,891 +297,70 @@\n %0A%7D%0A%0A\n-func (list *List%5BT%5D) Insert(b *Node%5BT%5D, value T) %7B%0A%09a := b.prev%0A%09c := &Node%5BT%5D%7B%0A%09%09info: value,%0A%09%09next: b,%0A%09%09prev: a,%0A%09%7D%0A%09a.next = c%0A%09b.prev = c%0A%09list.cursor = c%0A%7D%0A%0Afunc (list *List%5BT%5D) Remove(b *Node%5BT%5D) %7B%0A%09a := b.prev%0A%09c := b.next%0A%09a.next = c%0A%09c.prev = a%0A%09b.next = nil%0A%09b.prev = nil%0A%09list.cursor = a%0A%7D%0A%0Afunc (list *List%5BT%5D) String() string %7B%0A%09saida := %22%22%0A%0A%09if list.cursor == list.head %7B%0A%09%09saida += %22%7C%22%0A%09%7D%0A%0A%09for it := list.head.next; it != list.head; it = it.next %7B%0A%09%09saida += fmt.Sprint(it.info)%0A%0A%09%09if it == list.cursor %7B%0A%09%09%09saida += %22%7C%22%0A%09%09%7D%0A%09%7D%0A%09return saida%0A%7D%0A%0Afunc (list *List%5BT%5D) direita() %7B%0A%09if list.head != list.cursor.next %7B%0A%09%09list.cursor = list.cursor.next%0A%09%7D%0A%7D%0A%0Afunc (list *List%5BT%5D) esquerda() %7B%0A%09if list.cursor != list.head %7B%0A%09%09list.cursor = list.cursor.prev%0A%09%7D%0A%7D%0A%0Afunc main() %7B%0A%09var palavra string%0A%09fmt.Scan(&palavra)%0A%0A%09list := NewList%5Bstring%5D()%0A%09fmt.Println(list.String())\n+// func (list *List%5BT%5D) String() string %7B%0A%0A// %7D%0A%0Afunc main() %7B%0A\n %0A%7D%0A\n",
+            "lines": "27"
+        },
+        {
+            "label": "2026-05-05_08-55-44",
+            "content": "@@ -798,16 +798,9 @@\n rint\n-f(%22%25c%22, \n+(\n it.i\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-05-05_08-56-10",
+            "content": "@@ -1175,102 +1175,10 @@\n %5D()%0A\n-%0A\n %09f\n-or _, l := range palavra %7B%0A%09%09if l == 'R' %7B%0A%09%09%09list.Insert(list.cursor.next, %22%5Cn%22)%0A%09%09%7D%0A%09%7D%0A%09f\n mt.P\n@@ -1188,12 +1188,21 @@\n tln(list\n+.String()\n )%0A%7D%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-05-05_09-04-15",
+            "content": "@@ -1175,22 +1175,8 @@\n %5D()%0A\n-%09list.String()\n %0A%09fo\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-05_09-04-38",
+            "content": "@@ -30,16 +30,30 @@\n ype Node\n+%5BT comparable%5D\n  struct \n@@ -60,20 +60,17 @@\n %7B%0A%09info \n-rune\n+T\n %0A%09next *\n@@ -73,16 +73,19 @@\n xt *Node\n+%5BT%5D\n %0A%09prev *\n@@ -84,24 +84,27 @@\n %0A%09prev *Node\n+%5BT%5D\n %0A%7D%0A%0Atype Lis\n@@ -104,16 +104,30 @@\n ype List\n+%5BT comparable%5D\n  struct \n@@ -141,16 +141,19 @@\n    *Node\n+%5BT%5D\n %0A%09cursor\n@@ -158,16 +158,19 @@\n or *Node\n+%5BT%5D\n %0A%7D%0A%0Afunc\n@@ -181,16 +181,30 @@\n List\n+%5BT comparable%5D\n () *List\n  %7B%0A%09\n@@ -199,16 +199,19 @@\n () *List\n+%5BT%5D\n  %7B%0A%09list\n@@ -219,16 +219,19 @@\n := &Node\n+%5BT%5D\n %7B%7D%0A%09list\n@@ -274,16 +274,19 @@\n rn &List\n+%5BT%5D\n %7Bhead: l\n@@ -323,16 +323,19 @@\n st *List\n+%5BT%5D\n ) Insert\n@@ -346,16 +346,19 @@\n Node\n+%5BT%5D\n , value \n rune\n@@ -357,12 +357,9 @@\n lue \n-rune\n+T\n ) %7B%0A\n@@ -382,16 +382,19 @@\n := &Node\n+%5BT%5D\n %7B%0A%09%09info\n@@ -487,16 +487,19 @@\n st *List\n+%5BT%5D\n ) Remove\n@@ -506,16 +506,19 @@\n (b *Node\n+%5BT%5D\n ) %7B%0A%09a :\n@@ -566,20 +566,20 @@\n  = a%0A%09b.\n-prev\n+next\n  = nil%0A%09\n@@ -576,28 +576,28 @@\n xt = nil%0A%09b.\n-next\n+prev\n  = nil%0A%09list\n@@ -627,16 +627,19 @@\n st *List\n+%5BT%5D\n ) String\n@@ -663,16 +663,67 @@\n a := %22%22%0A\n+%0A%09if list.cursor == list.head %7B%0A%09%09saida += %22%7C%22%0A%09%7D%0A%0A\n %09for it \n@@ -777,53 +777,8 @@\n t %7B%0A\n-%09%09if list.cursor == it %7B%0A%09%09%09saida += %22%7C%22%0A%09%09%7D%0A\n %09%09sa\n@@ -815,26 +815,16 @@\n fo)%0A\n+%0A\n %09\n-%7D%0A\n %09if \n-list.cursor\n+it\n  == \n@@ -820,39 +820,42 @@\n %09%09if it == list.\n-head\n+cursor\n  %7B%0A\n+%09\n %09%09saida += %22%7C%22%0A%09\n@@ -853,16 +853,20 @@\n  += %22%7C%22%0A\n+%09%09%7D%0A\n %09%7D%0A%09retu\n@@ -897,20 +897,62 @@\n List\n-) right() %7B%0A\n+%5BT%5D) direita() %7B%0A%09if list.head != list.cursor.next %7B%0A%09\n %09lis\n@@ -979,16 +979,18 @@\n or.next%0A\n+%09%7D\n %0A%7D%0A%0Afunc\n@@ -1005,19 +1005,58 @@\n List\n-) left()\n+%5BT%5D) esquerda() %7B%0A%09if list.cursor != list.head\n  %7B%0A\n+%09\n %09lis\n@@ -1083,16 +1083,19 @@\n or.prev%0A\n+%09%7D%0A\n %7D%0A%0Afunc \n@@ -1145,21 +1145,20 @@\n avra)%0A%0A%09\n-texto\n+list\n  := NewL\n@@ -1164,27 +1164,124 @@\n List\n-()%0A%0A%09texto.String()\n+%5Bstring%5D()%0A%09list.String()%0A%09for _, l := range palavra %7B%0A%09%09if l == 'R' %7B%0A%09%09%09list.Insert(list.cursor.next, %22%5Cn%22)%0A%09%09%7D%0A%09%7D\n %0A%09fm\n@@ -1294,13 +1294,12 @@\n tln(\n-texto\n+list\n )%0A%7D%0A\n",
+            "lines": "86"
+        },
+        {
+            "label": "2026-05-05_11-16-24",
+            "content": "@@ -1006,75 +1006,22 @@\n )%0A%0A%09\n-for _, p := range palavra %7B%0A%09%09texto.Insert(texto.cursor.next, p)%0A%09%7D\n+texto.String()\n %0A%09fm\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-05-05_11-18-35",
+            "content": "@@ -733,16 +733,64 @@\n nfo)%0A%09%7D%0A\n+%09if list.cursor == list.head %7B%0A%09%09saida += %22%7C%22%0A%09%7D\n %0A%09return\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-19-30",
+            "content": "@@ -401,21 +401,16 @@\n rsor = c\n-.next\n %0A%7D%0A%0Afunc\n@@ -737,56 +737,8 @@\n %0A%09%7D%0A\n-%09if list.cursor == list.head %7B%0A%09%09saida += %22%7C%22%0A%09%7D\n %0A%09re\n",
+            "lines": "76"
+        },
+        {
+            "label": "2026-05-05_11-20-19",
+            "content": "@@ -401,16 +401,21 @@\n rsor = c\n+.next\n %0A%7D%0A%0Afunc\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-20-36",
+            "content": "@@ -401,21 +401,16 @@\n rsor = c\n-.next\n %0A%7D%0A%0Afunc\n@@ -535,21 +535,16 @@\n rsor = a\n-.next\n %0A%7D%0A%0Afunc\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-21-04",
+            "content": "@@ -539,17 +539,22 @@\n ursor = \n-c\n+a.next\n %0A%7D%0A%0Afunc\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-21-25",
+            "content": "@@ -401,16 +401,21 @@\n rsor = c\n+.next\n %0A%7D%0A%0Afunc\n@@ -539,17 +539,17 @@\n ursor = \n-a\n+c\n %0A%7D%0A%0Afunc\n@@ -1062,16 +1062,21 @@\n o.cursor\n+.next\n , p)%0A%09%7D%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-22-27",
+            "content": "@@ -1057,21 +1057,16 @@\n o.cursor\n-.prev\n , p)%0A%09%7D%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-22-36",
+            "content": "@@ -1058,20 +1058,20 @@\n .cursor.\n-next\n+prev\n , p)%0A%09%7D%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-22-51",
+            "content": "@@ -400,17 +400,17 @@\n ursor = \n-b\n+c\n %0A%7D%0A%0Afunc\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-24-35",
+            "content": "@@ -392,33 +392,33 @@\n %0A%09list.cursor = \n-a\n+b\n %0A%7D%0A%0Afunc (list *\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-24-53",
+            "content": "@@ -400,17 +400,17 @@\n ursor = \n-c\n+a\n %0A%7D%0A%0Afunc\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-24-59",
+            "content": "@@ -401,21 +401,16 @@\n rsor = c\n-.next\n %0A%7D%0A%0Afunc\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-25-14",
+            "content": "@@ -400,17 +400,22 @@\n ursor = \n-b\n+c.next\n %0A%7D%0A%0Afunc\n@@ -1062,16 +1062,21 @@\n o.cursor\n+.next\n , p)%0A%09%7D%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-26-23",
+            "content": "@@ -1034,25 +1034,8 @@\n a %7B%0A\n-%09%09if p == 'R' %7B%0A%09\n %09%09te\n@@ -1063,17 +1063,10 @@\n or, \n-'%5Cn')%0A%09%09%7D\n+p)\n %0A%09%7D%0A\n",
+            "lines": "78"
+        },
+        {
+            "label": "2026-05-05_11-27-26",
+            "content": "@@ -1086,52 +1086,8 @@\n n')%0A\n-%09%09%7D else %7B%0A%09%09%09texto.Insert(texto.cursor, p)%0A\n %09%09%7D%0A\n",
+            "lines": "80"
+        },
+        {
+            "label": "2026-05-05_11-27-54",
+            "content": "@@ -1036,30 +1036,21 @@\n %7B%0A%09%09\n-switch p %7B%0A%09%09case\n+if p ==\n  'R'\n-:\n+ %7B\n %0A%09%09%09\n@@ -1088,58 +1088,16 @@\n )%0A%09%09\n-case 'B':%0A%09%09%09texto.Remove(texto.cursor)%0A%09%09default:\n+%7D else %7B\n %0A%09%09%09\n",
+            "lines": "82"
+        },
+        {
+            "label": "2026-05-05_11-30-20",
+            "content": "@@ -1137,112 +1137,8 @@\n or)%0A\n-%09%09case 'D':%0A%09%09%09texto.Remove(texto.cursor.next)%0A%09%09case '%3E':%0A%09%09%09texto.right()%0A%09%09case '%3C':%0A%09%09%09texto.left()%0A\n %09%09de\n",
+            "lines": "85"
+        },
+        {
+            "label": "2026-05-05_11-31-28",
+            "content": "@@ -1131,21 +1131,16 @@\n o.cursor\n-.prev\n )%0A%09%09case\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-05-05_11-32-19",
+            "content": "@@ -1178,16 +1178,21 @@\n o.cursor\n+.next\n )%0A%09%09case\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-05-05_11-32-32",
+            "content": "@@ -299,41 +299,8 @@\n ) %7B%0A\n-%09if b == list.head %7B%0A%09%09return%0A%09%7D%0A\n %09a :\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-05-05_11-32-48",
+            "content": "@@ -291,24 +291,57 @@\n lue rune) %7B%0A\n+%09if b == list.head %7B%0A%09%09return%0A%09%7D%0A\n %09a := b.prev\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-05_11-32-56",
+            "content": "@@ -831,45 +831,8 @@\n ) %7B%0A\n-%09if list.head.next == list.cursor %7B%0A%09\n %09lis\n@@ -858,19 +858,16 @@\n sor.next\n-%0A%09%7D\n %0A%0A%7D%0A%0Afun\n",
+            "lines": "91"
+        },
+        {
+            "label": "2026-05-07_14-21-55",
+            "content": "@@ -895,24 +895,25 @@\n sor.next%0A%09%7D%0A\n+%0A\n %7D%0A%0Afunc (lis\n@@ -934,40 +934,8 @@\n ) %7B%0A\n-%09if list.cursor == list.head %7B%0A%09\n %09lis\n@@ -962,19 +962,16 @@\n or.prev%0A\n-%09%7D%0A\n %7D%0A%0Afunc \n",
+            "lines": "93"
+        },
+        {
+            "label": "2026-05-07_14-22-36",
+            "content": "@@ -846,17 +846,17 @@\n ad.next \n-!\n+=\n = list.c\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-07_14-23-23",
+            "content": "@@ -840,16 +840,21 @@\n ist.head\n+.next\n  != list\n@@ -860,21 +860,16 @@\n t.cursor\n-.next\n  %7B%0A%09%09lis\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-07_14-23-38",
+            "content": "@@ -948,15 +948,10 @@\n rsor\n-.prev !\n+ =\n = li\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-07_14-23-55",
+            "content": "@@ -299,42 +299,8 @@\n ) %7B%0A\n-%09if b == list.head %7B%0A%09%09return%0A%09%7D%0A%0A\n %09a :\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-07_14-24-45",
+            "content": "@@ -295,16 +295,50 @@\n rune) %7B%0A\n+%09if b == list.head %7B%0A%09%09return%0A%09%7D%0A%0A\n %09a := b.\n@@ -479,42 +479,8 @@\n ) %7B%0A\n-%09if b == list.head %7B%0A%09%09return%0A%09%7D%0A%0A\n %09a :\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-25-06",
+            "content": "@@ -568,17 +568,17 @@\n ursor = \n-c\n+a\n %0A%7D%0A%0Afunc\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-25-31",
+            "content": "@@ -573,16 +573,17 @@\n  = c%0A%7D%0A%0A\n+f\n unc (lis\n@@ -609,16 +609,16 @@\n tring %7B%0A\n-\n %09saida :\n@@ -622,17 +622,16 @@\n a := %22%22%0A\n-%0A\n %09for it \n@@ -689,14 +689,8 @@\n %09%09if\n- it ==\n  lis\n@@ -698,16 +698,22 @@\n .cursor \n+== it \n %7B%0A%09%09%09sai\n@@ -767,17 +767,16 @@\n nfo)%0A%09%7D%0A\n-%0A\n %09if list\n@@ -813,20 +813,19 @@\n  += %22%7C%22%0A\n+\n %09%7D%0A\n-%0A\n %09return \n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-26-49",
+            "content": "@@ -569,25 +569,24 @@\n rsor = c%0A%7D%0A%0A\n-f\n unc (list *L\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-05-07_14-26-57",
+            "content": "@@ -888,24 +888,29 @@\n  list.cursor\n+.next\n  %7B%0A%09%09list.cu\n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-05-07_14-27-26",
+            "content": "@@ -622,16 +622,17 @@\n a := %22%22%0A\n+%0A\n %09for it \n@@ -686,16 +686,22 @@\n t %7B%0A%09%09if\n+ it ==\n  list.cu\n@@ -709,14 +709,8 @@\n sor \n-== it \n %7B%0A%09%09\n@@ -768,16 +768,17 @@\n nfo)%0A%09%7D%0A\n+%0A\n %09if list\n@@ -815,19 +815,20 @@\n  += %22%7C%22%0A\n-\n %09%7D%0A\n+%0A\n %09return \n",
+            "lines": "101"
+        },
+        {
+            "label": "2026-05-07_14-27-53",
+            "content": "@@ -18,18 +18,13 @@\n ort \n-(%0A%09\n %22fmt%22\n-%0A)\n %0A%0Aty\n@@ -83,22 +83,20 @@\n %7D%0A%0Atype \n-Editor\n+List\n  struct \n@@ -140,34 +140,28 @@\n  New\n-Editor() *Editor %7B%0A%09editor\n+List() *List %7B%0A%09list\n  := \n@@ -173,22 +173,20 @@\n %7B%7D%0A%09\n-editor\n+list\n .next = \n edit\n@@ -185,30 +185,26 @@\n t = \n-editor%0A%09editor\n+list%0A%09list\n .prev = \n edit\n@@ -199,22 +199,20 @@\n .prev = \n-editor\n+list\n %0A%09return\n@@ -217,27 +217,23 @@\n rn &\n-Editor\n+List\n %7Bhead: \n-editor\n+list\n , cu\n@@ -238,22 +238,20 @@\n cursor: \n-editor\n+list\n %7D%0A%7D%0A%0Afun\n@@ -253,30 +253,26 @@\n %0A%0Afunc (\n-editor *Editor\n+list *List\n ) Insert\n@@ -386,22 +386,20 @@\n ev = c%0A%09\n-editor\n+list\n .cursor \n@@ -392,33 +392,33 @@\n %0A%09list.cursor = \n-c\n+b\n %0A%7D%0A%0Afunc (editor\n@@ -411,30 +411,26 @@\n %0A%0Afunc (\n-editor *Editor\n+list *List\n ) Remove\n@@ -437,24 +437,58 @@\n (b *Node) %7B%0A\n+%09if b == list.head %7B%0A%09%09return%0A%09%7D%0A%0A\n %09a := b.prev\n@@ -554,22 +554,20 @@\n  = nil%0A%09\n-editor\n+list\n .cursor \n@@ -579,30 +579,26 @@\n %0A%0Afunc (\n-editor *Editor\n+list *List\n ) String\n@@ -622,17 +622,16 @@\n a := %22%22%0A\n-%0A\n %09for it \n@@ -633,22 +633,20 @@\n r it := \n-editor\n+list\n .head.ne\n@@ -651,30 +651,28 @@\n next; it != \n-editor\n+list\n .head; it = \n@@ -682,30 +682,28 @@\n next %7B%0A%09%09if \n-editor\n+list\n .cursor == i\n@@ -767,30 +767,28 @@\n nfo)%0A%09%7D%0A%09if \n-editor\n+list\n .cursor == e\n@@ -786,22 +786,20 @@\n rsor == \n-editor\n+list\n .head %7B%0A\n@@ -843,29 +843,25 @@\n nc (\n-editor *Editor\n+list *List\n ) rig\n-t\n h\n+t\n () %7B\n@@ -869,47 +869,41 @@\n %09if \n-editor.cursor != editor.head %7B%0A%09%09editor\n+list.head != list.cursor %7B%0A%09%09list\n .cur\n@@ -900,38 +900,36 @@\n %09%09list.cursor = \n-editor\n+list\n .cursor.next%0A%09%7D%0A\n@@ -941,22 +941,18 @@\n nc (\n-editor *Editor\n+list *List\n ) le\n@@ -962,22 +962,20 @@\n ) %7B%0A%09if \n-editor\n+list\n .cursor.\n@@ -982,22 +982,20 @@\n prev != \n-editor\n+list\n .head %7B%0A\n@@ -996,22 +996,20 @@\n ead %7B%0A%09%09\n-editor\n+list\n .cursor \n@@ -1010,22 +1010,20 @@\n ursor = \n-editor\n+list\n .cursor.\n@@ -1093,27 +1093,24 @@\n )%0A%0A%09\n-edi\n+tex\n to\n-r\n  := New\n-Editor\n+List\n ()%0A%0A\n@@ -1117,17 +1117,17 @@\n %09for _, \n-c\n+p\n  := rang\n@@ -1147,17 +1147,17 @@\n %09switch \n-c\n+p\n  %7B%0A%09%09cas\n@@ -1170,22 +1170,21 @@\n %0A%09%09%09\n-edi\n+tex\n to\n-r\n .Insert(\n edit\n@@ -1183,30 +1183,216 @@\n ert(\n-editor.head.next, '%5Cn'\n+texto.cursor, '%5Cn')%0A%09%09case 'B':%0A%09%09%09texto.Remove(texto.cursor.prev)%0A%09%09case 'D':%0A%09%09%09texto.Remove(texto.cursor)%0A%09%09case '%3E':%0A%09%09%09texto.right()%0A%09%09case '%3C':%0A%09%09%09texto.left()%0A%09%09default:%0A%09%09%09texto.Insert(texto.cursor, p\n )%0A%09%09\n@@ -1396,17 +1396,16 @@\n %0A%09%09%7D%0A%09%7D%0A\n-%0A\n %09fmt.Pri\n@@ -1413,23 +1413,13 @@\n tln(\n-editor.String()\n+texto\n )%0A%7D%0A\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-54-49",
+            "content": "@@ -1230,30 +1230,28 @@\n sert(editor.\n-cursor\n+head\n .next, '%5Cn')\n@@ -1255,59 +1255,8 @@\n n')%0A\n-%09%09default:%0A%09%09%09editor.Insert(editor.cursor.next, c)%0A\n %09%09%7D%0A\n",
+            "lines": "88"
+        },
+        {
+            "label": "2026-05-07_14-55-23",
+            "content": "@@ -573,17 +573,17 @@\n ursor = \n-a\n+c\n %0A%7D%0A%0Afunc\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-07_14-55-36",
+            "content": "@@ -433,17 +433,17 @@\n ursor = \n-b\n+c\n %0A%7D%0A%0Afunc\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-07_14-56-04",
+            "content": "@@ -1294,16 +1294,21 @@\n r.cursor\n+.next\n , c)%0A%09%09%7D\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-07_14-56-34",
+            "content": "@@ -1240,16 +1240,21 @@\n r.cursor\n+.next\n , '%5Cn')%0A\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-07_14-56-45",
+            "content": "@@ -1252,57 +1252,8 @@\n n')%0A\n-%09%09case 'D':%0A%09%09%09editor.Remove(editor.cursor.prev)%0A\n %09%09de\n",
+            "lines": "90"
+        },
+        {
+            "label": "2026-05-07_14-57-23",
+            "content": "@@ -1294,57 +1294,13 @@\n rsor\n-)%0A%09%09case 'B':%0A%09%09%09editor.Remove(editor.cursor.next\n+.prev\n )%0A%09%09\n",
+            "lines": "92"
+        },
+        {
+            "label": "2026-05-07_14-57-47",
+            "content": "@@ -1290,21 +1290,16 @@\n r.cursor\n-.prev\n )%0A%09%09case\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-07_14-57-54",
+            "content": "@@ -1350,67 +1350,8 @@\n xt)%0A\n-%09%09case '%3E':%0A%09%09%09editor.rigth()%0A%09%09case '%3C':%0A%09%09%09editor.left()%0A\n %09%09de\n",
+            "lines": "94"
+        },
+        {
+            "label": "2026-05-07_14-58-33",
+            "content": "@@ -1339,16 +1339,21 @@\n r.cursor\n+.next\n )%0A%09%09case\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-58-48",
+            "content": "@@ -1290,16 +1290,21 @@\n r.cursor\n+.prev\n )%0A%09%09case\n@@ -1331,37 +1331,32 @@\n ve(editor.cursor\n-.prev\n )%0A%09%09case '%3E':%0A%09%09\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-59-08",
+            "content": "@@ -1473,12 +1473,21 @@\n n(editor\n+.String()\n )%0A%7D%0A\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-59-43",
+            "content": "@@ -578,19 +578,16 @@\n  = a%0A%7D%0A%0A\n-// \n func (ed\n@@ -618,19 +618,16 @@\n tring %7B%0A\n-// \n %09saida :\n@@ -632,19 +632,16 @@\n  := %22%22%0A%0A\n-// \n %09for it \n@@ -695,19 +695,16 @@\n .next %7B%0A\n-// \n %09%09if edi\n@@ -722,19 +722,16 @@\n == it %7B%0A\n-// \n %09%09%09saida\n@@ -742,18 +742,12 @@\n %22%7C%22%0A\n-// \n %09%09%7D%0A\n-// \n %09%09sa\n@@ -780,25 +780,19 @@\n t.info)%0A\n-// %09%7D%0A// \n+%09%7D%0A\n %09if edit\n@@ -818,19 +818,16 @@\n .head %7B%0A\n-// \n %09%09saida \n@@ -837,17 +837,11 @@\n %22%7C%22%0A\n-// %09%7D%0A// \n+%09%7D%0A\n %09ret\n@@ -854,11 +854,8 @@\n ida%0A\n-// \n %7D%0A%0Af\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_14-59-58",
+            "content": "@@ -574,24 +574,27 @@\n rsor = a%0A%7D%0A%0A\n+// \n func (editor\n@@ -621,16 +621,19 @@\n tring %7B%0A\n+// \n %09saida :\n@@ -638,16 +638,19 @@\n  := %22%22%0A%0A\n+// \n %09for it \n@@ -704,16 +704,19 @@\n .next %7B%0A\n+// \n %09%09if edi\n@@ -734,16 +734,19 @@\n == it %7B%0A\n+// \n %09%09%09saida\n@@ -753,20 +753,26 @@\n  += %22%7C%22%0A\n+// \n %09%09%7D%0A\n+// \n %09%09saida \n@@ -801,19 +801,25 @@\n t.info)%0A\n-%09%7D%0A\n+// %09%7D%0A// \n %09if edit\n@@ -845,16 +845,19 @@\n .head %7B%0A\n+// \n %09%09saida \n@@ -863,19 +863,25 @@\n  += %22%7C%22%0A\n-%09%7D%0A\n+// %09%7D%0A// \n %09return \n@@ -886,16 +886,19 @@\n n saida%0A\n+// \n %7D%0A%0Afunc \n@@ -941,21 +941,16 @@\n r.cursor\n-.next\n  != edit\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_15-01-24",
+            "content": "@@ -573,17 +573,17 @@\n ursor = \n-c\n+a\n %0A%7D%0A%0Afunc\n@@ -902,16 +902,21 @@\n r.cursor\n+.next\n  != edit\n",
+            "lines": "98"
+        },
+        {
+            "label": "2026-05-07_15-03-02",
+            "content": "package main\n\nimport (\n\t\"fmt\"\n)\n\ntype Node struct {\n\tinfo rune\n\tnext *Node\n\tprev *Node\n}\n\ntype Editor struct {\n\thead   *Node\n\tcursor *Node\n}\n\nfunc NewEditor() *Editor {\n\teditor := &Node{}\n\teditor.next = editor\n\teditor.prev = editor\n\treturn &Editor{head: editor, cursor: editor}\n}\n\nfunc (editor *Editor) Insert(b *Node, value rune) {\n\ta := b.prev\n\tc := &Node{\n\t\tinfo: value,\n\t\tnext: b,\n\t\tprev: a,\n\t}\n\ta.next = c\n\tb.prev = c\n\teditor.cursor = b\n}\n\nfunc (editor *Editor) Remove(b *Node) {\n\ta := b.prev\n\tc := b.next\n\ta.next = c\n\tc.prev = a\n\tb.prev = nil\n\tb.next = nil\n\teditor.cursor = c\n}\n\nfunc (editor *Editor) String() string {\n\tsaida := \"\"\n\n\tfor it := editor.head.next; it != editor.head; it = it.next {\n\t\tif editor.cursor == it {\n\t\t\tsaida += \"|\"\n\t\t}\n\t\tsaida += fmt.Sprintf(\"%c\", it.info)\n\t}\n\tif editor.cursor == editor.head {\n\t\tsaida += \"|\"\n\t}\n\treturn saida\n}\n\nfunc (editor *Editor) rigth() {\n\tif editor.cursor != editor.head {\n\t\teditor.cursor = editor.cursor.next\n\t}\n}\n\nfunc (editor *Editor) left() {\n\tif editor.cursor.prev != editor.head {\n\t\teditor.cursor = editor.cursor.prev\n\t}\n}\n\nfunc main() {\n\tvar palavra string\n\tfmt.Scan(&palavra)\n\n\teditor := NewEditor()\n\n\tfor _, c := range palavra {\n\t\tswitch c {\n\t\tcase 'R':\n\t\t\teditor.Insert(editor.cursor, '\\n')\n\t\tcase 'D':\n\t\t\teditor.Remove(editor.cursor)\n\t\tcase 'B':\n\t\t\teditor.Remove(editor.cursor.prev)\n\t\tcase '>':\n\t\t\teditor.rigth()\n\t\tcase '<':\n\t\t\teditor.left()\n\t\tdefault:\n\t\t\teditor.Insert(editor.cursor, c)\n\t\t}\n\t}\n\n\tfmt.Println(editor)\n}\n",
+            "lines": "98"
+        }
+    ]
+}
