@@ -19,3 +19,12 @@
 2026-05-25 10:16:45, EXEC, v:1, k:ed@editorint, mode:FREE
 2026-05-25 10:16:45, MOVE, v:1, k:ed@editorint, mode:EDIT
 2026-05-25 10:26:41, EXEC, v:1, k:ed@editorint, mode:FREE
+2026-05-25 10:29:22, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-05-25 10:29:45, SELF, v:1, k:ed@editorint, self:1, rate:100, study:93, concept:1, refactor:1
+2026-05-25 10:26:41, MOVE, v:1, k:ed@editorint, mode:EDIT
+2026-05-25 14:16:41, MOVE, v:1, k:ed@editorint, mode:PICK
+2026-05-25 14:16:42, EXEC, v:1, k:ed@editorint, mode:LOCK, rate:100, size:272
+2026-05-25 14:16:43, MOVE, v:1, k:ed@editorint, mode:BACK
+2026-05-25 14:16:50, SELF, v:1, k:ed@editorint, self:1, concept:1, refactor:1
+2026-05-25 14:17:08, SELF, v:1, k:ed@editorint, self:1, study:132, concept:1, refactor:1
+2026-05-25 14:17:17, SELF, v:1, k:ed@editorint, self:1, rate:100, study:132, concept:1, refactor:1
