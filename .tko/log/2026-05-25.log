@@ -28,3 +28,30 @@
 2026-05-25 14:16:50, SELF, v:1, k:ed@editorint, self:1, concept:1, refactor:1
 2026-05-25 14:17:08, SELF, v:1, k:ed@editorint, self:1, study:132, concept:1, refactor:1
 2026-05-25 14:17:17, SELF, v:1, k:ed@editorint, self:1, rate:100, study:132, concept:1, refactor:1
+2026-05-25 14:36:19, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-25 15:10:23, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-05-25 22:09:05, MOVE, v:1, k:ed@iterador, mode:DOWN
+2026-05-25 22:09:05, MOVE, v:1, k:ed@iterador, mode:PICK
+2026-05-25 22:09:06, EXEC, v:1, k:ed@iterador, mode:FULL, rate:33
+2026-05-25 22:09:08, MOVE, v:1, k:ed@iterador, mode:BACK
+2026-05-25 22:12:07, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-25 22:09:05, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-25 22:09:05, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-25 22:09:05, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-25 22:09:05, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-25 22:09:06, MOVE, v:1, k:ed@iterador, mode:EDIT
+2026-05-25 22:16:24, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-05-25 22:19:01, MOVE, v:1, k:ed@triangulo, mode:PICK
+2026-05-25 22:19:02, EXEC, v:1, k:ed@triangulo, mode:FULL, rate:100
+2026-05-25 22:19:02, MOVE, v:1, k:ed@triangulo, mode:BACK
+2026-05-25 22:21:31, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-25 22:19:01, MOVE, v:1, k:ed@triangulo, mode:EDIT
+2026-05-25 22:26:08, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:25, size:81
+2026-05-25 22:26:19, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:75, size:81
+2026-05-25 22:26:38, EXEC, v:1, k:ed@wordsearch, mode:FULL, rate:100, size:88
+2026-05-25 22:26:39, MOVE, v:1, k:ed@wordsearch, mode:BACK
+2026-05-25 22:28:11, MOVE, v:1, k:ed@wordsearch, mode:PICK
+2026-05-25 22:26:35, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 22:26:38, MOVE, v:1, k:ed@wordsearch, mode:EDIT
+2026-05-25 22:39:57, EXEC, v:1, k:ed@wordsearch, mode:FULL, size:61, fail:COMP
+2026-05-25 22:39:55, MOVE, v:1, k:ed@wordsearch, mode:EDIT

@@ -7,8 +7,37 @@ import (
 )
 
 // Não mude a assinatura desta função, ela é a função chamada pelo LeetCode
-func exist(grid [][]byte, word string) bool {
-	_, _ = grid, word
+func exist(board [][]byte, word string) bool {
+	linhas := len(board)
+	colunas := len(board[0])
+	total := linhas * colunas
+
+	var busca func(r, c, i int) bool
+	busca = func(r, c, i int) bool {
+		if len(word) == i {
+			return true
+		}
+
+		if c < 0 || r < 0 || r >= linhas || c >= colunas || board[r][c] != word[i] {
+			return false
+		}
+
+		temp := board[r][c]
+		board[r][c] = '#'
+
+		aux := busca(r+1, c, i+1) || busca(r-1, c, i+1) || busca(r, c+1, i+1) || busca(r, c-1, i+1)
+		board[r][c] = temp
+		return aux
+	}
+
+	for i := 0; i < total; i++ {
+		r := i / colunas
+		c := i % colunas
+
+		if busca(r, c, 0) {
+			return true
+		}
+	}
 	return false
 }
 
