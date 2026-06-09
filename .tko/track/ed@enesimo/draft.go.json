@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-09_11-30-46",
+            "content": "@@ -6,17 +6,16 @@\n ge main%0A\n-%0A\n import %22\n@@ -23,367 +23,53 @@\n mt%22%0A\n-%0A\n func \n-busca(n int, atual int, divisor int) int %7B%0A%09if divisor*divisor %3E atual %7B%0A%09%09if n == 1 %7B%0A%09%09%09return atual%0A%09%09%7D%0A%09%09return busca(n-1, atual+1, 2)%0A%09%7D%0A%0A%09if atual%25divisor == 0 %7B%0A%09%09return busca(n, atual+1, 2)%0A%09%7D%0A%0A%09return busca(n, atual, divisor+1)%0A%7D%0A%0Afunc enesimo(n int) int %7B%0A%09return busca(n, 1, 2)%0A%7D%0A%0Afunc main() %7B%0A%09var n int%0A%09fmt.Scan(n)%0A%09fmt.Println(enesimo(n)\n+main() %7B%0A    fmt.Println(%22Hello, World!%22\n )%0A%7D%0A\n",
+            "lines": "5"
+        },
+        {
+            "label": "2026-06-09_11-39-19",
+            "content": "@@ -309,17 +309,17 @@\n usca(n, \n-2\n+1\n , 2)%0A%7D%0A%0A\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-09_11-39-31",
+            "content": "@@ -357,9 +357,8 @@\n can(\n-&\n n)%0A%09\n",
+            "lines": "28"
+        },
+        {
+            "label": "2026-06-09_11-40-07",
+            "content": "package main\n\nimport \"fmt\"\n\nfunc busca(n int, atual int, divisor int) int {\n\tif divisor*divisor > atual {\n\t\tif n == 1 {\n\t\t\treturn atual\n\t\t}\n\t\treturn busca(n-1, atual+1, 2)\n\t}\n\n\tif atual%divisor == 0 {\n\t\treturn busca(n, atual+1, 2)\n\t}\n\n\treturn busca(n, atual, divisor+1)\n}\n\nfunc enesimo(n int) int {\n\treturn busca(n, 2, 2)\n}\n\nfunc main() {\n\tvar n int\n\tfmt.Scan(&n)\n\tfmt.Println(enesimo(n))\n}\n",
+            "lines": "28"
+        }
+    ]
+}
