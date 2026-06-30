@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2026-06-30_20-09-57",
+            "content": "@@ -142,17 +142,19 @@\n ,%0A%09%09%7Bp.l\n-+\n+ + \n 1, p.c%7D,\n@@ -165,17 +165,19 @@\n p.l, p.c\n-+\n+ + \n 1%7D,%0A%09%09%7Bp\n@@ -183,12 +183,15 @@\n p.l,\n+ \n p.c\n--\n+ - \n 1%7D,%0A\n@@ -197,16 +197,17 @@\n %0A%09%09%7Bp.c,\n+ \n p.l%7D,%0A%09%7D\n@@ -664,17 +664,16 @@\n Pos%5DPos)\n- \n %0A%0A%09for !\n@@ -971,304 +971,14 @@\n %09%09%7D%0A\n+\n %09%7D%0A%7D%0A%0A\n-func voltar(grid %5B%5D%5Brune%5D, startPos Pos, endPos Pos, caminho map%5BPos%5DPos) %7B%0A%09if _, exist := caminho%5BendPos%5D; !exist && startPos != endPos %7B%0A%09%09return%0A%09%7D%0A%09curr := endPos%0A%0A%09for curr != startPos %7B%0A%09%09grid%5Bcurr.l%5D%5Bcurr.c%5D != '.'%0A%09%09curr = caminho%5Bcurr%5D%0A%09%7D%0A%09grid%5BstartPos.l%5D%5BstartPos.c%5D = '.'%0A%09%0A%7D%0A%0A\n func\n",
+            "lines": "96"
+        },
+        {
+            "label": "2026-06-30_20-20-14",
+            "content": "@@ -142,19 +142,17 @@\n ,%0A%09%09%7Bp.l\n- + \n++\n 1, p.c%7D,\n@@ -167,11 +167,9 @@\n  p.c\n- + \n++\n 1%7D,%0A\n@@ -179,15 +179,12 @@\n p.l,\n- \n p.c\n- - \n+-\n 1%7D,%0A\n@@ -190,17 +190,16 @@\n %0A%09%09%7Bp.c,\n- \n p.l%7D,%0A%09%7D\n@@ -656,16 +656,17 @@\n Pos%5DPos)\n+ \n %0A%0A%09for !\n@@ -978,37 +978,37 @@\n  voltar(grid %5B%5D%5B\n-%5D\n rune\n+%5D\n , startPos Pos, \n@@ -1178,24 +1178,25 @@\n .l%5D%5Bcurr.c%5D \n+!\n = '.'%0A%09%09curr\n@@ -1251,16 +1251,17 @@\n %5D = '.'%0A\n+%09\n %0A%7D%0A%0Afunc\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-06-30_20-21-06",
+            "content": "@@ -190,16 +190,30 @@\n c - 1%7D,%0A\n+%09%09%7Bp.c, p.l%7D,%0A\n %09%7D%0A%7D%0A%0Afu\n",
+            "lines": "110"
+        },
+        {
+            "label": "2026-06-30_20-34-32",
+            "content": "@@ -960,49 +960,8 @@\n %0A%09%7D%0A\n-%09voltar(grid, startPos, endPos, caminho)%0A\n %7D%0A%0Af\n",
+            "lines": "109"
+        },
+        {
+            "label": "2026-06-30_20-35-12",
+            "content": "package main\n\nimport (\n\t\"bufio\"\n\t\"fmt\"\n\t\"os\"\n)\n\ntype Pos struct {\n\tl, c int\n}\n\nfunc (p Pos) getNeig() []Pos {\n\treturn []Pos{\n\t\t{p.l - 1, p.c},\n\t\t{p.l + 1, p.c},\n\t\t{p.l, p.c + 1},\n\t\t{p.l, p.c - 1},\n\t}\n}\n\nfunc inside(grid [][]rune, pos Pos) bool {\n\tnrows := len(grid)\n\tncols := len(grid[0])\n\treturn pos.l >= 0 && pos.l < nrows && pos.c >= 0 && pos.c < ncols\n}\n\nfunc match(grid [][]rune, pos Pos, char rune) bool {\n\treturn inside(grid, pos) && grid[pos.l][pos.c] == char\n}\n\nfunc search(grid [][]rune, startPos Pos, endPos Pos) {\n\tq := NewQueue[Pos]()\n\tq.Enqueue(startPos)\n\n\tvisited := make(map[Pos]bool)\n\tvisited[startPos] = true\n\n\tcaminho := make(map[Pos]Pos)\n\n\tfor !q.IsEmpty() {\n\t\tcurr, _ := q.Dequeue()\n\n\t\tif curr == endPos {\n\t\t\tbreak\n\t\t}\n\n\t\tfor _, vizinho := range curr.getNeig() {\n\t\t\tif inside(grid, vizinho) && grid[vizinho.l][vizinho.c] != '#' && !visited[vizinho] {\n\t\t\t\tvisited[vizinho] = true\n\t\t\t\tq.Enqueue(vizinho)\n\t\t\t\tcaminho[vizinho] = curr\n\t\t\t}\n\t\t}\n\t}\n\tvoltar(grid, startPos, endPos, caminho)\n}\n\nfunc voltar(grid [][]rune, startPos Pos, endPos Pos, caminho map[Pos]Pos) {\n\tif _, exist := caminho[endPos]; !exist && startPos != endPos {\n\t\treturn\n\t}\n\tcurr := endPos\n\n\tfor curr != startPos {\n\t\tgrid[curr.l][curr.c] = '.'\n\t\tcurr = caminho[curr]\n\t}\n\tgrid[startPos.l][startPos.c] = '.'\n\n}\n\nfunc main() {\n\tscanner := bufio.NewScanner(os.Stdin)\n\n\tvar nl, nc int\n\tscanner.Scan()\n\tline := scanner.Text()\n\tfmt.Sscanf(line, \"%d %d\", &nl, &nc)\n\tmat := make([][]rune, nl) // Inicializa a matriz de runes\n\n\t// Carregando matriz\n\tfor i := range nl {\n\t\tscanner.Scan()\n\t\tline := scanner.Text()\n\t\tmat[i] = []rune(line)\n\t}\n\n\tvar inicio, fim Pos\n\n\t// Procurando inicio e fim e colocando ' ' nas posi\u00e7\u00f5es iniciais\n\tfor l := range nl {\n\t\tfor c := range nc {\n\t\t\tif mat[l][c] == 'I' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tinicio = Pos{l, c}\n\t\t\t}\n\t\t\tif mat[l][c] == 'F' {\n\t\t\t\tmat[l][c] = ' '\n\t\t\t\tfim = Pos{l, c}\n\t\t\t}\n\t\t}\n\t}\n\n\tsearch(mat, inicio, fim)\n\n\tfor _, line := range mat {\n\t\tfmt.Println(string(line)) // Converte o slice de runes de volta para string para imprimir\n\t}\n}\n",
+            "lines": "110"
+        }
+    ]
+}

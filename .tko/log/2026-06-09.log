@@ -47,3 +47,24 @@
 2026-06-09 11:45:15, MOVE, v:1, k:ed@enesimo, mode:BACK
 2026-06-09 11:45:49, MOVE, v:1, k:ed@subset_sum, mode:PICK
 2026-06-09 11:46:13, MOVE, v:1, k:ed@subset_sum, mode:BACK
+2026-06-09 15:45:10, MOVE, v:1, k:ed@ilhas, mode:PICK
+2026-06-09 15:45:10, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:10, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:11, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:11, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:11, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:11, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:12, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:12, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:12, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:13, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:13, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:13, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:13, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:14, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:14, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:14, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:15, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:15, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:15, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
+2026-06-09 15:45:16, EXEC, v:1, k:ed@ilhas, mode:FULL, rate:100
